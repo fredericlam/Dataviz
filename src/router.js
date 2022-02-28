@@ -6,13 +6,13 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import('./pages/Home.vue') , 
+    component: () => import('./pages/Cervix.vue') , 
     meta: { breadcrumb: [ { name: 'home' } ] }
   },
   {
     path: '/cervix',
     name: 'cervix',
-    component: () => import('./pages/Cervix.vue') , 
+    component: () => import('./pages/Home.vue') , 
     meta: { breadcrumb: [ { name: 'home' } ] }
   },
   // aliases
