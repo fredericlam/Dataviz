@@ -51,12 +51,12 @@
 
 				<div class="col-md-10">
 
-					<div class="story">
+					<div class="story" id="story">
 						<div class="row">
 
 							<div class="col-md-4">
 								<p class="step1">
-									<a href="#" class="link_step" v-on:click="startAnimation(['Higher'])" >
+									<a href="#story" class="link_step" v-on:click="startAnimation(['Higher'])" >
 										For <span class="step_marker" style="background-color: #ffc300">high-education countries</span>, cancer rates is low almost everywhere
 									</a>
 								</p>
@@ -64,7 +64,7 @@
 
 							<div class="col-md-4">
 								<p class="step2">
-									<a href="#" class="link_step" v-on:click="startAnimation(['Intermediate'])" >
+									<a href="#story" class="link_step" v-on:click="startAnimation(['Intermediate'])" >
 									Whereas for <span class="step_marker step_marker_white" style="background-color: #c70039">intermediate-education</span> countries, cancer rates are much more variable and disparate.
 									</a>
 								</p>
@@ -72,7 +72,7 @@
 
 							<div class="col-md-4">
 								<p class="step2">
-									<a href="#" class="link_step" v-on:click="startAnimation(['Lower'])" >
+									<a href="#story" class="link_step" v-on:click="startAnimation(['Lower'])" >
 									The same applies to <span class="step_marker step_marker_white" style="background-color: #571845">lower-education</span> countries.
 									</a>
 								</p>
@@ -638,7 +638,7 @@ h1{
 }
 
 .model{
-	padding-bottom: 40px ;
+	padding-bottom: 100px ;
 	.story{
 		padding-left: 40px;
 		a.link_step{
