@@ -42,12 +42,12 @@
 
 					<h1>Cervical cancer mortality</h1>
 
-					<div class="story" id="story">
+					<div class="story">
 						<div class="row">
 
 							<div class="col-md-3">
 								<p class="step1">
-									<a href="#story" class="link_step" v-on:click="startAnimation(['Higher'])" >
+									<a href="#" class="link_step" v-on:click="startAnimation(['Higher'])" >
 										<span class="step_marker" style="background-color: #ffc300">High-education </span>
 									</a>
 								</p>
@@ -55,7 +55,7 @@
 
 							<div class="col-md-3">
 								<p class="step2">
-									<a href="#story" class="link_step" v-on:click="startAnimation(['Intermediate'])" >
+									<a href="#" class="link_step" v-on:click="startAnimation(['Intermediate'])" >
 									<span class="step_marker step_marker_white" style="background-color: #c70039">Intermediate-education</span>
 									</a>
 								</p>
@@ -63,7 +63,7 @@
 
 							<div class="col-md-3">
 								<p class="step2">
-									<a href="#story" class="link_step" v-on:click="startAnimation(['Lower'])" >
+									<a href="#" class="link_step" v-on:click="startAnimation(['Lower'])" >
 									<span class="step_marker step_marker_white" style="background-color: #571845">Lower-education</span>
 									</a>
 								</p>
