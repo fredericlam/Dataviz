@@ -29,6 +29,10 @@
 
 <style lang="scss">
 
+body{
+  overflow: hidden;
+}
+
 $font : 'Signika Negative', sans-serif ;
 #app {
   font-family: $font ;
