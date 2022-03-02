@@ -28,7 +28,7 @@
   },
   {
     "country_iso2": "ES",
-    "country": "Spain (National)",
+    "country": "Spain",
     "midyear": 2009,
     "cancer.02": "Cervix",
     "sex": "Women",
@@ -37,7 +37,7 @@
   },
   {
     "country_iso2": "ES",
-    "country": "Spain (National)",
+    "country": "Spain",
     "midyear": 2009,
     "cancer.02": "Cervix",
     "sex": "Women",
@@ -46,7 +46,7 @@
   },
   {
     "country_iso2": "ES",
-    "country": "Spain (National)",
+    "country": "Spain",
     "midyear": 2009,
     "cancer.02": "Cervix",
     "sex": "Women",
@@ -163,7 +163,7 @@
   },
   {
     "country_iso2": "IT",
-    "country": "Italy (Torino)",
+    "country": "Italy",
     "midyear": "2012,8",
     "cancer.02": "Cervix",
     "sex": "Women",
@@ -172,7 +172,7 @@
   },
   {
     "country_iso2": "IT",
-    "country": "Italy (Torino)",
+    "country": "Italy",
     "midyear": "2012,8",
     "cancer.02": "Cervix",
     "sex": "Women",
@@ -181,7 +181,7 @@
   },
   {
     "country_iso2": "IT",
-    "country": "Italy (Torino)",
+    "country": "Italy",
     "midyear": "2012,8",
     "cancer.02": "Cervix",
     "sex": "Women",

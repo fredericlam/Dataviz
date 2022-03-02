@@ -1,9 +1,6 @@
 <template>
 
 	<div class="container">
-
-		<h1>Social inequalities</h1>
-		<h2 style="text-align: center;">Cervical cancer, Age-Standardized Rate, Females, by Level of Education</h2>
 		
 		<div class="model" id="model1">
 			<div class="row">
@@ -12,14 +9,6 @@
 
 					<div class="filters">
 						<form>
-
-							<div>
-								<button type="button" class="btn btn-primary mb-3" v-on:click="resetAll">
-									Reset all
-								</button>
-							</div>
-
-
 							<div class="mb-3">
 								<label class="form-label">Sort by level of education</label>
 								<select id="sort_by" v-model="sort_by" placeholder="Sort by" class="form-select" v-on:change="redraw">
@@ -51,31 +40,38 @@
 
 				<div class="col-md-10">
 
+					<h1>Cervical cancer mortality</h1>
+
 					<div class="story" id="story">
 						<div class="row">
 
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<p class="step1">
 									<a href="#story" class="link_step" v-on:click="startAnimation(['Higher'])" >
-										For <span class="step_marker" style="background-color: #ffc300">high-education countries</span>, cancer rates is low almost everywhere
+										<span class="step_marker" style="background-color: #ffc300">High-education </span>
 									</a>
 								</p>
 							</div>
 
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<p class="step2">
 									<a href="#story" class="link_step" v-on:click="startAnimation(['Intermediate'])" >
-									Whereas for <span class="step_marker step_marker_white" style="background-color: #c70039">intermediate-education</span> countries, cancer rates are much more variable and disparate.
+									<span class="step_marker step_marker_white" style="background-color: #c70039">Intermediate-education</span>
 									</a>
 								</p>
 							</div>
 
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<p class="step2">
 									<a href="#story" class="link_step" v-on:click="startAnimation(['Lower'])" >
-									The same applies to <span class="step_marker step_marker_white" style="background-color: #571845">lower-education</span> countries.
+									<span class="step_marker step_marker_white" style="background-color: #571845">Lower-education</span>
 									</a>
 								</p>
+							</div>
+							<div class="col-md-3">
+								<button type="button" class="btn btn-primary mb-3" id="btn-reset" v-on:click="resetAll">
+									Reset all
+								</button>
 							</div>
 								
 						</div>
@@ -131,7 +127,7 @@ export default {
 	    	y_axis : [] ,
 
 	    	color_scale : {} , 
-	    	colors : ["#571845","#C70039","#FFC300"] ,
+	    	colors : ["#C70039","#FFC300","#571845"] ,
 
 	    	// options 
 	    	scales : {
@@ -157,7 +153,7 @@ export default {
 
 			filters : {} , 
 
-			sort_by : 'Higher',
+			sort_by : 'Lower',
 			sort_dir : 'asc' , 
 
 			steps : []  
@@ -440,7 +436,7 @@ export default {
 
 			this.g_circles.selectAll(".country")
 				.style('opacity',o => {
-					console.info("this.steps[o.edu]",o.country,o.edu,this.steps[o.edu]) ; 
+					// console.info("this.steps[o.edu]",o.country,o.edu,this.steps[o.edu]) ; 
 					if ( o.asr == 'NA') return 0 ; 
 					else if ( o.country == label && this.steps[o.edu] == true ) return 1 ; 
 					else if ( this.steps[o.edu] == true ) return 0.1 ; 
@@ -468,7 +464,7 @@ export default {
 			// console.info("Sorting","sort_by",this.sort_by,"sort_dir",this.sort_dir)
 
 			// legend
-			this.setLegend( this.filters.colors );
+			// this.setLegend( this.filters.colors );
 
 			this.dataset.map( m => {
 				m.sort = ( m.edu == this.sort_by ) ? m.asr : 0  ; 
@@ -631,8 +627,9 @@ export default {
 
 <style lang="scss">
 h1{
-	padding: 10px 0;
-	text-align: center ;
+	padding: 20px 0 10px 40px;
+	font-size: 1.4em;
+	text-align: left ;
 	font-weight: 900;
 	text-transform: uppercase; 
 }
@@ -644,17 +641,26 @@ h1{
 		a.link_step{
 			display: block ; 
 			font-size: 1.2em;
-			padding: 20px;
+			padding: 0 5px;
 			width: 100%;
 			height: 100%;
-			min-height: 120px;
 			&:hover{
 				background: #f0f0f0 ; 
 				text-decoration: none!important;
 			}
+			span.step_marker{
+				padding: 10px; 
+				display: block;
+				margin: auto ; 
+				text-align: center;
+			}
 			span.step_marker_white{
 				color: #fff ; 
 			}
+		}
+		button#btn-reset{
+			float: right;
+   	 		margin-right: 40px;
 		}
 	}
 }
@@ -667,11 +673,12 @@ h1{
 		a.country_button{
 			text-decoration: none!important;
 			display: block;
+			font-size: .9em;
 			&:hover{
 				text-decoration: none!important;
 			}
 			img{
-				width: 20px;
+				height: 10px;
 			}
 		}
 	}
@@ -699,6 +706,7 @@ g.y.axis{
 }
 
 .filters{
+	padding-top: 20px;
 	.legend{
 		padding-left:0 ;
 	}
