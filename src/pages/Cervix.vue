@@ -12,6 +12,14 @@
 
 					<div class="filters">
 						<form>
+
+							<div>
+								<button type="button" class="btn btn-primary mb-3" v-on:click="resetAll">
+									Reset all
+								</button>
+							</div>
+
+
 							<div class="mb-3">
 								<label class="form-label">Sort by level of education</label>
 								<select id="sort_by" v-model="sort_by" placeholder="Sort by" class="form-select" v-on:change="redraw">
@@ -30,7 +38,7 @@
 
 						<ul class="list-group" id="countries_list">
 							<li class="list-group-item" v-for="population in filters.populations_ordered">
-								<a href="javascript:void(0)" class="country_button">
+								<a href="javascript:void(0)" class="country_button" v-on:mouseover="selectCountry(population.label)"  v-on:mouseout="deselectCountry()">
 									<img :src="'../img/flags/'+population.iso+'.svg'">
 									{{ population.label }}	
 								</a>
@@ -46,18 +54,26 @@
 					<div class="story">
 						<div class="row">
 
-							<div class="col-md-6">
+							<div class="col-md-4">
 								<p class="step1">
-									<a href="#" class="link_step" v-on:mouseover="mouseOver(['Higher'])" v-on:mouseout="mouseOut">
+									<a href="#" class="link_step" v-on:click="startAnimation(['Higher'])" >
 										For <span class="step_marker" style="background-color: #ffc300">high-education countries</span>, cancer rates is low almost everywhere
 									</a>
 								</p>
 							</div>
 
-							<div class="col-md-6">
+							<div class="col-md-4">
 								<p class="step2">
-									<a href="#" class="link_step" v-on:mouseover="mouseOver(['Intermediate','Lower'])" v-on:mouseout="mouseOut">
-									Whereas for <span class="step_marker step_marker_white" style="background-color: #571845">low-education</span> and <span class="step_marker step_marker_white" style="background-color: #c70039">intermediate-education</span> countries, cancer rates are much more variable and disparate.
+									<a href="#" class="link_step" v-on:click="startAnimation(['Intermediate'])" >
+									Whereas for <span class="step_marker step_marker_white" style="background-color: #c70039">intermediate-education</span> countries, cancer rates are much more variable and disparate.
+									</a>
+								</p>
+							</div>
+
+							<div class="col-md-4">
+								<p class="step2">
+									<a href="#" class="link_step" v-on:click="startAnimation(['Lower'])" >
+									The same applies to <span class="step_marker step_marker_white" style="background-color: #571845">lower-education</span> countries.
 									</a>
 								</p>
 							</div>
@@ -142,7 +158,9 @@ export default {
 			filters : {} , 
 
 			sort_by : 'Higher',
-			sort_dir : 'asc'
+			sort_dir : 'asc' , 
+
+			steps : []  
 	    }
 	},
 	created(){	
@@ -223,8 +241,13 @@ export default {
 
 				this.filters.educations = Array.from( d3.group( this.dataset , d => d.edu ) )
 					.map( m =>{ 
+						this.steps[ m[0] ] = false ;  
 						return { edu : m[0] } 
 					})
+
+				/*this.steps = this.filters.educations.map( f =>{
+					return { value : f.edu , active : false } ; 
+				})*/
 
 				this.color_scale = d3.scaleOrdinal()
 					.range(this.colors)
@@ -236,9 +259,9 @@ export default {
 				})
 				this.filters.colors.reverse() ;	
 
-				console.table(this.filters.colors) ;
+				// console.table(this.steps) ;
 
-				this.redraw();
+				this.redraw( true );
 				
 			}))
 	        
@@ -303,27 +326,102 @@ export default {
 	            .text( t => t.edu )
 		},
 
-		mouseOver : function( edu ){
+		resetAll : function(){
+
+			this.filters.educations.forEach( e => {
+				this.steps[ e.edu ] = false ; 
+			})
 
 			this.g_circles.selectAll(".country")
-				.style('opacity', o => {
-					if ( o.asr == 'NA') return 0 ; 
-					let opacity = 0 ;
-					if ( edu.includes(o.edu) ) opacity = 1 ; 
-					return opacity ; 
-				})
 				.transition()
 	            .duration(500)
-	            .attr("cy",this.height-this.margin.bottom)
-				.transition()
-	            .duration(2000)
-	            .attr("cy",d=>this.y_scale(d.asr))
+	            .attr("cy",c => {
+	            	return  this.height-this.margin.bottom
+	            })
+	            .style("opacity",0)
+
+		}, 
+
+		startAnimation : function( edu ){
+
+			let animate ; 
+
+			this.steps[edu] = !this.steps[edu] ;
+
+			// go up or down
+			// console.info("animate",edu,this.steps[edu]) ; 
+			// console.table(this.steps); 
+
+			// return ; 
+
+			// fade - in
+			if ( this.steps[edu] == true )
+			{
+				this.g_circles.selectAll(".country")
+					.style('opacity', o => {
+						let opacity = 0 ; 
+						if ( o.asr == 'NA') opacity = 0 ;
+						else if ( this.steps[o.edu] == true ) opacity = 1 ;
+						return opacity ;
+					})
+					.attr("cy",c => {
+						if ( this.steps[c.edu] == true && c.edu != edu )
+							return this.y_scale(c.asr)
+						else
+							return  this.height-this.margin.bottom
+					})
+					.transition()
+		            .duration(2000)
+		            .attr("cy",c => {
+						if ( this.steps[c.edu] == true )
+	            			return this.y_scale(c.asr)
+	            	})
+		            .style('opacity', o => {
+		            	let opacity = 0 ; 
+						if ( o.asr == 'NA') opacity = 0 ;
+						else if ( o.edu == edu || this.steps[o.edu] == true) opacity = 1 ;
+						return opacity ; 
+					})
+			}		
+			else
+			{
+
+			}
+
+			/*this.g_circles.selectAll(".country")
 				.style('opacity', o => {
 					if ( o.asr == 'NA') return 0 ; 
-					let opacity = 0 ;
-					if ( edu.includes(o.edu) ) opacity = 1 ; 
+					let opacity = 0;
+					if ( this.steps[o.edu] == true )
+						opacity = 1 ; 
+					else if( edu == o.edu )
+						opacity = (this.steps[o.edu]==true)?0:1 ; 
 					return opacity ; 
-				}) ; 
+				})
+				//.transition()
+	            //.duration(500)
+	            .attr("cy",c => {
+	            	if ( this.steps[c.edu] == true )
+	            		return this.y_scale(c.asr)
+	            	else
+	            		return  this.height-this.margin.bottom
+	            })
+				.transition()
+	            .duration(2000)
+	            .attr("cy",c => {
+	            	if ( this.steps[c.edu] == true )
+	            		return this.y_scale(c.asr)
+	            	else
+	            		return  this.height-this.margin.bottom
+	            })
+				.style('opacity', o => {
+					if ( o.asr == 'NA') return 0 ; 
+					let opacity = ( this.steps[o.edu] == true ) ? 1 : 0 ;
+					if( edu == o.edu )
+						opacity = (this.steps[o.edu]==true)?1:0 ;
+
+					return opacity ; 
+				}) ; */
 		},
 
 		mouseOut : function(){
@@ -336,14 +434,38 @@ export default {
 
 		} , 
 
+		selectCountry( label ){
+
+			// console.table(this.steps);
+
+			this.g_circles.selectAll(".country")
+				.style('opacity',o => {
+					console.info("this.steps[o.edu]",o.country,o.edu,this.steps[o.edu]) ; 
+					if ( o.asr == 'NA') return 0 ; 
+					else if ( o.country == label && this.steps[o.edu] == true ) return 1 ; 
+					else if ( this.steps[o.edu] == true ) return 0.1 ; 
+					return 0 ; 
+				})
+
+		} , 
+
+		deselectCountry(){
+			this.g_circles.selectAll(".country")
+				.style('opacity',o => {
+					if ( o.asr == 'NA') return 0 ; 
+					else if ( this.steps[o.edu] == true ) return 1 ; 
+					return 0 ; 
+				}) ; 
+		},
+
 		/**
 		* Redraw graphic
-		* @param (no param)
+		* @param (bool) init or not
 		* @return (no return )
 		*/
-		redraw : function(){
+		redraw : function( init ){
 
-			console.info("Sorting","sort_by",this.sort_by,"sort_dir",this.sort_dir)
+			// console.info("Sorting","sort_by",this.sort_by,"sort_dir",this.sort_dir)
 
 			// legend
 			this.setLegend( this.filters.colors );
@@ -428,8 +550,6 @@ export default {
 	            .duration(750)
 	            .call(this.x_axis);
 
-	        //return ; 
-
 	        this.circles = this.g_circles.selectAll(".country")
 	            .data(this.dataset, d => d.id );
 
@@ -444,25 +564,13 @@ export default {
 	            .attr("cx", d=>this.x_scale(d.iso)+ this.x_scale.bandwidth()/2)
             	.attr("cy",this.height-this.margin.bottom)
 	            .attr("r", 6)
-	            .attr("fill", "#fff") //function(d){ return colors(d.continent)})
-	            .style("opacity",d=>{
-	            	return (d.asr=='NA')?0:1;
-	            })
-	            .merge(this.circles)
-	            .transition()
-	            .duration(1250)
-	            .attr("cx", d=>this.x_scale(d.iso)+ this.x_scale.bandwidth()/2)
-            	.attr("cy",d=>this.y_scale(d.asr))
-	            .style("opacity",d=>{
-	            	return (d.asr=='NA')?0:1;
-	            })
-	            .attr('attr-edu', e => e.edu )
 	            .attr("fill", d=>{ 
 	            	return this.color_scale(d.edu) 
 	            })
 	            .style("stroke","#000")
-	            .style("stroke-width","0.5px")
-	            
+	            .style("stroke-width","0.5px") //function(d){ return colors(d.continent)})
+	            .style("opacity",0)
+
 	        this.g_circles.selectAll(".country")
 	        	.on("mousemove", (event, d) => {
 
@@ -496,11 +604,22 @@ export default {
 		        		.style("left", 0)
 		        		.style("opacity", 0);
 		            //this.xLine.attr("opacity", 0);
-	        	});
-
-	            //.attr("cx", d => d.x )
-	            //.attr("cy", d => d.y )
+	        	})
 	        ;
+
+	        if ( init == true ) return ; 
+
+	        this.circles.merge(this.circles)
+	            .transition()
+	            .duration(1250)
+	            .attr("cx", d=>this.x_scale(d.iso)+ this.x_scale.bandwidth()/2)
+            	.attr("cy",d=>this.y_scale(d.asr))
+	            .style("opacity",d=>{
+	            	return (d.asr=='NA')?0:1;
+	            })
+	            .attr('attr-edu', e => e.edu )
+	            
+	        
 
 	    } // end redraw
 

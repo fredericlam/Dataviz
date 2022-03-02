@@ -8,12 +8,12 @@
 
 <template>
   
-  <header>
+  <!--<header>
     <div class="container-md">
       &lt;social-inequalities/&gt;
     </div>
 
-  </header>
+  </header>-->
 
   <main class="page-content container-md">
     
