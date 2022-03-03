@@ -117,7 +117,7 @@ export default {
 
 	    	// svg conf
 	    	width: 0 ,
-	    	height : 600 , 
+	    	height : 0 , 
 	    	margin : {top: 10, right: 40, bottom: 80, left: 40} ,
 
 	    	x_scale : [] , 
@@ -164,7 +164,10 @@ export default {
 	mounted(){
 
 		this.width = $('#graphic').width() ; 
-			
+		this.height = ( $(window).height() < 600 ) ? $(window).height() - 80 : 600 ; 
+		
+		// console.info("this.height",$(window).height(),this.height) ; 
+
 		// create svg
 		this.svg = d3.select('#graphic').append("svg")
 			.attr('id','graphic')

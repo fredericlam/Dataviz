@@ -201,6 +201,15 @@ $font : 'Signika Negative', sans-serif ;
     }
 }
 
+@media (min-width: 768px) and (max-width: 1141px){
+  .container, .container-md, .container-sm {
+      max-width: 100%;
+  }
+  body{
+    font-size: 0.6em;
+  }
+}
+
 @media (min-width: 1400px){
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
       max-width: 1600px;
