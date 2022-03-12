@@ -21,6 +21,12 @@ const routes = [
     component: () => import('./pages/Thyroid.vue') , 
     meta: { breadcrumb: [ { name: 'thyroid' } ] }
   },
+  {
+    path: '/thyroid-age-specific',
+    name: 'thyroid-age-specific',
+    component: () => import('./pages/Thyroid.vue') , 
+    meta: { breadcrumb: [ { name: 'thyroid-age-specific' } ] }
+  },
   // aliases
   { path: "/:catchAll(.*)", redirect: '/404' }
 ] ; 

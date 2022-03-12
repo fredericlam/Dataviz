@@ -4,11 +4,16 @@
 		
 		<div class="model" id="model1">
 
-			<h1>Age-standardized rate (World) per 100 000, incidence , females</h1>
-
 			<div class="row">
 
-				<div class="col-md-7">
+				<div class="col-md-2">
+
+				</div>
+
+				<div class="col-md-5">
+
+					<h1 v-if="is_age_specific==false">Age-standardized rate (World) per 100 000, incidence , females</h1>
+			<h1 v-if="is_age_specific==true">Rates per 100 000 by period, Age-specific<br/> Korea (5 registries), incidence , females</h1>
 
 					<div id="graphic"></div>
 
@@ -19,7 +24,8 @@
 					<div class="filters">
 						<form>
 							
-							<div class="row">
+							<div class="row" v-if="is_age_specific==false">
+								
 								<div class="col-md-12">
 									<p class="step1">
 										<a href="#" class="link_step">
@@ -43,11 +49,31 @@
 								<div class="col-md-12">
 									<p class="step2">
 										<a href="#" class="link_step" v-on:click="startAnimation()" >
-										<span class="step_marker step_marker_white"  :style="{ 'background-color': pops[2].color }">
+											<span class="step_marker step_marker_white"  :style="{ 'background-color': pops[2].color }">
 											<i class='fas fa-check' v-if="animate==true"></i>Republic of Korea</span>
 										</a>
 									</p>
 								</div>
+							</div>
+
+							<div class="row" v-if="is_age_specific==true">
+
+
+								<div class="col-md-12" v-for="(period,i) in pops">
+									<p class="step1">
+										<a href="#" :class="'link_step '+period.class">
+											<label :for="'checkbox_'+i">
+												<input type="checkbox" v-model="lines_checkbox" :value="period.label" :id="'checkbox_'+i" v-on:change="periodAnimation()">
+												<span class="step_marker" :style="{ 'background-color': period.color }">
+													<i class='fas fa-check'></i>
+													{{ period.label }} 
+												</span>
+												
+											</label>
+										</a>
+									</p>
+								</div>
+
 							</div>
 							
 							<!--<div class="col-md-3">
@@ -149,12 +175,30 @@ export default {
 				{ country : 25000 , label : 'France' , color : "#ffbc42" } ,
 				{ country : 84000 , label : 'USA' , color : "#d81159" } ,
 				{ country : 41000 , label : 'Korea' , color : "#218380" }
-			]
+			] , 
+
+			is_age_specific : false , 
+
+			lines_checkbox : []
 	    }
 	},
 	created(){	
 	},
 	mounted(){
+
+
+		this.is_age_specific = ( this.$router.currentRoute.value.name == 'thyroid-age-specific' ) ? true : false  
+
+		if ( this.is_age_specific == true ){
+			this.pops = [
+				{ label : '1999-2000' , color : "#ef476f" , checked : false } ,
+				{ label : '2001-2003' , color : "#ffd166" , checked : false } ,
+				{ label : '2004-2006' , color : "#06d6a0" , checked : false } ,
+				{ label : '2007-2009' , color : "#118ab2" , checked : false } ,
+				{ label : '2010-2012' , color : "#073b4c" , checked : false , class : 'span_white' } ,
+
+			] ; 
+		}
 
 		this.width = $('#graphic').width() ; 
 		this.height = ( $(window).height() < 600 ) ? $(window).height() - 80 : 600 ; 
@@ -198,29 +242,60 @@ export default {
 		this.chartState.scale 	= this.scales.lin ;
 		this.chartState.legend 	= this.legend.total ;
 
+
+
 		let promise = axios.get( "../data/dataset-thyroid.json" ) ; 
+
+		if ( this.is_age_specific == true ){
+			promise = axios.get( "../data/dataset-age-specific.json" ) ; 
+		}
 
 		axios.all( [promise] )
 			.then( axios.spread(( dataset_promise ) => {
 
-				let tmp_dataset = dataset_promise.data.dataset
-					.filter( f => f.type == 0 )
-					.map( d => {
-						return {
-							id : `dot-${d.id}-${d.type}-${d.sex}` , 
-							//iso : d.country_iso2 , 
-							country : d.country , 
-							year : d.year , 
-							sex : d.sex , 
-							type : d.type ,
-							asr : parseFloat(d.asr)
-						}
-					}) ;
+				let tmp_dataset = [] , key_  ; 
+
+
+				if ( this.is_age_specific == true )
+				{
+					key_ = 'period' ; 
+					tmp_dataset = dataset_promise.data
+						.map( d => {
+							let m = d.age.split('-') ;
+							return {
+								id : `plot-${d.age}-period-${d.period}` , 
+								period : d.period , 
+								type : 0 ,
+								age : d.age ,
+								y : m[0] ,
+								asr : parseFloat(d.rate)
+							}
+						}) ;
+				}
+				else
+				{
+					key_ = 'country' ; 
+					tmp_dataset = dataset_promise.data.dataset
+						.filter( f => f.type == 0 )
+						.map( d => {
+							return {
+								id : `dot-${d.id}-${d.type}-${d.sex}` , 
+								//iso : d.country_iso2 , 
+								country : d.country , 
+								year : d.year , 
+								sex : d.sex , 
+								type : d.type ,
+								asr : parseFloat(d.asr)
+							}
+						}) ;
+				}
 
 				// console.info("tmp_dataset",tmp_dataset) ; 
 
-				let lines_dataset =  d3.group(tmp_dataset, d => d.country , d => d.type ) ;
+				let lines_dataset =  d3.group(tmp_dataset, d => d[key_] , d => d.type ) ;
 				let line , values = [] ; 
+
+				// console.info("lines_dataset",lines_dataset) ; 
 
 				lines_dataset.forEach( c => {
 					
@@ -231,20 +306,27 @@ export default {
 						//console.info( t ) ; 
 
 						t.forEach( s => {
-							let obj = { asr : s.asr , year : s.year , country : s.country } ;
+							let obj = { asr : s.asr , year : s.year , country : s.country , period : s.period , age : s.age , y : s.y } ;
 							this.all_values.push(obj) ; 
 							values.push(obj) ;
 							line = {
 								id : s.id ,
 								country : s.country , 
+								period : s.period ,
 								type : s.type , 
-								sex : s.sex
+								sex : s.sex , 
+								age : s.age , 
+								y : s.y
 							}
 						})
 
-						let country = this.pops.find( p => line.country == p.country )
+						let item = this.pops.find( p => line.country == p.country )
 
-						line.color = country.color ; 
+						if ( this.is_age_specific == true ){
+							item = this.pops.find( p => line.period == p.label )
+						}
+
+						line.color = item.color ; 
 						line.dash = ( line.type == 0 ) ? false : true ; 
 						line.values = values ; 
 
@@ -332,7 +414,7 @@ export default {
 		* @param (bool) init or not
 		* @return (no return )
 		*/
-		redraw : function( init ){
+		redraw : function( init , label ){
 
 			// legend
 			// console.info("dataset",this.dataset,this.all_values) ; 
@@ -342,16 +424,50 @@ export default {
 				dataset_in = this.dataset ;
 				all_values_in = this.all_values ; 
 			} else {
-				dataset_in = this.dataset.filter( c => c.country != 41000 )
-				all_values_in = this.all_values.filter( c => c.country != 41000 )
+
+				if ( this.is_age_specific == true ){
+					
+					dataset_in = this.dataset
+						.filter( c => {
+							return this.lines_checkbox.includes( c.period ) 
+						})
+
+					all_values_in = this.all_values
+				
+				}
+				else{
+					dataset_in = this.dataset.filter( c => c.country != 41000 )
+					all_values_in = this.all_values.filter( c => c.country != 41000 )
+				}
 			}
 			
-		 	this.x_scale = d3.scaleLinear()
-			 	//.domain( this.filters.years.map( p => p.year ) )
-			 	.domain( this.axis.x )
-	        	.rangeRound([ this.margin.left , this.width - this.margin.right ]) 
-	        	//.paddingInner(1)
-	        ;
+			console.log("dataset_in",dataset_in);
+		 	
+	        if ( this.is_age_specific == true ){
+
+	        	// console.info("this all_values",this.all_values) ;
+
+	        	this.filters.years = Array.from( d3.group( this.all_values , d => d.y ) )
+					.map( m =>{ 
+						return { y : m[0] } 
+					})
+
+				let x_axis_ticks = this.filters.years.map( p => p.y ) ; 
+				// console.info("x_axis_ticks",x_axis_ticks) ;
+
+	        	this.x_scale = d3.scaleBand()
+				 	.domain( this.filters.years.map( p => p.y ) )
+		        	.rangeRound([ this.margin.left , this.width - this.margin.right ]) 
+		        	//.paddingInner(1)
+		        ;
+	        } else {
+	        	this.x_scale = d3.scaleLinear()
+				 	//.domain( this.filters.years.map( p => p.year ) )
+				 	.domain( this.axis.x )
+		        	.rangeRound([ this.margin.left , this.width - this.margin.right ]) 
+		        	//.paddingInner(1)
+		        ;
+	        }
 	        
 			// Set scale type based on button clicked
 	        if (this.chartState.scale === this.scales.lin) {
@@ -368,7 +484,7 @@ export default {
 	        this.y_scale.domain([0,this.domains[1]] ).nice() ;
 
 	       	this.line = d3.line()
-	            .x((d)=>{ return this.x_scale( d.year ); })
+	            .x((d)=>{ return this.x_scale( (this.is_age_specific==true) ? d.y : d.year ); })
 	            .y((d)=>{ return this.y_scale( d.asr ); })
 	            .curve( d3.curveBasis )
 	        ;
@@ -384,7 +500,7 @@ export default {
             this.x_axis = d3.axisBottom(this.x_scale)
             	.ticks(10)
             	.tickFormat(d=>{
-            		return parseFloat(d)
+            		return ( this.is_age_specific == true ) ? d : parseFloat(d)
             	})
 	        // console.info("this.x_scale",this.x_scale)
 
@@ -438,6 +554,15 @@ export default {
 
 	    	this.redraw();
 
+	    } , 
+
+	    periodAnimation : function( label ){
+
+	    	console.info("lines_checkbox",this.lines_checkbox) ;
+
+	    	// let item = this.pops.find( p => p.label == label )
+	    	this.redraw( false , label );
+
 	    }
 
 	}
@@ -462,6 +587,9 @@ a.link_step{
 	height: 100%;
 	min-width: 250px;
 	transition: all 0.2s ease-in-out;
+	&.span_white{
+		color: #fff !important;
+	}
 	&:hover{
 		background: #f0f0f0 ; 
 		text-decoration: none!important;
@@ -479,6 +607,24 @@ a.link_step{
 	}
 	span.step_marker_white{
 		color: #fff ; 
+	}
+
+	label{
+		display: block; 
+		width: 100%;
+		cursor: pointer;
+	}
+
+	input[type="checkbox"]{
+		display: none ; 
+	}
+
+	input[type="checkbox"]:not(:checked) + span i{
+		display: none;
+	}
+
+	input[type="checkbox"]:checked + span i{
+		display: inline-block ;
 	}
 }
 button#btn-reset{
