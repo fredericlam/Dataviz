@@ -8,12 +8,18 @@ const routes = [
     name: 'home',
     component: () => import('./pages/Cervix.vue') , 
     meta: { breadcrumb: [ { name: 'home' } ] }
-  },
+  }/*,
   {
     path: '/cervix',
     name: 'cervix',
     component: () => import('./pages/Home.vue') , 
     meta: { breadcrumb: [ { name: 'home' } ] }
+  }*/,
+  {
+    path: '/thyroid',
+    name: 'thyroid',
+    component: () => import('./pages/Thyroid.vue') , 
+    meta: { breadcrumb: [ { name: 'thyroid' } ] }
   },
   // aliases
   { path: "/:catchAll(.*)", redirect: '/404' }
