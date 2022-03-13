@@ -187,7 +187,7 @@ export default {
 	mounted(){
 
 
-		this.is_age_specific = ( this.$router.currentRoute.value.name == 'thyroid-age-specific' ) ? true : false  
+		this.is_age_specific = ( this.$router.currentRoute.value.name == 'thyroid_age' ) ? true : false  
 
 		if ( this.is_age_specific == true ){
 			this.pops = [

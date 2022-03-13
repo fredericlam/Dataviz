@@ -14,13 +14,13 @@ const routes = [
     name: 'thyroid',
     component: () => import('./pages/Thyroid.vue') , 
     meta: { breadcrumb: [ { name: 'thyroid' } ] }
-  }/*,
+  },
   {
-    path: '/thyroid-age-specific',
-    name: 'thyroid-age-specific',
+    path: '/thyroid_age',
+    name: 'thyroid_age',
     component: () => import('./pages/Thyroid.vue') , 
     meta: { breadcrumb: [ { name: 'thyroid-age-specific' } ] }
-  }*/,
+  },
   // aliases
   { path: "/:catchAll(.*)", redirect: '/404' }
 ] ; 
