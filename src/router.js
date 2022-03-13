@@ -8,13 +8,13 @@ const routes = [
     name: 'home',
     component: () => import('./pages/Cervix.vue') , 
     meta: { breadcrumb: [ { name: 'home' } ] }
-  }/*,
+  },
   {
     path: '/thyroid',
     name: 'thyroid',
     component: () => import('./pages/Thyroid.vue') , 
     meta: { breadcrumb: [ { name: 'thyroid' } ] }
-  },
+  }/*,
   {
     path: '/thyroid-age-specific',
     name: 'thyroid-age-specific',
