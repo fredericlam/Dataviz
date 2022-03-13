@@ -10,12 +10,6 @@ const routes = [
     meta: { breadcrumb: [ { name: 'home' } ] }
   }/*,
   {
-    path: '/cervix',
-    name: 'cervix',
-    component: () => import('./pages/Home.vue') , 
-    meta: { breadcrumb: [ { name: 'home' } ] }
-  }*/,
-  {
     path: '/thyroid',
     name: 'thyroid',
     component: () => import('./pages/Thyroid.vue') , 
@@ -26,7 +20,7 @@ const routes = [
     name: 'thyroid-age-specific',
     component: () => import('./pages/Thyroid.vue') , 
     meta: { breadcrumb: [ { name: 'thyroid-age-specific' } ] }
-  },
+  }*/,
   // aliases
   { path: "/:catchAll(.*)", redirect: '/404' }
 ] ; 
