@@ -23,5 +23,28 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="/src/main.js"></script>
 
+    <script type="text/javascript">
+      function line_transition(path,transition_duration) {
+          path.transition()
+              .duration(transition_duration)
+              .attrTween("stroke-dasharray", tweenDash)
+      }
+
+      function tweenDash(d) {
+        var dash_width = (d.dash_width!=undefined)?d.dash_width:5;
+        var dash = (d.gap == true) ? 2.5 : (d.dash == true) ? dash_width : 0 ; 
+          var l = this.getTotalLength(),
+          i = d3.interpolateString("0," + l, l + "," + l);
+          return function (t) { 
+          if (t < 1) {
+            return i(t);
+          }
+          else {
+            return dash;
+          }
+        };
+      }
+    </script>
+
   </body>
 </html>
