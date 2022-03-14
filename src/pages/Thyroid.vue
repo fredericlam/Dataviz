@@ -6,7 +6,7 @@
 
 			<div class="row">
 
-				<div class="col-md-8">
+				<div class="col-md-7">
 
 					<h1 v-if="is_age_specific==false">Age-standardized rate (World) per 100 000, incidence , females</h1>
 			<h1 v-if="is_age_specific==true">Rates per 100 000 by period, Age-specific<br/> Korea (5 registries), incidence , females</h1>
@@ -15,7 +15,7 @@
 
 				</div>
 
-				<div class="col-md-4">
+				<div class="col-md-5">
 
 					<div class="filters" style="margin-top: 60px;">
 						<form>
