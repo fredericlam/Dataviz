@@ -15,7 +15,7 @@
 
 					<p>
 						<span v-if="is_age_specific==false">Data source: <a href="https://gco.iarc.fr" target="_blank">The Global Cancer Observatory</a>, <a href="https://gco.iarc.fr/overtime" target="_blank">Cancer Overtime</a> </span>
-						<span v-if="is_age_specific==true">Data source: <a href="https://ci5.iarc.fr/ci5plus" target="_blank">CI5Plus</a></span>
+						<span v-if="is_age_specific==true">Data source: <a href="https://ci5.iarc.fr/ci5plus" target="_blank">CI5PLUS: Cancer Incidence in Five Continents Time Trends</a></span>
 					</p>
 
 				</div>
