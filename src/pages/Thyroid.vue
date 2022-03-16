@@ -6,9 +6,9 @@
 
 			<div class="row">
 
-				<div class="col-md-7">
+				<div class="col-md-9">
 
-					<h1 v-if="is_age_specific==false">Age-standardized rate (World) per 100 000, incidence , females</h1>
+					<h1 v-if="is_age_specific==false">Age-standardized rate (World) per 100 000<br/> incidence & mortality , females</h1>
 			<h1 v-if="is_age_specific==true">Rates per 100 000 by period, Age-specific<br/> Korea (5 registries), incidence , females</h1>
 
 					<div id="graphic"></div>
@@ -20,7 +20,7 @@
 
 				</div>
 
-				<div class="col-md-5">
+				<div class="col-md-3">
 
 					<div class="filters" style="margin-top: 60px;">
 						<form>
@@ -126,7 +126,7 @@ export default {
 	    	// svg conf
 	    	width: 0 ,
 	    	height : 0 , 
-	    	margin : {top: 10, right: 40, bottom: 80, left: 40} ,
+	    	margin : {top: 10, right: 150, bottom: 80, left: 40} ,
 
 	    	x_scale : [] , 
 	    	x_axis : [] ,
@@ -178,6 +178,8 @@ export default {
 				{ country : 41000 , label : 'Korea' , color : "#218380" }
 			] , 
 
+			target_country : 41000 , 
+
 			is_age_specific : false , 
 
 			lines_checkbox : []
@@ -204,7 +206,7 @@ export default {
 		this.width = $('#graphic').width() ; 
 		this.height = ( $(window).height() < 600 ) ? $(window).height() - 80 : 600 ; 
 
-		this.width = this.height ; 
+		this.width = this.height + 150 ; 
 		
 		// console.info("this.height",$(window).height(),this.height) ; 
 
@@ -234,6 +236,9 @@ export default {
 	        .attr('class','group_lines') 
 		    //.attr("transform", `translate(${this.margin.left},0)`) 
 		   	// ${this.margin.top})`) 
+
+		this.legend_lines = this.svg.append('g')
+	        .attr('class','legend_lines') 
 
 		this.svg.append("g")
 		    .attr("class", "x axis")
@@ -268,7 +273,7 @@ export default {
 								period : d.period , 
 								type : 0 ,
 								age : d.age ,
-								y : m[0] ,
+								y : parseFloat(m[0])  ,
 								asr : parseFloat(d.rate)
 							}
 						}) ;
@@ -277,7 +282,7 @@ export default {
 				{
 					key_ = 'country' ; 
 					tmp_dataset = dataset_promise.data.dataset
-						.filter( f => f.type == 0 )
+						//.filter( f => f.type == 0 )
 						.map( d => {
 							return {
 								id : `dot-${d.id}-${d.type}-${d.sex}` , 
@@ -349,8 +354,10 @@ export default {
 
 				this.filters.colors = [] ; 	
 				
-
-				this.redraw( true );
+				setTimeout(() => {
+					this.redraw( true );
+				}, 7000 )
+				
 				
 			}))
 	        
@@ -437,12 +444,12 @@ export default {
 				
 				}
 				else{
-					dataset_in = this.dataset.filter( c => c.country != 41000 )
-					all_values_in = this.all_values.filter( c => c.country != 41000 )
+					dataset_in = this.dataset.filter( c => c.country != this.target_country )
+					all_values_in = this.all_values.filter( c => c.country != this.target_country )
 				}
 			}
 			
-			console.log("dataset_in",dataset_in);
+			// console.log("dataset_in",dataset_in);
 		 	
 	        if ( this.is_age_specific == true ){
 
@@ -450,14 +457,17 @@ export default {
 
 	        	this.filters.years = Array.from( d3.group( this.all_values , d => d.y ) )
 					.map( m =>{ 
-						return { y : m[0] } 
+						//console.info("m",m) ;
+						// return { y : parseFloat(m[0].replace('+','')) } 
+						return { y :m[0] } 
 					})
 
 				let x_axis_ticks = this.filters.years.map( p => p.y ) ; 
 				// console.info("x_axis_ticks",x_axis_ticks) ;
 
-	        	this.x_scale = d3.scaleBand()
-				 	.domain( this.filters.years.map( p => p.y ) )
+	        	this.x_scale = d3.scaleLinear()
+				 	.domain( [0,85] ) //this.filters.years.map( p => p.y ) )
+				 	// .ticks(15)
 		        	.rangeRound([ this.margin.left , this.width - this.margin.right ]) 
 		        	//.paddingInner(1)
 		        ;
@@ -505,16 +515,16 @@ export default {
             	})
 	        // console.info("this.x_scale",this.x_scale)
 
-	        let transition_duration = 3500 ; 
+	        this.transition_duration = 3500 ; 
 
 	        d3.transition(this.svg).select(".y.axis")
 	            .transition()
-	            .duration(transition_duration)
+	            .duration(this.transition_duration)
 	            .call(this.y_axis);
 
 	        d3.transition(this.svg).select(".x.axis")
 	            .transition()
-	            .duration(transition_duration)
+	            .duration(this.transition_duration)
 	            .call(this.x_axis);
 
           	this.lines = this.group_lines.selectAll('.path_lines')
@@ -534,18 +544,18 @@ export default {
 	            .attr("fill", "none") 
 	        ;
 
-	        
-
-	        lines_tran.call(line_transition, transition_duration ); 
+	        lines_tran.call(line_transition, this.transition_duration ); 
 
 	        this.lines
 	            .transition()
-	            .duration( transition_duration )
+	            .duration( this.transition_duration )
 	            .attr("d", (d) => { return this.line(d.values) ; })
 
 	        this.lines
 	            .exit()
 	            .remove() ; 
+
+	        this.buildLinesLegend( dataset_in ) ; 
 
 	    } ,  // end redraw
 
@@ -559,11 +569,186 @@ export default {
 
 	    periodAnimation : function( label ){
 
-	    	console.info("lines_checkbox",this.lines_checkbox) ;
+	    	// console.info("lines_checkbox",this.lines_checkbox) ;
 
 	    	// let item = this.pops.find( p => p.label == label )
 	    	this.redraw( false , label );
 
+	    },
+
+	    /**
+	    * Create right legend once
+	    * @param no param
+	    */
+	    buildLinesLegend : function( dataset_in ){
+
+	    	/*this.legend_lines
+	    		.selectAll('.line_legend')
+	    		.remove()
+	    	;
+
+	    	this.legend_lines
+	    		.selectAll('.text_legend')
+	    		.remove()
+	    	;*/
+
+	        let d ; 
+	        let spaces_y = [] ; 
+	        let y ; 
+	        let str; 
+	        
+	        let values = [] , latest_x , latest_y , legends_texts_domain ; 
+
+	        // get last values of lines 
+	        this.sorted_legends = [] ; 
+	        this.legends_texts = [] ; 
+
+	        if ( this.is_age_specific == true )
+	        	legends_texts_domain = [{period:"2001-2003",pos_x:50},{period:"2004-2006",pos_x:50}] ; 
+	        else 
+	        	legends_texts_domain = { 0 : 'incidence' , 1 : 'Mortality'} ; 
+	        
+	        // console.info("dataset_in",dataset_in) ; 
+	        dataset_in.forEach((d,i)=>{
+
+	        	let last_pos = d.values[d.values.length-1] , text_pos , pos_start , row_txt , item = { 'label' : 'undefined' } ; 
+
+	        	if ( this.is_age_specific == true ){
+	        		if ( d.period != "1999-2000"){
+	        			last_pos = d.values.find( d => d.y == 50 ) ;
+	        		}
+	        		text_pos =  {x:95,y:last_pos.asr} ; 
+	        		pos_start = {x:last_pos.y,y:last_pos.asr}  ; 
+	        	} else {
+	        		item = this.pops.find( p => d.country == p.country )
+	        		let is_targeted = dataset_in.find( c => c.country == this.target_country )
+	        		let y_end = last_pos.asr + ( ( is_targeted != undefined && d.country == 84000 ) ? 5 : 0 ) ; //( is_targeted != undefined ) ? 60 : 16 ; 
+	        		text_pos = (d.type == 1 ) ? {y:0.5,x:2021} : {y:y_end,x:2021} ; 
+	        		pos_start = {x:last_pos.year,y:last_pos.asr}  ; 
+	        	}
+
+	        	let display = false ; 
+
+	        	if ( this.is_age_specific == false && d.type == 0 ){
+	        		display = true ; 
+	        	}
+
+	        	this.sorted_legends.push({
+	        		id : `line-${d.type}-${d.id}`,
+	        		label : item.label ,
+	        		type : d.type ,
+	        		color : d.color ,
+	        		period : d.period ,
+	        		pos_start : pos_start , 
+	        		pos_end : text_pos ,
+	        		display : display
+	        	}) ;	        	
+	        })
+
+	        if ( this.is_age_specific == true ){
+		        this.legends_texts = Array.from( d3.group( this.sorted_legends , s => {
+		        		return s.period
+		        	}) ) 
+		        	.map( d => {
+		        		return { 
+		        			key : d[0] , 
+		        			label : ( this.is_age_specific == true ) ? d[1][0].period : legends_texts_domain[ d[0]] , 
+		        			pos : d[1][0].pos_end , 
+		        			color : d[1][0].color 
+		        		} ; 
+		        	})
+		        ; 
+		    }
+		    else
+		    {
+		    	console.info("this.sorted_legends",this.sorted_legends) ; 	
+
+		    	this.legends_texts = this.sorted_legends.map( m => {
+		    		return { 
+	        			key 	: m.type , 
+	        			label 	: ( (m.type == 0) ? m.label + ', ' : '') + legends_texts_domain[ m.type ] , 
+	        			pos 	: m.pos_end , 
+	        			color 	: m.color 
+	        		} ; 
+		    	})
+
+		    	console.info("this.legends_texts",this.legends_texts) ; 	
+		    }
+
+	        //console.info("this.legends_texts",this.legends_texts) ; 
+
+	        let legend_trans = this.legend_lines.selectAll('.line_legend')
+	            .data( this.sorted_legends ) ;
+
+
+	        legend_trans.enter()
+	            .append('line')
+	            .attr("stroke","#ccc")
+	            .attr("stroke-width","2px")
+	            .attr('stroke-dasharray',2)
+	            .attr('class','line_legend')
+	            .style("opacity",0) ; 
+
+	        this.legend_lines.selectAll('.line_legend')
+	        	.style("opacity",0)
+	            .attr('x1',(d)=>{
+	                return this.x_scale( d.pos_start.x ) ; 
+	            })
+	            .attr('y1',(d)=>{
+	                return this.y_scale( d.pos_start.y ) ; 
+	            })
+	            .attr('x2',(d)=>{
+	                return this.x_scale( d.pos_end.x ) ; 
+	            })
+	            .attr('y2',(d,i)=>{
+	                return this.y_scale( d.pos_end.y ) ; 
+	            }) 
+	            .transition()
+    			.delay(this.transition_duration)
+	            .style("opacity",d => (d.display==true)?1:0)
+	        ;
+
+	        legend_trans
+	            .exit()
+	            .remove() ;
+
+	        let selected_lines = [] ; 
+
+	       
+	        // console.info( this.dataset ) ; 
+	        let texts = this.legend_lines.selectAll('.text_legend')
+	            .data( this.legends_texts , d => d.label ) ; 
+
+	        texts
+	        	.enter()
+	            .append('text')
+	            .attr('class','text_legend')
+	            .attr('text-anchor','left')
+	            .attr('attr-id',(d)=>{ return d.id ; })
+	            
+	        ;
+
+	        this.legend_lines.selectAll('.text_legend')
+	            .transition()
+	            .attr('x',(d)=>{
+	                return this.x_scale( d.pos.x ) + 2 ; 
+	            })
+	            .attr('y',(d)=>{
+	                return this.y_scale( d.pos.y ) ; 
+	            })
+	            .attr('fill',d=>{
+	            	//return d.color ; 
+	            	return ( this.is_age_specific == true || d.key == 0 ) ? d.color: '#000'
+	            })
+	            .transition()
+    			.delay(this.transition_duration)
+	            .text( d => d.label )
+
+	        texts
+	            .exit()
+	            .remove() ; 
+
+	        return ; 
 	    }
 
 	}
@@ -671,6 +856,10 @@ g.y.axis{
 			stroke: #ccc ;
 		}
 	}
+}
+
+text.text_legend{
+	text-shadow: 1px 1px rgb(0 0 0 / 55%);
 }
 
 .filters{
