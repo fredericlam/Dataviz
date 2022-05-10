@@ -4,3 +4,4 @@ services:
     env: node
     plan: starter
     buildCommand: npm run build
+    startCommand: 
