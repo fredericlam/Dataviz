@@ -1,4 +1,4 @@
-# Dataviz for Salvo
+# Dataviz
 
 A simple repository to make slides/interactive dataviz
 
