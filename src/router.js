@@ -21,6 +21,12 @@ const routes = [
     component: () => import('./pages/Thyroid.vue') , 
     meta: { breadcrumb: [ { name: 'thyroid-age-specific' } ] }
   },
+  {
+    path: '/china_hdi',
+    name: 'china_hdi',
+    component: () => import('./pages/ChinaHDI.vue') , 
+    meta: { breadcrumb: [ { name: 'china_hdi' } ] }
+  },
   // aliases
   { path: "/:catchAll(.*)", redirect: '/404' }
 ] ; 
