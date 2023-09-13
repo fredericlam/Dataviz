@@ -46,11 +46,11 @@ export default {
 	},
 	data() {
 	    return {
-	    	year : 2020 , 
+	    	year : 2018 , 
 	    	// svg conf
 	    	width: 0 ,
 	    	height : 0 , 
-	    	margin : {top: 10, right: 40, bottom: 80, left: 40} ,
+	    	margin : {top: 10, right: 40, bottom: 80, left: 80} ,
 
 	    	x_scale : [] , 
 	    	x_axis : [] ,
@@ -88,7 +88,19 @@ export default {
 			sort_by : 'Lower',
 			sort_dir : 'asc' , 
 
-			steps : []  
+			steps : []  ,
+
+			hdi_threshold : [
+				{ key : 1 , point_text : .42 , index_min : 0.4 , index_max : 0.550 , name : 'Low HDI' } , 
+				{ key : 2 , point_text : .62 , index_min : 0.550 , index_max : 0.699 , name : 'Medium HDI' } , 
+				{ key : 3 , point_text : .75 , index_min : 0.700 , index_max : 0.799 , name : 'High HDI' } , 
+				{ key : 4 , point_text : .9 , index_min : 0.800 , index_max : 1 , name : 'Very High HDI' , hide_line : true }
+			], 
+
+			points : [180] , 
+
+			annotations : []
+
 	    }
 	},
 	created(){	
@@ -167,18 +179,9 @@ export default {
 					})
 				;
 
-				console.log(this.dataset);
+				// console.log(this.dataset);
 
-
-				let Array1 = [10, 20, 30, 40, 50, 60];
-				let Array2 = [1, 2];
-		        let Array3 = [0, 1.5, 6.8];
-		        let Array4 = [.8, .08, .008];
-
-		       	this.line_incidence = d3.line()
-				  .x(d => this.x_scale(d.hdi_value))
-				  .y(d => this.y_scale(d.asr))
-
+		       
 				/*this.filters.years = Array.from( d3.group( this.dataset , d => d.year ) )
 					.map( m =>{ 
 						return { year : m[0] } 
@@ -211,8 +214,11 @@ export default {
 
 				// console.table(this.steps) ;*/
 
-				this.redraw( );
-
+				setTimeout(() => {
+					// Todo ...
+					this.redraw( );
+				}, 200 )
+				
 			}))
 	        
 	        // eslint-disable-next-line
@@ -422,7 +428,7 @@ export default {
 
 	        this.r_scale = d3.scaleSqrt()
 	        	.domain( [ d3.min( pops ) , d3.max( pops ) ])
-	        	.range([0 , 30])
+	        	.range([0 , 30 ])
 
 			// Set scale type based on button clicked
 	        if (this.chartState.scale === this.scales.lin) {
@@ -500,20 +506,60 @@ export default {
 	            .style("opacity",1)
 
 	        // return ; 
-	        let inc_data = this.dataset.filter( d => d.type == 0 ) ; 
-	        console.info("inc_data",inc_data.map( d => {
-	        	return{
-	        		country : d.country , 
-	        		hdi_value : d.hdi_value 
-	        	}
-	        })) ; 
+	        let inc_data = this.dataset.filter( d => d.type == 0 ).sort( (a,b) => a.hdi_value - b.hdi_value ) ; 
+	        let mort_data = this.dataset.filter( d => d.type == 1 ).sort( (a,b) => a.hdi_value - b.hdi_value ) ; 
+	        // console.info("inc_data",inc_data.map(d => [d.hdi_value, d.asr])) ;
+	        
+	        let linearRegression = { 
+	        	inc : ss.linearRegression(inc_data.map(d => [d.hdi_value, d.asr])) , 
+	        	mort : ss.linearRegression(mort_data.map(d => [d.hdi_value, d.asr])) 
+	        }
 
-	        this.svg.append("path")
-			    .data([inc_data])
+	        let linearRegressionLine = {
+	        	inc : ss.linearRegressionLine(linearRegression.inc),
+	        	mort : ss.linearRegressionLine(linearRegression.mort)
+	        }
+
+			const xCoordinates = {
+				inc : [inc_data[0].hdi_value, inc_data.slice(-1)[0].hdi_value] , 
+				mort : [mort_data[0].hdi_value, mort_data.slice(-1)[0].hdi_value] 
+			}
+
+			let regressionPoints =  {
+				inc : xCoordinates.inc.map( d => ({
+						x : d , // We pick x and y arbitrarily, just make sure they match d3.line accessors
+						y : linearRegressionLine.inc(d)
+					})) , 
+				mort : xCoordinates.mort.map( d => ({
+						x : d , // We pick x and y arbitrarily, just make sure they match d3.line accessors
+						y : linearRegressionLine.mort(d)
+					})) 
+			}
+
+
+			console.info("regressionPoints",regressionPoints);
+
+			this.line_incidence = d3.line()
+			  .x(d => this.x_scale(d.x))
+			  .y(d => this.y_scale(d.y))
+
+	        this.svg.append("path")   
 			    .attr("class", "line line-incidence")
 			    .attr("fill","none")
 			    .attr("stroke",this.colors[0])
-			    .attr("d", this.line_incidence );
+			    .attr("stroke-width","2px")
+			    .datum(regressionPoints.inc)
+			    .attr("d", this.line_incidence )
+			;
+
+			this.svg.append("path")   
+			    .attr("class", "line line-mortality")
+			    .attr("fill","none")
+			    .attr("stroke",this.colors[1])
+			    .attr("stroke-width","2px")
+			    .datum(regressionPoints.mort)
+			    .attr("d", this.line_incidence )
+			;
 	        
 	        this.g_circles.selectAll(".country")
 	        	.on("mousemove", (event, d) => {
@@ -521,14 +567,15 @@ export default {
 	        		let pointer = d3.pointer(event,this.g_circles.node())
 
 		        	this.tooltip.html(`
+		        		<h5>${d.label}</h5>
 		        		<table>
 		        			<tr>
 		        				<td class="metric">Population</td>
-		        				<td class="value">${d.country}</td>
+		        				<td class="value">${d3.format(".2s")(d.total_population)}</td>
 		        			</tr>
 		        			<tr>
-		        				<td class="metric">Education</td>
-		        				<td class="value">${d.edu}</td>
+		        				<td class="metric">HDI (rank)</td>
+		        				<td class="value">${d.hdi_value} (${d.hdi})</td>
 		        			</tr>
 		        			<tr>
 		        				<td class="metric">ASR</td>
@@ -536,7 +583,7 @@ export default {
 		        			</tr>
 		        		</table>
 		        		`)
-		            .style('top', pointer[1] - 100 + 'px')
+		            .style('top', pointer[1] - 130 + 'px')
 		            .style('left', pointer[0] - 120  + 'px')
 		            .style('display','block')
 		            .style("opacity", 0.9);
@@ -560,8 +607,65 @@ export default {
             	.attr("cy",d=>this.y_scale(d.asr))
 	            .style("opacity",1)
 	            //.attr('attr-edu', e => e.edu )
-	            
+
+
+	        // annotations
+	        this.points.forEach( p => {
+	        	this.annotations.push(
+				  {
+				    note: { label: "Hello" },
+				    x: 100,
+				    y: 100,
+				    dy: 137,
+				    dx: 162,
+				    subject: { radius: 50, radiusPadding: 10 },
+				  }
+				) ;	
+	        })
 	        
+
+			d3.annotation().annotations(annotations);
+	           
+	        // lines hdi
+	        this.g_hdi_lines = this.svg.append("g").attr("class","g_hdi_lines")
+	        
+	        this.hdi_lines = this.g_hdi_lines.selectAll(".hdi_lines")
+	            .data(this.hdi_threshold.filter( h => h.hdi_line != false) );
+
+	        this.hdi_lines.enter()
+	            .append("line")
+	            .attr("class", "hdi_lines")
+	            .attr("x1",d => this.x_scale(d.index_max))
+	            .attr("x2",d => this.x_scale(d.index_max))
+	            .attr("y1",this.height-this.margin.bottom)
+	            .attr("y2",this.margin.top)
+	            .attr("stroke","#ccc")
+	            .attr("stroke-width","2px")
+	            .attr("stroke-dasharray","4")
+
+	        this.hdi_text = this.g_hdi_lines.selectAll(".hdi_lines")
+	            .data(this.hdi_threshold ) ;
+
+			this.hdi_lines.enter()
+	            .append("text")
+	            .attr("y",this.margin.top + 30)	
+	            .attr("x",d => {
+	            	return this.x_scale(d.point_text)
+	            })
+	            .text( d => d.name ) 
+	            .attr("fill","#ccc")
+	            .attr("text-anchor","middle")
+
+	        this.svg.append("text")
+	        	.attr("y",10)
+	        	.attr("x",-(this.height/2))
+	        	.attr("transform","rotate(-90)")
+	        	.text("Age-standardized rate (World)")
+
+	        this.svg.append("text")
+	        	.attr("x",(this.width/2)-this.margin.left-this.margin.right)
+	        	.attr("y",this.height-20)
+	        	.text("Human Development Index")
 
 	    } // end redraw
 
@@ -638,7 +742,7 @@ h1{
 g.x.axis{
 	.tick{
 		text{
-			font-size: 1.2em;
+			font-size: 1.4em;
 		}
 	}
 }
@@ -647,6 +751,9 @@ g.y.axis{
 	.tick{
 		line{
 			stroke: #ccc ;
+		}
+		text{
+			font-size: 1.4em;
 		}
 	}
 }
