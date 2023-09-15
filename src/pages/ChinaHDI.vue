@@ -50,7 +50,7 @@ export default {
 	    	// svg conf
 	    	width: 0 ,
 	    	height : 0 , 
-	    	margin : {top: 10, right: 40, bottom: 80, left: 80} ,
+	    	margin : {top: 10, right: 40, bottom: 100, left: 80} ,
 
 	    	x_scale : [] , 
 	    	x_axis : [] ,
@@ -85,6 +85,8 @@ export default {
 
 			filters : {} , 
 
+			max_radius : 15 , 
+
 			sort_by : 'Lower',
 			sort_dir : 'asc' , 
 
@@ -97,7 +99,7 @@ export default {
 				{ key : 4 , point_text : .9 , index_min : 0.800 , index_max : 1 , name : 'Very High HDI' , hide_line : true }
 			], 
 
-			points : [180] , 
+			points : [76,160,752] , // 76,
 
 			annotations : []
 
@@ -180,39 +182,6 @@ export default {
 				;
 
 				// console.log(this.dataset);
-
-		       
-				/*this.filters.years = Array.from( d3.group( this.dataset , d => d.year ) )
-					.map( m =>{ 
-						return { year : m[0] } 
-					})
-
-				this.filters.populations_ordered = Array.from( d3.group( this.dataset , d => d.iso ) )
-					.map( m =>{ 
-						return { iso : m[0] , label : m[1][0].country } 
-					})
-					.sort((a, b)=> {
-						if(a.iso < b.iso) { return -1; }
-    					else if(a.iso > b.iso) { return 1; }
-					})
-
-				this.filters.educations = Array.from( d3.group( this.dataset , d => d.edu ) )
-					.map( m =>{ 
-						this.steps[ m[0] ] = false ;  
-						return { edu : m[0] } 
-					})
-
-				this.color_scale = d3.scaleOrdinal()
-					.range(this.colors)
-					.domain(this.filters.educations)
-
-				this.filters.colors = [] ; 	
-				this.colors.forEach((c,i)=>{
-					this.filters.colors.push({ color : c , edu : this.filters.educations[i].edu }) ; 
-				})
-				this.filters.colors.reverse() ;	
-
-				// console.table(this.steps) ;*/
 
 				setTimeout(() => {
 					// Todo ...
@@ -412,11 +381,6 @@ export default {
 
 			// console.table(this.dataset_sorted) ; 
 
-			this.filters.populations = Array.from( d3.group( this.dataset_sorted , d => d.iso ) )
-				.map( m =>{ 
-					return { iso : m[0] , label : m[1][0].country } 
-				})
-
 		 	this.x_scale = d3.scaleLinear()
 			 	.domain( [ 0.3 , 1 ] )
 	        	.range([ this.margin.left , this.width - this.margin.right ]) 
@@ -425,10 +389,11 @@ export default {
 	        ;
 	        
 	        let pops = this.dataset.map( t => t.total_population ) ; 
+	        let min_pop =  d3.min( pops ) , max_pop = d3.max( pops ) ;
 
 	        this.r_scale = d3.scaleSqrt()
-	        	.domain( [ d3.min( pops ) , d3.max( pops ) ])
-	        	.range([0 , 30 ])
+	        	.domain( [ min_pop , max_pop ] )
+	        	.range( [ 0 , this.max_radius ] )
 
 			// Set scale type based on button clicked
 	        if (this.chartState.scale === this.scales.lin) {
@@ -464,7 +429,7 @@ export default {
 	            ;
 
 	            this.x_axis = d3.axisBottom(this.x_scale)
-	            	.ticks(4)
+	            	.ticks(6)
 	            	//.tickFormat("")
 	        }
 	        // console.info("this.x_scale",this.x_scale)
@@ -508,8 +473,22 @@ export default {
 	        // return ; 
 	        let inc_data = this.dataset.filter( d => d.type == 0 ).sort( (a,b) => a.hdi_value - b.hdi_value ) ; 
 	        let mort_data = this.dataset.filter( d => d.type == 1 ).sort( (a,b) => a.hdi_value - b.hdi_value ) ; 
+	        
 	        // console.info("inc_data",inc_data.map(d => [d.hdi_value, d.asr])) ;
 	        
+	        /* let loess = science.stats.loess().bandwidth( 1 ) ;
+	        let loess_values = {
+				inc : loess( inc_data.map( i => i.hdi_value ) , inc_data.map( i => i.asr ) )
+			}
+
+			let inc_data_loess = loess_values.inc.map( (l,i) => {
+				return { x : l , y : inc_data[i].asr }
+			})
+
+			// console.info("loess_values",loess_values,inc_data_loess) ; 
+			
+			*/ 
+
 	        let linearRegression = { 
 	        	inc : ss.linearRegression(inc_data.map(d => [d.hdi_value, d.asr])) , 
 	        	mort : ss.linearRegression(mort_data.map(d => [d.hdi_value, d.asr])) 
@@ -535,34 +514,48 @@ export default {
 						y : linearRegressionLine.mort(d)
 					})) 
 			}
+			
+			// console.info("regressionPoints",regressionPoints);
 
-
-			console.info("regressionPoints",regressionPoints);
+			
 
 			this.line_incidence = d3.line()
 			  .x(d => this.x_scale(d.x))
 			  .y(d => this.y_scale(d.y))
+			  //.curve(d3.curveLinear)
 
 	        this.svg.append("path")   
 			    .attr("class", "line line-incidence")
 			    .attr("fill","none")
 			    .attr("stroke",this.colors[0])
-			    .attr("stroke-width","2px")
-			    .datum(regressionPoints.inc)
+			    .attr("stroke-width","5px")
+			    .datum( regressionPoints.inc )
 			    .attr("d", this.line_incidence )
 			;
+
+			
+
+			/* this.svg.append("path")   
+			    .attr("class", "line line-incidence-loess")
+			    .attr("fill","none")
+			    .attr("stroke",this.colors[0])
+			    .attr("stroke-width","5px")
+			    .data( inc_data_loess )
+			    .attr("d", this.line_incidence )
+			;*/
 
 			this.svg.append("path")   
 			    .attr("class", "line line-mortality")
 			    .attr("fill","none")
 			    .attr("stroke",this.colors[1])
-			    .attr("stroke-width","2px")
+			    .attr("stroke-width","5px")
 			    .datum(regressionPoints.mort)
 			    .attr("d", this.line_incidence )
 			;
 	        
 	        this.g_circles.selectAll(".country")
-	        	.on("mousemove", (event, d) => {
+	        	
+	        	/*.on("mousemove", (event, d) => {
 
 	        		let pointer = d3.pointer(event,this.g_circles.node())
 
@@ -595,7 +588,7 @@ export default {
 		        		.style("left", 0)
 		        		.style("opacity", 0);
 		            //this.xLine.attr("opacity", 0);
-	        	})
+	        	}) */
 	        ;
 
 	        // if ( init == true ) return ; 
@@ -610,21 +603,59 @@ export default {
 
 
 	        // annotations
-	        this.points.forEach( p => {
-	        	this.annotations.push(
-				  {
-				    note: { label: "Hello" },
-				    x: 100,
-				    y: 100,
-				    dy: 137,
-				    dx: 162,
-				    subject: { radius: 50, radiusPadding: 10 },
-				  }
-				) ;	
-	        })
-	        
+	        this.points.forEach( point => {
 
-			d3.annotation().annotations(annotations);
+	        	let annotations_base = this.dataset
+	        		.filter( d => d.country == point ) 
+	        		.map( d => {
+	        			return {
+	        				name : d.label , 
+	        				country : point , 
+		        			x : d.hdi_value ,
+		        			y : d.asr , 
+		        			type : d.type , 
+		        			total_population : d.total_population
+	        			}
+	        		})
+	        	; 
+
+	        	// console.info("annotations_base",annotations_base) ; 
+
+	        	annotations_base.forEach( a => {
+
+	        		let y = (a.type == 1)?100:-100  ;
+	        		let x = (a.country==160)?-50:50 ; 
+
+	        		// specific mortality china
+	        		if ( a.country == 160 && a.type == 1) y = 200 ; 
+
+		        	this.annotations.push(
+					  {
+					    note : { title: a.name },
+					    x : this.x_scale(a.x) ,
+					    y : this.y_scale(a.y) ,
+					    dy : y ,
+					    dx : x ,
+					    // type : d3.annotationLabel ,
+					    type : d3.annotationCalloutCircle ,
+					    connector : { end: "arrow" },
+					    subject: {
+						   radius: this.r_scale( a.total_population ),
+						   radiusPadding: 0
+						},
+						color : this.colors[a.type]
+					  }
+					) ;
+
+				})	
+	        })
+
+			let makeAnnotations = d3.annotation().annotations( this.annotations );
+
+			this.g_annotations = this.g_circles
+			  .append("g")
+			  .attr("class", "annotation-group")
+			  .call( makeAnnotations )
 	           
 	        // lines hdi
 	        this.g_hdi_lines = this.svg.append("g").attr("class","g_hdi_lines")
@@ -663,9 +694,54 @@ export default {
 	        	.text("Age-standardized rate (World)")
 
 	        this.svg.append("text")
-	        	.attr("x",(this.width/2)-this.margin.left-this.margin.right)
-	        	.attr("y",this.height-20)
+	        	.attr("x",(this.width/2)-this.margin.left)
+	        	.attr("y",this.height-30)
 	        	.text("Human Development Index")
+
+	        // legend incidence mortality
+	        let pos_y_legend = this.height-50 ; 
+
+	        var ordinal = d3.scaleOrdinal()
+			  .domain(["Incidence", "Mortality"])
+			  .range( this.colors )
+			;
+
+			this.svg.append("g")
+			  .attr("class", "legendColorLine")
+			  .attr("transform", `translate(${this.width-250},${pos_y_legend})`);
+
+			var legendSizeLine = d3.legendColor()
+		      .scale(ordinal)
+		      //.labelWrap(30)
+		      .shape("rect")
+		      .shapeWidth(100)
+		      .shapeHeight(5)
+		      //.labelAlign("middle")
+		      .shapePadding(10);
+
+			this.svg.select(".legendColorLine")
+			  .call(legendSizeLine);
+
+			var linearSize = d3.scaleLinear()
+				.domain( [ 1000000 , 10000000 ] )
+	        	.range( [ 5 , this.max_radius ] )
+
+			this.svg.append("g")
+			  .attr("class", "legendSize")
+			  .attr("transform", `translate(${this.margin.left},${pos_y_legend})`);
+
+			var legendSize = d3.legendSize()
+				.labelFormat(d3.format(".2s"))
+				.scale(linearSize)
+				.shape('circle')
+				.shapePadding(35)
+				.labelOffset(20)
+				.orient('horizontal')
+			;
+
+			this.svg.select(".legendSize")
+			  .call( legendSize );
+
 
 	    } // end redraw
 
@@ -765,5 +841,26 @@ g.y.axis{
 	}
 }
 
+svg{
+	path.subject{
+		stroke: none ;
+	}
+	g.y.axis{
+		path{
+			display: none ; 
+		}
+	}
+}
+
+.legendColorLine,.legendSize{
+	text{
+		font-size: 12px;
+	}
+	circle{
+		stroke : #000 ;
+		stroke-width: 2px; 
+		fill: #fff ;
+	}
+}
 
 </style>

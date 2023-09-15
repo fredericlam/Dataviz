@@ -33,7 +33,8 @@ body{
   overflow: hidden;
 }
 
-$font : 'Signika Negative', sans-serif ;
+$font : 'Varela Round' , serif; //'Signika Negative', sans-serif ;  
+
 #app {
   font-family: $font ;
   -webkit-font-smoothing: antialiased;
