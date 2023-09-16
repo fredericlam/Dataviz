@@ -11,6 +11,9 @@
 
 					<div id="graphic"></div>
 
+					<div class="source">
+						Source: <a href="https://gco.iarc.fr">GCO</a> - <a href="https://gco.iarc.fr/today">Globocan 2018</a> - Ferlay J, Ervik M, Lam F, Colombet M, Mery L, Piñeros M, Znaor A, Soerjomataram I, Bray F (2020). Global Cancer Observatory: Cancer Today. Lyon, France: International Agency for Research on Cancer. Available from: https://gco.iarc.fr/today, accessed [DD Month YYYY].
+					</div>
 				</div>
 
 			</div><!-- end row -->
@@ -50,7 +53,7 @@ export default {
 	    	// svg conf
 	    	width: 0 ,
 	    	height : 0 , 
-	    	margin : {top: 10, right: 40, bottom: 100, left: 80} ,
+	    	margin : {top: 10, right: 40, bottom: 130, left: 80} ,
 
 	    	x_scale : [] , 
 	    	x_axis : [] ,
@@ -476,18 +479,22 @@ export default {
 	        
 	        // console.info("inc_data",inc_data.map(d => [d.hdi_value, d.asr])) ;
 	        
-	        /* let loess = science.stats.loess().bandwidth( 1 ) ;
+	        let loess = science.stats.loess().bandwidth( 1 ) ;
 	        let loess_values = {
-				inc : loess( inc_data.map( i => i.hdi_value ) , inc_data.map( i => i.asr ) )
+				inc : loess( inc_data.map( i => i.hdi_value ) , inc_data.map( i => i.asr ) ),
+				mort : loess( mort_data.map( i => i.hdi_value ) , mort_data.map( i => i.asr ) )
 			}
 
 			let inc_data_loess = loess_values.inc.map( (l,i) => {
-				return { x : l , y : inc_data[i].asr }
+				return {  x : inc_data[i].hdi_value , y : l }
 			})
 
-			// console.info("loess_values",loess_values,inc_data_loess) ; 
-			
-			*/ 
+			let mort_data_loess = loess_values.mort.map( (l,i) => {
+				return {  x : mort_data[i].hdi_value , y : l }
+			})
+
+			console.info("loess_values",inc_data_loess) ; 
+		
 
 	        let linearRegression = { 
 	        	inc : ss.linearRegression(inc_data.map(d => [d.hdi_value, d.asr])) , 
@@ -517,40 +524,50 @@ export default {
 			
 			// console.info("regressionPoints",regressionPoints);
 
-			
-
 			this.line_incidence = d3.line()
 			  .x(d => this.x_scale(d.x))
 			  .y(d => this.y_scale(d.y))
 			  //.curve(d3.curveLinear)
 
-	        this.svg.append("path")   
+			let line_loess = d3.line()
+			  .x(d => this.x_scale(d.x))
+			  .y(d => this.y_scale(d.y))
+			  .curve(d3.curveLinear)
+
+	        /*this.svg.append("path")   
 			    .attr("class", "line line-incidence")
 			    .attr("fill","none")
 			    .attr("stroke",this.colors[0])
 			    .attr("stroke-width","5px")
 			    .datum( regressionPoints.inc )
 			    .attr("d", this.line_incidence )
-			;
+			;*/
 
-			
-
-			/* this.svg.append("path")   
+			this.svg.append("path")   
 			    .attr("class", "line line-incidence-loess")
 			    .attr("fill","none")
 			    .attr("stroke",this.colors[0])
 			    .attr("stroke-width","5px")
-			    .data( inc_data_loess )
-			    .attr("d", this.line_incidence )
-			;*/
+			    .datum( inc_data_loess )
+			    .attr("d", line_loess )
+			;
 
-			this.svg.append("path")   
+			/* this.svg.append("path")   
 			    .attr("class", "line line-mortality")
 			    .attr("fill","none")
 			    .attr("stroke",this.colors[1])
 			    .attr("stroke-width","5px")
-			    .datum(regressionPoints.mort)
+			    .datum( regressionPoints.mort )
 			    .attr("d", this.line_incidence )
+			;*/
+
+			this.svg.append("path")   
+			    .attr("class", "line line-mortality-loess")
+			    .attr("fill","none")
+			    .attr("stroke",this.colors[1])
+			    .attr("stroke-width","5px")
+			    .datum( mort_data_loess )
+			    .attr("d", line_loess )
 			;
 	        
 	        this.g_circles.selectAll(".country")
@@ -653,9 +670,9 @@ export default {
 			let makeAnnotations = d3.annotation().annotations( this.annotations );
 
 			this.g_annotations = this.g_circles
-			  .append("g")
-			  .attr("class", "annotation-group")
-			  .call( makeAnnotations )
+			  	.append("g")
+			  	.attr("class", "annotation-group")
+			  	.call( makeAnnotations )
 	           
 	        // lines hdi
 	        this.g_hdi_lines = this.svg.append("g").attr("class","g_hdi_lines")
@@ -695,11 +712,11 @@ export default {
 
 	        this.svg.append("text")
 	        	.attr("x",(this.width/2)-this.margin.left)
-	        	.attr("y",this.height-30)
+	        	.attr("y",this.height-60)
 	        	.text("Human Development Index")
 
 	        // legend incidence mortality
-	        let pos_y_legend = this.height-50 ; 
+	        let pos_y_legend = this.height-80 ; 
 
 	        var ordinal = d3.scaleOrdinal()
 			  .domain(["Incidence", "Mortality"])
@@ -861,6 +878,11 @@ svg{
 		stroke-width: 2px; 
 		fill: #fff ;
 	}
+}
+
+.source{
+	padding: 0 50px 20px 60px;
+	font-size: .8em; 
 }
 
 </style>
