@@ -11,8 +11,8 @@
 
 					<div id="graphic"></div>
 
-					<div class="source">
-						Source: <a href="https://gco.iarc.fr">GCO</a> - <a href="https://gco.iarc.fr/today">Globocan 2018</a> - Ferlay J, Ervik M, Lam F, Colombet M, Mery L, Piñeros M, Znaor A, Soerjomataram I, Bray F (2020). Global Cancer Observatory: Cancer Today. Lyon, France: International Agency for Research on Cancer. Available from: https://gco.iarc.fr/today, accessed [DD Month YYYY].
+					<div class="source"> 
+						Source: 2023/09 - <a href="https://gco.iarc.fr">GCO</a> - <a href="https://gco.iarc.fr/today">Globocan 2018</a> - Ferlay J, Ervik M, Lam F, Colombet M, Mery L, Piñeros M, Znaor A, Soerjomataram I, Bray F (2020). Global Cancer Observatory: Cancer Today. Lyon, France: International Agency for Research on Cancer. Available from: https://gco.iarc.fr/today, accessed [DD Month YYYY].
 					</div>
 				</div>
 
