@@ -12,7 +12,7 @@
 					<div id="graphic"></div>
 
 					<div class="source"> 
-						Source: 2023/09 - <a href="https://gco.iarc.fr">GCO</a> - <a href="https://gco.iarc.fr/today">Globocan 2018</a> - Ferlay J, Ervik M, Lam F, Colombet M, Mery L, Piñeros M, Znaor A, Soerjomataram I, Bray F (2020). Global Cancer Observatory: Cancer Today. Lyon, France: International Agency for Research on Cancer. Available from: https://gco.iarc.fr/today, accessed [DD Month YYYY].
+						Source: 2023/09 -<a href="https://gco.iarc.fr">GCO</a> - <a href="https://gco.iarc.fr/today">Globocan {{ year }}</a> - Ferlay J, Ervik M, Lam F, Colombet M, Mery L, Piñeros M, Znaor A, Soerjomataram I, Bray F (2020). Global Cancer Observatory: Cancer Today. Lyon, France: International Agency for Research on Cancer. Available from: https://gco.iarc.fr/today, accessed [DD Month YYYY].
 					</div>
 				</div>
 
@@ -49,7 +49,7 @@ export default {
 	},
 	data() {
 	    return {
-	    	year : 2018 , 
+	    	year : 2020 , 
 	    	// svg conf
 	    	width: 0 ,
 	    	height : 0 , 
@@ -102,7 +102,7 @@ export default {
 				{ key : 4 , point_text : .9 , index_min : 0.800 , index_max : 1 , name : 'Very High HDI' , hide_line : true }
 			], 
 
-			points : [76,160,752] , // 76,
+			points : [160,752] , // 76,
 
 			annotations : []
 
@@ -532,7 +532,7 @@ export default {
 			let line_loess = d3.line()
 			  .x(d => this.x_scale(d.x))
 			  .y(d => this.y_scale(d.y))
-			  .curve(d3.curveLinear)
+			  .curve(d3.curveNatural)
 
 	        /*this.svg.append("path")   
 			    .attr("class", "line line-incidence")
@@ -696,21 +696,24 @@ export default {
 
 			this.hdi_lines.enter()
 	            .append("text")
+	            .attr("class","hdi_axis")
 	            .attr("y",this.margin.top + 30)	
 	            .attr("x",d => {
 	            	return this.x_scale(d.point_text)
 	            })
 	            .text( d => d.name ) 
-	            .attr("fill","#ccc")
+	            .attr("fill","#000s")
 	            .attr("text-anchor","middle")
 
 	        this.svg.append("text")
+	        	.attr('class','legendAxis')
 	        	.attr("y",10)
 	        	.attr("x",-(this.height/2))
 	        	.attr("transform","rotate(-90)")
 	        	.text("Age-standardized rate (World)")
 
 	        this.svg.append("text")
+	        	.attr('class','legendAxis')
 	        	.attr("x",(this.width/2)-this.margin.left)
 	        	.attr("y",this.height-60)
 	        	.text("Human Development Index")
@@ -862,6 +865,10 @@ svg{
 	path.subject{
 		stroke: none ;
 	}
+	text.annotation-note-title{
+		font-size: 1em;
+		font-weight: bold;
+	}
 	g.y.axis{
 		path{
 			display: none ; 
@@ -869,9 +876,18 @@ svg{
 	}
 }
 
+.legendAxis{
+	font-weight: 800 ; 
+}
+
+.hdi_axis{
+	font-weight: 300;
+}
+
 .legendColorLine,.legendSize{
 	text{
 		font-size: 12px;
+		font-weight: 500 ; 
 	}
 	circle{
 		stroke : #000 ;

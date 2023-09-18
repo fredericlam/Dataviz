@@ -33,7 +33,7 @@ body{
   overflow: hidden;
 }
 
-$font : 'Varela Round' , serif; //'Signika Negative', sans-serif ;  
+$font : 'Poppins' , serif; //'Signika Negative', sans-serif ;  
 
 #app {
   font-family: $font ;
