@@ -626,7 +626,7 @@ export default {
 	        		.filter( d => d.country == point ) 
 	        		.map( d => {
 	        			return {
-	        				name : d.label , 
+	        				name : d.label  , 
 	        				country : point , 
 		        			x : d.hdi_value ,
 		        			y : d.asr , 
@@ -648,7 +648,7 @@ export default {
 
 		        	this.annotations.push(
 					  {
-					    note : { title: a.name },
+					    note : { title: a.name , label : ( a.type == 0 ) ? 'Incidence' : 'Mortality'  },
 					    x : this.x_scale(a.x) ,
 					    y : this.y_scale(a.y) ,
 					    dy : y ,
@@ -868,6 +868,9 @@ svg{
 	text.annotation-note-title{
 		font-size: 1em;
 		font-weight: bold;
+	}
+	text.annotation-note-label{
+		font-size: .8em;
 	}
 	g.y.axis{
 		path{
