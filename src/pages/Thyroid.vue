@@ -546,7 +546,7 @@ export default {
 
 	        lines_tran.call(line_transition, this.transition_duration ); 
 
-	        this.lines
+	        	this.lines
 	            .transition()
 	            .duration( this.transition_duration )
 	            .attr("d", (d) => { return this.line(d.values) ; })

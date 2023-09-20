@@ -27,6 +27,12 @@ const routes = [
     component: () => import('./pages/ChinaHDI.vue') , 
     meta: { breadcrumb: [ { name: 'china_hdi' } ] }
   },
+  {
+    path: '/prostate_2023',
+    name: 'prostate_2023',
+    component: () => import('./pages/2023_Prostate.vue') , 
+    meta: { breadcrumb: [ { name: 'prostate_2023' } ] }
+  },
   // aliases
   { path: "/:catchAll(.*)", redirect: '/404' }
 ] ; 

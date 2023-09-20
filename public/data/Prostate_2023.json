@@ -1,0 +1,9752 @@
+[
+  {
+    "country": "Denmark",
+    "year": 1980,
+    "asir": 70.62023598,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1981,
+    "asir": 70.42807564,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1982,
+    "asir": 70.51912357,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1983,
+    "asir": 70.88819487,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1984,
+    "asir": 71.46778903,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1985,
+    "asir": 72.40264766,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1986,
+    "asir": 73.48927148,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1987,
+    "asir": 74.72915536,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1988,
+    "asir": 75.94278536,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1989,
+    "asir": 76.84666943,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1990,
+    "asir": 76.38420386,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1991,
+    "asir": 75.56386579,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1992,
+    "asir": 73.79468039,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1993,
+    "asir": 72.55660386,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1994,
+    "asir": 72.14309125,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1995,
+    "asir": 74.03972693,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1996,
+    "asir": 77.14678222,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1997,
+    "asir": 81.95341787,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1998,
+    "asir": 87.98178344,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1999,
+    "asir": 93.89889477,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2000,
+    "asir": 101.3574394,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2001,
+    "asir": 110.9195298,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2002,
+    "asir": 123.423046,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2003,
+    "asir": 137.5476934,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2004,
+    "asir": 156.0389475,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2005,
+    "asir": 174.6098568,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2006,
+    "asir": 191.424452,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2007,
+    "asir": 205.4456183,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2008,
+    "asir": 211.2788271,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2009,
+    "asir": 213.6993204,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2010,
+    "asir": 211.5936547,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2011,
+    "asir": 209.1966979,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2012,
+    "asir": 205.6759078,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2013,
+    "asir": 202.0640825,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2014,
+    "asir": 197.6409499,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2015,
+    "asir": 193.1014811,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 2016,
+    "asir": 188.0733002,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1980,
+    "asir": 108.5992135,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1981,
+    "asir": 110.4912013,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1982,
+    "asir": 112.6945836,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1983,
+    "asir": 115.198201,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1984,
+    "asir": 117.8737162,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1985,
+    "asir": 120.8759088,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1986,
+    "asir": 123.9644812,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1987,
+    "asir": 126.6950706,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1988,
+    "asir": 129.1966835,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1989,
+    "asir": 131.8816718,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1990,
+    "asir": 134.8974933,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1991,
+    "asir": 138.0359454,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1992,
+    "asir": 141.4863645,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1993,
+    "asir": 144.6663469,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1994,
+    "asir": 148.8373265,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1995,
+    "asir": 154.2927651,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1996,
+    "asir": 161.1603732,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1997,
+    "asir": 170.8126037,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1998,
+    "asir": 181.9242426,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 1999,
+    "asir": 195.3086937,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2000,
+    "asir": 210.1572858,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2001,
+    "asir": 228.2943484,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2002,
+    "asir": 244.8644716,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2003,
+    "asir": 258.9338775,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2004,
+    "asir": 266.0764375,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2005,
+    "asir": 270.7136959,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2006,
+    "asir": 271.4492427,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2007,
+    "asir": 269.7340808,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2008,
+    "asir": 264.9332127,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2009,
+    "asir": 259.7066079,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2010,
+    "asir": 258.9932144,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2011,
+    "asir": 259.5981858,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2012,
+    "asir": 260.4518108,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2013,
+    "asir": 260.4798755,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2014,
+    "asir": 260.5950094,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2015,
+    "asir": 260.8067951,
+    "type": 0
+  },
+  {
+    "country": "Sweden",
+    "year": 2016,
+    "asir": 261.1374597,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1980,
+    "asir": 100.5300155,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1981,
+    "asir": 101.4840224,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1982,
+    "asir": 102.3341945,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1983,
+    "asir": 103.110311,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1984,
+    "asir": 103.9533871,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1985,
+    "asir": 104.4957478,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1986,
+    "asir": 105.2163933,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1987,
+    "asir": 105.8280709,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1988,
+    "asir": 108.3542089,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1989,
+    "asir": 111.9290891,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1990,
+    "asir": 117.5191221,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1991,
+    "asir": 123.8589261,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1992,
+    "asir": 130.0362791,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1993,
+    "asir": 136.3001276,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1994,
+    "asir": 143.4232066,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1995,
+    "asir": 152.9920305,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1996,
+    "asir": 162.9106752,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1997,
+    "asir": 173.3542785,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1998,
+    "asir": 183.1082436,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 1999,
+    "asir": 188.4781112,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2000,
+    "asir": 193.7923218,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2001,
+    "asir": 199.0799763,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2002,
+    "asir": 206.0756947,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2003,
+    "asir": 214.2488244,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2004,
+    "asir": 229.2816978,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2005,
+    "asir": 244.6599611,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2006,
+    "asir": 256.081228,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2007,
+    "asir": 265.8236542,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2008,
+    "asir": 271.1717995,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2009,
+    "asir": 274.5550287,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2010,
+    "asir": 277.034732,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2011,
+    "asir": 277.8985302,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2012,
+    "asir": 277.5153143,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2013,
+    "asir": 276.31528,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2014,
+    "asir": 273.9337482,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2015,
+    "asir": 270.4057278,
+    "type": 0
+  },
+  {
+    "country": "Norway",
+    "year": 2016,
+    "asir": 265.6953555,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 1994,
+    "asir": 104.4187135,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 1995,
+    "asir": 107.2610571,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 1996,
+    "asir": 111.5861233,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 1997,
+    "asir": 116.9203034,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 1998,
+    "asir": 126.4185592,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 1999,
+    "asir": 142.5223137,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 2000,
+    "asir": 162.5644185,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 2001,
+    "asir": 185.1744665,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 2002,
+    "asir": 196.9270241,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 2003,
+    "asir": 220.1631012,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 2004,
+    "asir": 239.7540023,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 2005,
+    "asir": 239.8265767,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 2006,
+    "asir": 233.9656254,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 2007,
+    "asir": 243.267491,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 2008,
+    "asir": 252.8505763,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 2009,
+    "asir": 261.8679991,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 2010,
+    "asir": 278.8715955,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 2011,
+    "asir": 285.7793052,
+    "type": 0
+  },
+  {
+    "country": "Ireland",
+    "year": 2012,
+    "asir": 285.1385408,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1980,
+    "asir": 50.79124727,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1981,
+    "asir": 52.01137697,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1982,
+    "asir": 53.30893641,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1983,
+    "asir": 54.66376095,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1984,
+    "asir": 56.10587015,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1985,
+    "asir": 57.58012859,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1986,
+    "asir": 59.09069463,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1987,
+    "asir": 60.7852912,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1988,
+    "asir": 61.98952536,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1989,
+    "asir": 63.75203219,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1990,
+    "asir": 67.37761583,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1991,
+    "asir": 72.02163144,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1992,
+    "asir": 77.19217055,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1993,
+    "asir": 83.64188394,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1994,
+    "asir": 90.2361494,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1995,
+    "asir": 94.87443842,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1996,
+    "asir": 99.78905693,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1997,
+    "asir": 105.4767536,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1998,
+    "asir": 111.7955488,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1999,
+    "asir": 120.7186977,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2000,
+    "asir": 131.1144261,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2001,
+    "asir": 140.543531,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2002,
+    "asir": 149.3832379,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2003,
+    "asir": 157.1528991,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2004,
+    "asir": 161.5293853,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2005,
+    "asir": 164.0738109,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2006,
+    "asir": 166.8865286,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2007,
+    "asir": 170.3271776,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2008,
+    "asir": 173.6209855,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2009,
+    "asir": 177.4017364,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2010,
+    "asir": 181.3367994,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2011,
+    "asir": 184.3752883,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2012,
+    "asir": 186.35982,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2013,
+    "asir": 187.6026041,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2014,
+    "asir": 188.0197743,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2015,
+    "asir": 187.6666065,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2016,
+    "asir": 186.4676895,
+    "type": 0
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2017,
+    "asir": 184.4648077,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1993,
+    "asir": 90.92409979,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1994,
+    "asir": 89.52188638,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1995,
+    "asir": 88.1559259,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1996,
+    "asir": 86.83174579,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1997,
+    "asir": 85.62542999,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1998,
+    "asir": 89.94982376,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1999,
+    "asir": 97.61839679,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2000,
+    "asir": 105.0065898,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2001,
+    "asir": 115.8070476,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2002,
+    "asir": 130.4845691,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2003,
+    "asir": 145.253327,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2004,
+    "asir": 154.7719628,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2005,
+    "asir": 159.5534262,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2006,
+    "asir": 166.0859462,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2007,
+    "asir": 178.7356095,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2008,
+    "asir": 186.7212443,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2009,
+    "asir": 183.2545542,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2010,
+    "asir": 177.4094334,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2011,
+    "asir": 173.4755687,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2012,
+    "asir": 169.9754153,
+    "type": 0
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2013,
+    "asir": 167.5144463,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1980,
+    "asir": 55.82121834,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1981,
+    "asir": 57.53699239,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1982,
+    "asir": 59.23239428,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1983,
+    "asir": 60.92200474,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1984,
+    "asir": 62.61869987,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1985,
+    "asir": 64.30034353,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1986,
+    "asir": 65.95545376,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1987,
+    "asir": 67.34883635,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1988,
+    "asir": 68.86667075,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1989,
+    "asir": 70.14149675,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1990,
+    "asir": 72.34002576,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1991,
+    "asir": 76.86294677,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1992,
+    "asir": 82.59811804,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1993,
+    "asir": 91.38846291,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1994,
+    "asir": 100.0755183,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1995,
+    "asir": 105.8055378,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1996,
+    "asir": 110.1416377,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1997,
+    "asir": 110.3445609,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1998,
+    "asir": 110.1914311,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1999,
+    "asir": 111.477947,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2000,
+    "asir": 116.96151,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2001,
+    "asir": 123.5591498,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2002,
+    "asir": 130.9628961,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2003,
+    "asir": 137.8594149,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2004,
+    "asir": 141.3477234,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2005,
+    "asir": 143.8529681,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2006,
+    "asir": 145.618374,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2007,
+    "asir": 146.8760001,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2008,
+    "asir": 148.3957875,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2009,
+    "asir": 149.8452713,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2010,
+    "asir": 151.4201735,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2011,
+    "asir": 153.0080496,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2012,
+    "asir": 154.605023,
+    "type": 0
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2013,
+    "asir": 156.2119393,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1989,
+    "asir": 88.5367641,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1990,
+    "asir": 93.01892192,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1991,
+    "asir": 99.70416841,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1992,
+    "asir": 107.7452497,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1993,
+    "asir": 118.6930918,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1994,
+    "asir": 129.4360461,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1995,
+    "asir": 136.8394473,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1996,
+    "asir": 139.2805122,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1997,
+    "asir": 139.8068087,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1998,
+    "asir": 140.0761524,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1999,
+    "asir": 140.2871213,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2000,
+    "asir": 141.7074877,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2001,
+    "asir": 145.880415,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2002,
+    "asir": 154.5866087,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2003,
+    "asir": 164.0624664,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2004,
+    "asir": 173.5465442,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2005,
+    "asir": 177.9061476,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2006,
+    "asir": 179.8125009,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2007,
+    "asir": 177.9502709,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2008,
+    "asir": 178.9708138,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2009,
+    "asir": 180.2294899,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2010,
+    "asir": 181.8715456,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2011,
+    "asir": 181.0132305,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2012,
+    "asir": 178.558307,
+    "type": 0
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2013,
+    "asir": 173.8639141,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 1998,
+    "asir": 149.5555891,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 1999,
+    "asir": 158.1207801,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 2000,
+    "asir": 163.533865,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 2001,
+    "asir": 169.4680229,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 2002,
+    "asir": 197.2095153,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 2003,
+    "asir": 209.366052,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 2004,
+    "asir": 193.1289443,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 2005,
+    "asir": 177.4068661,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 2006,
+    "asir": 186.9742283,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 2007,
+    "asir": 193.9177418,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 2008,
+    "asir": 187.2183397,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 2009,
+    "asir": 175.0479178,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 2010,
+    "asir": 172.5568023,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 2011,
+    "asir": 165.0350648,
+    "type": 0
+  },
+  {
+    "country": "Germany",
+    "year": 2012,
+    "asir": 151.566472,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 1998,
+    "asir": 177.3855199,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 1999,
+    "asir": 198.1643435,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 2000,
+    "asir": 213.3050256,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 2001,
+    "asir": 219.117695,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 2002,
+    "asir": 223.0232696,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 2003,
+    "asir": 230.7467897,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 2004,
+    "asir": 222.9443537,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 2005,
+    "asir": 206.1343475,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 2006,
+    "asir": 202.1043041,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 2007,
+    "asir": 197.6150076,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 2008,
+    "asir": 185.8255308,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 2009,
+    "asir": 171.2705504,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 2010,
+    "asir": 164.6296809,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 2011,
+    "asir": 157.3043734,
+    "type": 0
+  },
+  {
+    "country": "Austria",
+    "year": 2012,
+    "asir": 149.3626533,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 1988,
+    "asir": 97.07356596,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 1989,
+    "asir": 106.5437687,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 1990,
+    "asir": 114.9377067,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 1991,
+    "asir": 122.2068382,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 1992,
+    "asir": 128.07055,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 1993,
+    "asir": 133.0488039,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 1994,
+    "asir": 137.169323,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 1995,
+    "asir": 139.4094322,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 1996,
+    "asir": 142.6627233,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 1997,
+    "asir": 148.426365,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 1998,
+    "asir": 159.7542717,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 1999,
+    "asir": 175.9548875,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 2000,
+    "asir": 199.7743612,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 2001,
+    "asir": 231.6655684,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 2002,
+    "asir": 265.0713102,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 2003,
+    "asir": 297.4497808,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 2004,
+    "asir": 320.8891634,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 2005,
+    "asir": 334.8679612,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 2006,
+    "asir": 330.9862174,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 2007,
+    "asir": 314.1206463,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 2008,
+    "asir": 292.1714707,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 2009,
+    "asir": 275.1571904,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 2010,
+    "asir": 257.5226652,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 2011,
+    "asir": 239.6428044,
+    "type": 0
+  },
+  {
+    "country": "France",
+    "year": 2012,
+    "asir": 222.2337354,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 1988,
+    "asir": 106.5010865,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 1989,
+    "asir": 110.7186478,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 1990,
+    "asir": 115.2785748,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 1991,
+    "asir": 120.4112157,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 1992,
+    "asir": 125.6859,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 1993,
+    "asir": 131.7486806,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 1994,
+    "asir": 138.9228987,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 1995,
+    "asir": 149.7330338,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 1996,
+    "asir": 162.0078987,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 1997,
+    "asir": 174.6526563,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 1998,
+    "asir": 188.2786844,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 1999,
+    "asir": 201.5538029,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 2000,
+    "asir": 212.3253112,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 2001,
+    "asir": 221.892867,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 2002,
+    "asir": 229.9296082,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 2003,
+    "asir": 236.0432285,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 2004,
+    "asir": 237.7718408,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 2005,
+    "asir": 237.1451383,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 2006,
+    "asir": 233.9783981,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 2007,
+    "asir": 229.2266749,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 2008,
+    "asir": 224.2719563,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 2009,
+    "asir": 221.6116665,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 2010,
+    "asir": 218.119639,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 2011,
+    "asir": 214.2685912,
+    "type": 0
+  },
+  {
+    "country": "Switzerland",
+    "year": 2012,
+    "asir": 209.8034763,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 1988,
+    "asir": 52.76549665,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 1989,
+    "asir": 53.91572797,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 1990,
+    "asir": 56.90329431,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 1991,
+    "asir": 61.47507307,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 1992,
+    "asir": 68.09707175,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 1993,
+    "asir": 75.98762749,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 1994,
+    "asir": 84.6621557,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 1995,
+    "asir": 92.66007133,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 1996,
+    "asir": 100.5869158,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 1997,
+    "asir": 108.0193377,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 1998,
+    "asir": 115.4305545,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 1999,
+    "asir": 124.4306915,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 2000,
+    "asir": 137.3621452,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 2001,
+    "asir": 155.9482456,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 2002,
+    "asir": 173.7462431,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 2003,
+    "asir": 186.2037143,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 2004,
+    "asir": 189.311351,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 2005,
+    "asir": 188.725517,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 2006,
+    "asir": 185.7897653,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 2007,
+    "asir": 186.4921094,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 2008,
+    "asir": 186.5724608,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 2009,
+    "asir": 183.7296698,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 2010,
+    "asir": 177.9085694,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 2011,
+    "asir": 169.3392035,
+    "type": 0
+  },
+  {
+    "country": "Italy",
+    "year": 2012,
+    "asir": 157.6949388,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 1993,
+    "asir": 66.21205231,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 1994,
+    "asir": 71.38018181,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 1995,
+    "asir": 77.97044942,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 1996,
+    "asir": 85.74448418,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 1997,
+    "asir": 94.94104065,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 1998,
+    "asir": 106.5826095,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 1999,
+    "asir": 118.6744047,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 2000,
+    "asir": 130.3859719,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 2001,
+    "asir": 139.312939,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 2002,
+    "asir": 148.6085314,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 2003,
+    "asir": 160.5378199,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 2004,
+    "asir": 169.739754,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 2005,
+    "asir": 174.2618645,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 2006,
+    "asir": 174.530365,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 2007,
+    "asir": 175.2060771,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 2008,
+    "asir": 178.1672541,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 2009,
+    "asir": 180.1084447,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 2010,
+    "asir": 181.3445556,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 2011,
+    "asir": 181.8067413,
+    "type": 0
+  },
+  {
+    "country": "Spain",
+    "year": 2012,
+    "asir": 181.5042014,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 1998,
+    "asir": 75.25950063,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 1999,
+    "asir": 94.15838177,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 2000,
+    "asir": 112.2331214,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 2001,
+    "asir": 126.8470924,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 2002,
+    "asir": 119.2965611,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 2003,
+    "asir": 131.3475567,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 2004,
+    "asir": 142.3383147,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 2005,
+    "asir": 144.2818152,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 2006,
+    "asir": 137.2839163,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 2007,
+    "asir": 146.828969,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 2008,
+    "asir": 153.653284,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 2009,
+    "asir": 157.1120409,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 2010,
+    "asir": 161.6068511,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 2011,
+    "asir": 163.3331829,
+    "type": 0
+  },
+  {
+    "country": "Cyprus",
+    "year": 2012,
+    "asir": 159.6297135,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1980,
+    "asir": 51.48812599,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1981,
+    "asir": 50.21696849,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1982,
+    "asir": 49.22752306,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1983,
+    "asir": 48.52560676,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1984,
+    "asir": 48.18986812,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1985,
+    "asir": 48.13505625,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1986,
+    "asir": 48.53171216,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1987,
+    "asir": 49.94419559,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1988,
+    "asir": 51.63267418,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1989,
+    "asir": 52.95403015,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1990,
+    "asir": 54.53042902,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1991,
+    "asir": 55.80752398,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1992,
+    "asir": 57.72052663,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1993,
+    "asir": 60.94293311,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1994,
+    "asir": 65.80131821,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1995,
+    "asir": 74.34214817,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1996,
+    "asir": 83.77948671,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1997,
+    "asir": 92.65751426,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1998,
+    "asir": 101.8367591,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 1999,
+    "asir": 110.8073367,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 2000,
+    "asir": 119.1469369,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 2001,
+    "asir": 125.9932321,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 2002,
+    "asir": 132.6839481,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 2003,
+    "asir": 138.7547979,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 2004,
+    "asir": 145.3819566,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 2005,
+    "asir": 154.4969287,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 2006,
+    "asir": 164.8541514,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 2007,
+    "asir": 177.9288489,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 2008,
+    "asir": 190.0719577,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 2009,
+    "asir": 198.820452,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 2010,
+    "asir": 205.9251396,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 2011,
+    "asir": 210.5219351,
+    "type": 0
+  },
+  {
+    "country": "Slovenia",
+    "year": 2012,
+    "asir": 213.0444559,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 1988,
+    "asir": 42.71768977,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 1989,
+    "asir": 40.26757387,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 1990,
+    "asir": 39.47335995,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 1991,
+    "asir": 39.87517793,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 1992,
+    "asir": 42.29084897,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 1993,
+    "asir": 45.10098976,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 1994,
+    "asir": 46.61073838,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 1995,
+    "asir": 44.75739162,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 1996,
+    "asir": 43.32090836,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 1997,
+    "asir": 44.53563538,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 1998,
+    "asir": 51.93402567,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 1999,
+    "asir": 61.13812354,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 2000,
+    "asir": 71.44515967,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 2001,
+    "asir": 78.29803987,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 2002,
+    "asir": 83.82741044,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 2003,
+    "asir": 87.17637235,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 2004,
+    "asir": 91.89516767,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 2005,
+    "asir": 96.70541081,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 2006,
+    "asir": 101.4174096,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 2007,
+    "asir": 106.4855162,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 2008,
+    "asir": 110.7811212,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 2009,
+    "asir": 113.1645883,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 2010,
+    "asir": 114.3615009,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 2011,
+    "asir": 114.2849477,
+    "type": 0
+  },
+  {
+    "country": "Croatia",
+    "year": 2012,
+    "asir": 112.8122742,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1980,
+    "asir": 37.81581915,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1981,
+    "asir": 40.26983899,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1982,
+    "asir": 42.55687564,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1983,
+    "asir": 44.57230406,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1984,
+    "asir": 46.2732418,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1985,
+    "asir": 47.96129858,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1986,
+    "asir": 49.34420425,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1987,
+    "asir": 47.9043981,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1988,
+    "asir": 46.96162606,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1989,
+    "asir": 49.29697182,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1990,
+    "asir": 53.74178183,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1991,
+    "asir": 63.58430481,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1992,
+    "asir": 73.88047908,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1993,
+    "asir": 81.73256262,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1994,
+    "asir": 88.33861931,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1995,
+    "asir": 89.86321761,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1996,
+    "asir": 89.72106939,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1997,
+    "asir": 89.48502726,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1998,
+    "asir": 90.2631971,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 1999,
+    "asir": 92.10218376,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 2000,
+    "asir": 96.3778709,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 2001,
+    "asir": 107.1071276,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 2002,
+    "asir": 121.1492118,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 2003,
+    "asir": 139.4801436,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 2004,
+    "asir": 159.4162275,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 2005,
+    "asir": 178.0881799,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 2006,
+    "asir": 196.6614537,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 2007,
+    "asir": 214.7654463,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 2008,
+    "asir": 232.3705559,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 2009,
+    "asir": 248.7185517,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 2010,
+    "asir": 264.0905265,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 2011,
+    "asir": 278.3675559,
+    "type": 0
+  },
+  {
+    "country": "Estonia",
+    "year": 2012,
+    "asir": 291.6626683,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1983,
+    "asir": 31.9450045,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1984,
+    "asir": 34.14154639,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1985,
+    "asir": 35.64551912,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1986,
+    "asir": 36.72840721,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1987,
+    "asir": 37.0503557,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1988,
+    "asir": 37.12117942,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1989,
+    "asir": 37.73437832,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1990,
+    "asir": 38.48600298,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1991,
+    "asir": 39.2975269,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1992,
+    "asir": 40.51418306,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1993,
+    "asir": 41.64603569,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1994,
+    "asir": 43.39714285,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1995,
+    "asir": 46.74356995,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1996,
+    "asir": 51.08448295,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1997,
+    "asir": 57.0414945,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1998,
+    "asir": 62.72769081,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 1999,
+    "asir": 69.17320169,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 2000,
+    "asir": 76.89992095,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 2001,
+    "asir": 85.55803414,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 2002,
+    "asir": 96.31500982,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 2003,
+    "asir": 107.2414335,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 2004,
+    "asir": 117.2768963,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 2005,
+    "asir": 126.2018175,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 2006,
+    "asir": 131.3191474,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 2007,
+    "asir": 135.5695613,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 2008,
+    "asir": 140.6556361,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 2009,
+    "asir": 146.1461041,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 2010,
+    "asir": 152.5411476,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 2011,
+    "asir": 159.5406637,
+    "type": 0
+  },
+  {
+    "country": "Latvia",
+    "year": 2012,
+    "asir": 167.49631,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1980,
+    "asir": 37.23487221,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1981,
+    "asir": 39.34859208,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1982,
+    "asir": 41.2216733,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1983,
+    "asir": 42.84198573,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1984,
+    "asir": 44.15625459,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1985,
+    "asir": 45.36991118,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1986,
+    "asir": 46.14642588,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1987,
+    "asir": 45.2346806,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1988,
+    "asir": 44.27689314,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1989,
+    "asir": 44.18528735,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1990,
+    "asir": 44.77264898,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1991,
+    "asir": 46.60946055,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1992,
+    "asir": 49.47120905,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1993,
+    "asir": 54.05974033,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1994,
+    "asir": 59.47816302,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1995,
+    "asir": 65.05053132,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1996,
+    "asir": 71.10156028,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1997,
+    "asir": 75.99014485,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1998,
+    "asir": 82.2105389,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 1999,
+    "asir": 90.59729894,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 2000,
+    "asir": 102.1725457,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 2001,
+    "asir": 115.1913823,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 2002,
+    "asir": 134.2898016,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 2003,
+    "asir": 168.0873534,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 2004,
+    "asir": 210.3822123,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 2005,
+    "asir": 275.1147858,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 2006,
+    "asir": 334.929892,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 2007,
+    "asir": 361.804762,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 2008,
+    "asir": 373.4223574,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 2009,
+    "asir": 370.8464973,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 2010,
+    "asir": 353.0680445,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 2011,
+    "asir": 318.7788738,
+    "type": 0
+  },
+  {
+    "country": "Lithuania",
+    "year": 2012,
+    "asir": 269.0195162,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1980,
+    "asir": 16.67990611,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1981,
+    "asir": 17.82697834,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1982,
+    "asir": 19.12546349,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1983,
+    "asir": 20.56030463,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1984,
+    "asir": 22.07663831,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1985,
+    "asir": 23.88611233,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1986,
+    "asir": 25.72138986,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1987,
+    "asir": 27.11647774,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1988,
+    "asir": 28.27933586,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1989,
+    "asir": 28.91497836,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1990,
+    "asir": 29.68141855,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1991,
+    "asir": 31.0859282,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1992,
+    "asir": 32.76427741,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1993,
+    "asir": 35.18642763,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1994,
+    "asir": 37.90234376,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1995,
+    "asir": 40.67191029,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1996,
+    "asir": 43.3001562,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1997,
+    "asir": 45.19342435,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1998,
+    "asir": 46.92390235,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 1999,
+    "asir": 48.27176859,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 2000,
+    "asir": 49.88784185,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 2001,
+    "asir": 52.37394117,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 2002,
+    "asir": 55.43385549,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 2003,
+    "asir": 59.66424017,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 2004,
+    "asir": 64.49163494,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 2005,
+    "asir": 68.70578916,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 2006,
+    "asir": 73.75506282,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 2007,
+    "asir": 80.89162638,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 2008,
+    "asir": 89.41840553,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 2009,
+    "asir": 99.26244468,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 2010,
+    "asir": 110.4346021,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 2011,
+    "asir": 122.9819253,
+    "type": 0
+  },
+  {
+    "country": "Belarus",
+    "year": 2012,
+    "asir": 136.8749221,
+    "type": 0
+  },
+  {
+    "country": "Ukraine",
+    "year": 2003,
+    "asir": 42.75508674,
+    "type": 0
+  },
+  {
+    "country": "Ukraine",
+    "year": 2004,
+    "asir": 44.99192364,
+    "type": 0
+  },
+  {
+    "country": "Ukraine",
+    "year": 2005,
+    "asir": 46,
+    "type": 0
+  },
+  {
+    "country": "Ukraine",
+    "year": 2006,
+    "asir": 46.7,
+    "type": 0
+  },
+  {
+    "country": "Ukraine",
+    "year": 2007,
+    "asir": 49.7,
+    "type": 0
+  },
+  {
+    "country": "Ukraine",
+    "year": 2008,
+    "asir": 53.1,
+    "type": 0
+  },
+  {
+    "country": "Ukraine",
+    "year": 2009,
+    "asir": 53.3,
+    "type": 0
+  },
+  {
+    "country": "Ukraine",
+    "year": 2010,
+    "asir": 57.7,
+    "type": 0
+  },
+  {
+    "country": "Ukraine",
+    "year": 2011,
+    "asir": 59.9,
+    "type": 0
+  },
+  {
+    "country": "Ukraine",
+    "year": 2012,
+    "asir": 62.7,
+    "type": 0
+  },
+  {
+    "country": "Ukraine",
+    "year": 2013,
+    "asir": 65.7,
+    "type": 0
+  },
+  {
+    "country": "Ukraine",
+    "year": 2014,
+    "asir": 67.05201909,
+    "type": 0
+  },
+  {
+    "country": "Ukraine",
+    "year": 2015,
+    "asir": 66.98652945,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 1998,
+    "asir": 64.30131212,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 1999,
+    "asir": 69.67319495,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 2000,
+    "asir": 74.17626033,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 2001,
+    "asir": 82.6818183,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 2002,
+    "asir": 92.68810932,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 2003,
+    "asir": 92.0133504,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 2004,
+    "asir": 82.60394294,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 2005,
+    "asir": 79.83268913,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 2006,
+    "asir": 76.63836924,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 2007,
+    "asir": 72.32329191,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 2008,
+    "asir": 76.58958858,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 2009,
+    "asir": 77.03612871,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 2010,
+    "asir": 74.28298469,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 2011,
+    "asir": 83.31703183,
+    "type": 0
+  },
+  {
+    "country": "Poland",
+    "year": 2012,
+    "asir": 105.6439612,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1983,
+    "asir": 47.10158875,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1984,
+    "asir": 48.22562112,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1985,
+    "asir": 49.47847722,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1986,
+    "asir": 50.90401428,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1987,
+    "asir": 52.49902218,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1988,
+    "asir": 54.29855222,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1989,
+    "asir": 56.19070396,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1990,
+    "asir": 58.39820941,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1991,
+    "asir": 61.07042371,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1992,
+    "asir": 64.25955285,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1993,
+    "asir": 68.46172081,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1994,
+    "asir": 73.11700218,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1995,
+    "asir": 78.37292136,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1996,
+    "asir": 83.42054113,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1997,
+    "asir": 86.95623566,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1998,
+    "asir": 90.27158242,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 1999,
+    "asir": 92.13648971,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2000,
+    "asir": 94.850529,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2001,
+    "asir": 101.5148483,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2002,
+    "asir": 109.9252541,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2003,
+    "asir": 121.6197797,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2004,
+    "asir": 133.516403,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2005,
+    "asir": 141.5816294,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2006,
+    "asir": 149.4099411,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2007,
+    "asir": 158.3319303,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2008,
+    "asir": 166.901398,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2009,
+    "asir": 175.5796553,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2010,
+    "asir": 182.5150371,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2011,
+    "asir": 186.3679916,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2012,
+    "asir": 188.0486671,
+    "type": 0
+  },
+  {
+    "country": "Czechia",
+    "year": 2013,
+    "asir": 186.6995152,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1980,
+    "asir": 38.6212831,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1981,
+    "asir": 41.74828802,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1982,
+    "asir": 44.26330799,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1983,
+    "asir": 46.3145861,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1984,
+    "asir": 47.65148974,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1985,
+    "asir": 48.62604742,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1986,
+    "asir": 49.73155437,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1987,
+    "asir": 50.85507162,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1988,
+    "asir": 52.38309794,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1989,
+    "asir": 53.75511684,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1990,
+    "asir": 54.1094776,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1991,
+    "asir": 54.31255366,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1992,
+    "asir": 54.26900284,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1993,
+    "asir": 54.66769716,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1994,
+    "asir": 57.13148482,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1995,
+    "asir": 60.02636202,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1996,
+    "asir": 62.80510419,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1997,
+    "asir": 65.49242416,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1998,
+    "asir": 66.83363616,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 1999,
+    "asir": 68.21533946,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 2000,
+    "asir": 70.10041697,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 2001,
+    "asir": 72.60363436,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 2002,
+    "asir": 76.79501824,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 2003,
+    "asir": 81.90966612,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 2004,
+    "asir": 87.62503594,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 2005,
+    "asir": 94.01414971,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 2006,
+    "asir": 101.0145037,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 2007,
+    "asir": 108.5895623,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 2008,
+    "asir": 116.7032815,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 2009,
+    "asir": 125.38607,
+    "type": 0
+  },
+  {
+    "country": "Slovakia",
+    "year": 2010,
+    "asir": 134.562159,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1993,
+    "asir": 31.35131569,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1994,
+    "asir": 30.56380608,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1995,
+    "asir": 31.19337064,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1996,
+    "asir": 33.29045915,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1997,
+    "asir": 37.04086815,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1998,
+    "asir": 39.69839439,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1999,
+    "asir": 40.93683664,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2000,
+    "asir": 41.59918922,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2001,
+    "asir": 42.57279967,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2002,
+    "asir": 44.89244349,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2003,
+    "asir": 47.9825103,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2004,
+    "asir": 49.84369265,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2005,
+    "asir": 49.96151682,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2006,
+    "asir": 49.74008149,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2007,
+    "asir": 50.4075712,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2008,
+    "asir": 50.9793967,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2009,
+    "asir": 54.44211721,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2010,
+    "asir": 64.99374263,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2011,
+    "asir": 76.72312524,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2012,
+    "asir": 86.75540896,
+    "type": 0
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2013,
+    "asir": 95.00516049,
+    "type": 0
+  },
+  {
+    "country": "Denmark",
+    "year": 1980,
+    "asir": 36.52526144,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1981,
+    "asir": 36.78885044,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1982,
+    "asir": 37.06364815,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1983,
+    "asir": 37.3349603,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1984,
+    "asir": 37.62861211,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1985,
+    "asir": 37.91721361,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1986,
+    "asir": 38.18508487,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1987,
+    "asir": 38.49844013,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1988,
+    "asir": 38.81979866,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1989,
+    "asir": 39.28273088,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1990,
+    "asir": 40.21498102,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1991,
+    "asir": 41.39267778,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1992,
+    "asir": 42.31118889,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1993,
+    "asir": 43.0023907,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1994,
+    "asir": 43.45587725,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1995,
+    "asir": 43.1908941,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1996,
+    "asir": 42.51604984,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1997,
+    "asir": 42.04733327,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1998,
+    "asir": 42.06704322,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 1999,
+    "asir": 42.11899453,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2000,
+    "asir": 42.1763085,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2001,
+    "asir": 42.30342808,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2002,
+    "asir": 42.14559862,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2003,
+    "asir": 41.43093918,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2004,
+    "asir": 40.52582861,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2005,
+    "asir": 39.59601249,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2006,
+    "asir": 38.55823978,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2007,
+    "asir": 37.64165047,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2008,
+    "asir": 37.09958568,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2009,
+    "asir": 36.48475043,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2010,
+    "asir": 35.39438936,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2011,
+    "asir": 34.12004666,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2012,
+    "asir": 32.88135753,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2013,
+    "asir": 31.64106271,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2014,
+    "asir": 30.44459593,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2015,
+    "asir": 29.37903069,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2016,
+    "asir": 28.3887858,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2017,
+    "asir": 27.54901801,
+    "type": 1
+  },
+  {
+    "country": "Denmark",
+    "year": 2018,
+    "asir": 26.82182655,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1980,
+    "asir": 39.26016573,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1981,
+    "asir": 38.81799604,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1982,
+    "asir": 38.61194494,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1983,
+    "asir": 38.6648166,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1984,
+    "asir": 38.92382112,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1985,
+    "asir": 39.5139212,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1986,
+    "asir": 40.41475693,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1987,
+    "asir": 41.32336442,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1988,
+    "asir": 42.19650224,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1989,
+    "asir": 43.00089383,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1990,
+    "asir": 43.64812588,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1991,
+    "asir": 44.22202724,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1992,
+    "asir": 44.69294451,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1993,
+    "asir": 45.04527073,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1994,
+    "asir": 45.26981765,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1995,
+    "asir": 45.41166475,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1996,
+    "asir": 45.45817946,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1997,
+    "asir": 45.30276834,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1998,
+    "asir": 44.75793753,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 1999,
+    "asir": 44.11926766,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2000,
+    "asir": 43.63000835,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2001,
+    "asir": 43.10652203,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2002,
+    "asir": 42.52649621,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2003,
+    "asir": 42.05575115,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2004,
+    "asir": 41.45499484,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2005,
+    "asir": 40.40035231,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2006,
+    "asir": 39.09743662,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2007,
+    "asir": 37.71049891,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2008,
+    "asir": 36.0819433,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2009,
+    "asir": 34.4459539,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2010,
+    "asir": 33.13586053,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2011,
+    "asir": 31.92717532,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2012,
+    "asir": 30.73509298,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2013,
+    "asir": 29.5546251,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2014,
+    "asir": 28.3922238,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2015,
+    "asir": 27.22997921,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2016,
+    "asir": 26.08153291,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2017,
+    "asir": 24.93457994,
+    "type": 1
+  },
+  {
+    "country": "Sweden",
+    "year": 2018,
+    "asir": 23.79447897,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1980,
+    "asir": 41.56329958,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1981,
+    "asir": 41.62227312,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1982,
+    "asir": 41.84322957,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1983,
+    "asir": 42.18841129,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1984,
+    "asir": 42.62097321,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1985,
+    "asir": 43.36082511,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1986,
+    "asir": 44.15036209,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1987,
+    "asir": 44.61459884,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1988,
+    "asir": 44.78440228,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1989,
+    "asir": 44.88998424,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1990,
+    "asir": 45.29490819,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1991,
+    "asir": 45.70734591,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1992,
+    "asir": 46.09043575,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1993,
+    "asir": 46.44488918,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1994,
+    "asir": 46.71385859,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1995,
+    "asir": 46.90238217,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1996,
+    "asir": 46.9384016,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1997,
+    "asir": 46.76725527,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1998,
+    "asir": 46.37737633,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 1999,
+    "asir": 45.53232411,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2000,
+    "asir": 44.48606673,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2001,
+    "asir": 43.22597932,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2002,
+    "asir": 41.88362868,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2003,
+    "asir": 40.51873757,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2004,
+    "asir": 39.35943436,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2005,
+    "asir": 38.23914875,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2006,
+    "asir": 37.26797396,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2007,
+    "asir": 36.25249539,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2008,
+    "asir": 34.92568192,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2009,
+    "asir": 33.58918585,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2010,
+    "asir": 32.28873359,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2011,
+    "asir": 31.13434303,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2012,
+    "asir": 29.99794999,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2013,
+    "asir": 28.83518213,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2014,
+    "asir": 27.6928328,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2015,
+    "asir": 26.59598216,
+    "type": 1
+  },
+  {
+    "country": "Norway",
+    "year": 2016,
+    "asir": 25.52814598,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1980,
+    "asir": 29.96782301,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1981,
+    "asir": 29.91847327,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1982,
+    "asir": 30.18443743,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1983,
+    "asir": 30.78072735,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1984,
+    "asir": 31.61798486,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1985,
+    "asir": 32.77866392,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1986,
+    "asir": 34.11465773,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1987,
+    "asir": 35.79394405,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1988,
+    "asir": 37.37431349,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1989,
+    "asir": 38.31078963,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1990,
+    "asir": 38.93183247,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1991,
+    "asir": 38.64214188,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1992,
+    "asir": 38.61601571,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1993,
+    "asir": 38.51638725,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1994,
+    "asir": 38.51449534,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1995,
+    "asir": 38.45403162,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1996,
+    "asir": 38.45075502,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1997,
+    "asir": 38.38221164,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1998,
+    "asir": 38.15912548,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 1999,
+    "asir": 37.7150641,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2000,
+    "asir": 36.67315738,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2001,
+    "asir": 35.7468388,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2002,
+    "asir": 34.74962684,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2003,
+    "asir": 33.5658374,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2004,
+    "asir": 32.32930085,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2005,
+    "asir": 31.28379226,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2006,
+    "asir": 30.32580896,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2007,
+    "asir": 29.59254154,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2008,
+    "asir": 28.81243482,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2009,
+    "asir": 27.70369712,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2011,
+    "asir": 25.33373111,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2012,
+    "asir": 24.26275522,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2013,
+    "asir": 23.22850439,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2015,
+    "asir": 21.32349981,
+    "type": 1
+  },
+  {
+    "country": "Ireland",
+    "year": 2018,
+    "asir": 18.75971202,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1980,
+    "asir": 25.98677043,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1981,
+    "asir": 27.08055782,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1982,
+    "asir": 28.16437326,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1983,
+    "asir": 29.25550979,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1984,
+    "asir": 30.33651268,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1985,
+    "asir": 31.37506973,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1986,
+    "asir": 32.47923485,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1987,
+    "asir": 33.61907652,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1988,
+    "asir": 34.55530443,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1989,
+    "asir": 35.29642408,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1990,
+    "asir": 35.84223645,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1991,
+    "asir": 36.0911946,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1992,
+    "asir": 36.1190917,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1993,
+    "asir": 35.93959085,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1994,
+    "asir": 35.37155706,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1995,
+    "asir": 34.64506843,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1996,
+    "asir": 33.88026813,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1997,
+    "asir": 32.96552933,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1998,
+    "asir": 32.18367971,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 1999,
+    "asir": 31.59187056,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2000,
+    "asir": 31.04028216,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2001,
+    "asir": 30.59055426,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2002,
+    "asir": 30.22779237,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2003,
+    "asir": 29.80956631,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2004,
+    "asir": 29.30746929,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2005,
+    "asir": 28.78720378,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2006,
+    "asir": 28.2107805,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2007,
+    "asir": 27.58315209,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2008,
+    "asir": 26.96746527,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2009,
+    "asir": 26.35247323,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2010,
+    "asir": 25.76338249,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2011,
+    "asir": 25.24009777,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2012,
+    "asir": 24.7409737,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2013,
+    "asir": 24.26151184,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2014,
+    "asir": 23.79795524,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2015,
+    "asir": 23.36057375,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2016,
+    "asir": 22.95765352,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2017,
+    "asir": 22.58408767,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2018,
+    "asir": 22.23632837,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2019,
+    "asir": 21.91128097,
+    "type": 1
+  },
+  {
+    "country": "UK..England.and.Wales.",
+    "year": 2020,
+    "asir": 21.61041778,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1980,
+    "asir": 24.46902751,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1981,
+    "asir": 25.39695706,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1982,
+    "asir": 26.25540447,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1983,
+    "asir": 27.04417961,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1984,
+    "asir": 27.78015285,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1985,
+    "asir": 28.47351791,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1986,
+    "asir": 29.06663196,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1987,
+    "asir": 29.56542184,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1988,
+    "asir": 30.07543572,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1989,
+    "asir": 30.8410265,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1990,
+    "asir": 31.59641371,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1991,
+    "asir": 32.13109077,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1992,
+    "asir": 32.57206525,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1993,
+    "asir": 32.76595637,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1994,
+    "asir": 32.559963,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1995,
+    "asir": 32.22687515,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1996,
+    "asir": 31.92589673,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1997,
+    "asir": 31.50821873,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1998,
+    "asir": 30.99682778,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 1999,
+    "asir": 30.22085107,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2000,
+    "asir": 29.42591423,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2001,
+    "asir": 28.89434757,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2002,
+    "asir": 28.41448156,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2003,
+    "asir": 27.89305082,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2004,
+    "asir": 27.19322627,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2005,
+    "asir": 26.54000712,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2006,
+    "asir": 26.08657601,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2007,
+    "asir": 25.715664,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2008,
+    "asir": 25.47107095,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2009,
+    "asir": 25.45761338,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2010,
+    "asir": 25.48139656,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2011,
+    "asir": 25.58640128,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2012,
+    "asir": 25.82691525,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2013,
+    "asir": 25.81413197,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2014,
+    "asir": 25.41436135,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2015,
+    "asir": 24.87204163,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2016,
+    "asir": 24.24003121,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2017,
+    "asir": 23.46895901,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2018,
+    "asir": 22.58386682,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2019,
+    "asir": 21.59779516,
+    "type": 1
+  },
+  {
+    "country": "UK..Northern.Ireland.",
+    "year": 2020,
+    "asir": 20.49744567,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1980,
+    "asir": 26.28219328,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1981,
+    "asir": 26.51614728,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1982,
+    "asir": 26.83196694,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1983,
+    "asir": 27.24440946,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1984,
+    "asir": 27.73853936,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1985,
+    "asir": 28.28690129,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1986,
+    "asir": 28.9373231,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1987,
+    "asir": 29.6786799,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1988,
+    "asir": 30.39508728,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1989,
+    "asir": 31.11955638,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1990,
+    "asir": 31.82020531,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1991,
+    "asir": 32.53030655,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1992,
+    "asir": 33.22677869,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1993,
+    "asir": 33.61186686,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1994,
+    "asir": 33.5379298,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1995,
+    "asir": 33.32282518,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1996,
+    "asir": 32.9655843,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1997,
+    "asir": 32.39070051,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1998,
+    "asir": 31.88686034,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 1999,
+    "asir": 31.53625956,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2000,
+    "asir": 31.18271338,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2001,
+    "asir": 30.904131,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2002,
+    "asir": 30.68742272,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2003,
+    "asir": 30.32720588,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2004,
+    "asir": 29.56694534,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2005,
+    "asir": 28.76686271,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2006,
+    "asir": 28.15378821,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2007,
+    "asir": 27.53727583,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2008,
+    "asir": 27.01116365,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2009,
+    "asir": 26.60188467,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2010,
+    "asir": 26.28746182,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2011,
+    "asir": 26.14562779,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2012,
+    "asir": 26.11475918,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2013,
+    "asir": 26.00704487,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2014,
+    "asir": 25.74065219,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2015,
+    "asir": 25.48474039,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2016,
+    "asir": 25.30557,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2017,
+    "asir": 25.14339308,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2018,
+    "asir": 24.99787366,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2019,
+    "asir": 24.86981345,
+    "type": 1
+  },
+  {
+    "country": "UK..Scotland.",
+    "year": 2020,
+    "asir": 24.76012989,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1980,
+    "asir": 32.44437037,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1981,
+    "asir": 32.60698518,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1982,
+    "asir": 32.82223465,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1983,
+    "asir": 33.10788704,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1984,
+    "asir": 33.44262389,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1985,
+    "asir": 33.79136502,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1986,
+    "asir": 34.2101364,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1987,
+    "asir": 34.69237923,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1988,
+    "asir": 35.1091361,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1989,
+    "asir": 35.38182239,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1990,
+    "asir": 35.6189592,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1991,
+    "asir": 35.93360076,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1992,
+    "asir": 36.23137164,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1993,
+    "asir": 36.35282861,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1994,
+    "asir": 36.36644663,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1995,
+    "asir": 36.25506888,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1996,
+    "asir": 35.80574821,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1997,
+    "asir": 35.12988196,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1998,
+    "asir": 34.42609602,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 1999,
+    "asir": 33.5734817,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2000,
+    "asir": 32.70745361,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2001,
+    "asir": 32.09042179,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2002,
+    "asir": 31.54516982,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2003,
+    "asir": 30.9953688,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2004,
+    "asir": 30.41921137,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2005,
+    "asir": 29.85060835,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2006,
+    "asir": 29.34187743,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2007,
+    "asir": 28.86142534,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2008,
+    "asir": 28.29063403,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2009,
+    "asir": 27.54324247,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2010,
+    "asir": 26.76940729,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2011,
+    "asir": 26.00353948,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2012,
+    "asir": 25.20337544,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2013,
+    "asir": 24.48991158,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2014,
+    "asir": 23.89174499,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2015,
+    "asir": 23.34537265,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2016,
+    "asir": 22.84540405,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2017,
+    "asir": 22.39931114,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2018,
+    "asir": 22.00923384,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2019,
+    "asir": 21.67330212,
+    "type": 1
+  },
+  {
+    "country": "The.Netherlands",
+    "year": 2020,
+    "asir": 21.38903446,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 1990,
+    "asir": 32.69947786,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 1991,
+    "asir": 33.59159561,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 1992,
+    "asir": 34.11984989,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 1993,
+    "asir": 34.31071923,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 1994,
+    "asir": 34.12040653,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 1995,
+    "asir": 33.61193772,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 1996,
+    "asir": 32.727204,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 1997,
+    "asir": 31.67792606,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 1998,
+    "asir": 30.56302231,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 1999,
+    "asir": 29.46167929,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2000,
+    "asir": 28.65121114,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2001,
+    "asir": 27.90257022,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2002,
+    "asir": 27.14343459,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2003,
+    "asir": 26.4282001,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2004,
+    "asir": 25.7132807,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2005,
+    "asir": 25.05789031,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2006,
+    "asir": 24.52068788,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2007,
+    "asir": 24.07295832,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2008,
+    "asir": 23.80379956,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2009,
+    "asir": 23.57489114,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2010,
+    "asir": 23.25183156,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2011,
+    "asir": 22.932569,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2012,
+    "asir": 22.62101125,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2013,
+    "asir": 22.31186052,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2014,
+    "asir": 22.01419785,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2015,
+    "asir": 21.73292058,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2016,
+    "asir": 21.46909681,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2017,
+    "asir": 21.22063258,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2018,
+    "asir": 20.98898646,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2019,
+    "asir": 20.77456736,
+    "type": 1
+  },
+  {
+    "country": "Germany",
+    "year": 2020,
+    "asir": 20.58132755,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1980,
+    "asir": 32.89516993,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1981,
+    "asir": 32.7139611,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1982,
+    "asir": 32.64494884,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1983,
+    "asir": 32.7041345,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1984,
+    "asir": 32.87101839,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1985,
+    "asir": 33.11371764,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1986,
+    "asir": 33.57559044,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1987,
+    "asir": 34.22311356,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1988,
+    "asir": 34.75908201,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1989,
+    "asir": 35.24039409,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1990,
+    "asir": 35.58130972,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1991,
+    "asir": 35.55262193,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1992,
+    "asir": 35.33678661,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1993,
+    "asir": 35.04013562,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1994,
+    "asir": 34.55664818,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1995,
+    "asir": 33.9749002,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1996,
+    "asir": 33.48614948,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1997,
+    "asir": 32.97134249,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1998,
+    "asir": 32.36323911,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 1999,
+    "asir": 31.73271899,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2000,
+    "asir": 30.98879488,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2001,
+    "asir": 29.89283191,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2002,
+    "asir": 28.59007139,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2003,
+    "asir": 27.34628715,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2004,
+    "asir": 26.06171655,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2005,
+    "asir": 24.80922704,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2006,
+    "asir": 23.80293053,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2007,
+    "asir": 22.89013319,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2008,
+    "asir": 22.04534533,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2009,
+    "asir": 21.27471684,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2010,
+    "asir": 20.58652243,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2011,
+    "asir": 19.93661743,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2012,
+    "asir": 19.34111145,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2013,
+    "asir": 18.86808336,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2014,
+    "asir": 18.54166428,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2015,
+    "asir": 18.31896005,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2016,
+    "asir": 18.19145608,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2017,
+    "asir": 18.16951408,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2018,
+    "asir": 18.24898946,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2019,
+    "asir": 18.42577058,
+    "type": 1
+  },
+  {
+    "country": "Austria",
+    "year": 2020,
+    "asir": 18.70149868,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1980,
+    "asir": 31.64952283,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1981,
+    "asir": 32.14650334,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1982,
+    "asir": 32.63816737,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1983,
+    "asir": 33.11327929,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1984,
+    "asir": 33.54186859,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1985,
+    "asir": 33.97676746,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1986,
+    "asir": 34.3489252,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1987,
+    "asir": 34.65825521,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1988,
+    "asir": 34.7966584,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1989,
+    "asir": 34.51003716,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1990,
+    "asir": 34.03090372,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1991,
+    "asir": 33.36668211,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1992,
+    "asir": 32.51906263,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1993,
+    "asir": 31.63755386,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1994,
+    "asir": 30.90178519,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1995,
+    "asir": 30.25265215,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1996,
+    "asir": 29.93045144,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1997,
+    "asir": 29.64474927,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1998,
+    "asir": 29.33989365,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 1999,
+    "asir": 29.00715821,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2000,
+    "asir": 28.57048881,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2001,
+    "asir": 27.84745595,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2002,
+    "asir": 27.01089575,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2003,
+    "asir": 26.12748556,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2004,
+    "asir": 25.20989426,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2005,
+    "asir": 24.33122285,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2006,
+    "asir": 23.43566811,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2007,
+    "asir": 22.50978057,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2008,
+    "asir": 21.56956259,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2009,
+    "asir": 20.63579005,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2010,
+    "asir": 19.62609007,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2011,
+    "asir": 18.67510237,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2012,
+    "asir": 17.88316072,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2013,
+    "asir": 17.18204456,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2014,
+    "asir": 16.59258885,
+    "type": 1
+  },
+  {
+    "country": "France",
+    "year": 2017,
+    "asir": 15.40150807,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1980,
+    "asir": 39.75984909,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1981,
+    "asir": 41.01240463,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1982,
+    "asir": 42.03263536,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1983,
+    "asir": 42.79087274,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1984,
+    "asir": 43.34093457,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1985,
+    "asir": 43.60612229,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1986,
+    "asir": 43.60608006,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1987,
+    "asir": 43.57940589,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1988,
+    "asir": 43.59439063,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1989,
+    "asir": 43.55732108,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1990,
+    "asir": 43.70028101,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1991,
+    "asir": 43.88694415,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1992,
+    "asir": 43.56028736,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1993,
+    "asir": 42.26497838,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1994,
+    "asir": 40.72970796,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1995,
+    "asir": 39.2316729,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1996,
+    "asir": 37.53464918,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1997,
+    "asir": 36.08751683,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1998,
+    "asir": 35.2073208,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 1999,
+    "asir": 34.43020449,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2000,
+    "asir": 33.4995261,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2001,
+    "asir": 32.5718151,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2002,
+    "asir": 31.54435631,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2003,
+    "asir": 30.24869132,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2004,
+    "asir": 28.95551574,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2005,
+    "asir": 27.9130031,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2006,
+    "asir": 26.97212052,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2007,
+    "asir": 26.09307425,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2008,
+    "asir": 25.2818666,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2009,
+    "asir": 24.51948976,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2010,
+    "asir": 23.813294,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2011,
+    "asir": 23.16687634,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2012,
+    "asir": 22.49729802,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2013,
+    "asir": 21.76879731,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2015,
+    "asir": 20.3620597,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2016,
+    "asir": 19.74134673,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2017,
+    "asir": 19.15476463,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2018,
+    "asir": 18.61567884,
+    "type": 1
+  },
+  {
+    "country": "Switzerland",
+    "year": 2019,
+    "asir": 18.1179033,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1980,
+    "asir": 22.84614624,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1981,
+    "asir": 23.41182023,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1982,
+    "asir": 23.89891208,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1983,
+    "asir": 24.31293214,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1984,
+    "asir": 24.64261825,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1985,
+    "asir": 24.90172965,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1986,
+    "asir": 25.08993431,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1987,
+    "asir": 25.16700821,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1988,
+    "asir": 25.08834728,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1989,
+    "asir": 24.91119775,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1990,
+    "asir": 24.63289197,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1991,
+    "asir": 24.24221558,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1992,
+    "asir": 23.83889992,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1993,
+    "asir": 23.42743106,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1994,
+    "asir": 23.00505477,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1995,
+    "asir": 22.63269719,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1996,
+    "asir": 22.23804797,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1997,
+    "asir": 21.75929055,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1998,
+    "asir": 21.25605715,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 1999,
+    "asir": 20.74909841,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2000,
+    "asir": 20.22179537,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2001,
+    "asir": 19.68928295,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2002,
+    "asir": 19.1444103,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2003,
+    "asir": 18.60646764,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2004,
+    "asir": 18.10135431,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2005,
+    "asir": 17.60707594,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2006,
+    "asir": 17.10658853,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2007,
+    "asir": 16.61001913,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2008,
+    "asir": 16.10566605,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2009,
+    "asir": 15.53716908,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2010,
+    "asir": 14.93863601,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2011,
+    "asir": 14.39598157,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2012,
+    "asir": 13.90755162,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2013,
+    "asir": 13.47839708,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2014,
+    "asir": 13.13332832,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2015,
+    "asir": 12.85455382,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2016,
+    "asir": 12.66121353,
+    "type": 1
+  },
+  {
+    "country": "Italy",
+    "year": 2017,
+    "asir": 12.54454155,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1980,
+    "asir": 25.98928355,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1981,
+    "asir": 26.00343723,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1982,
+    "asir": 26.04461702,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1983,
+    "asir": 26.11651693,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1984,
+    "asir": 26.20881551,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1985,
+    "asir": 26.35145941,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1986,
+    "asir": 26.5399872,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1987,
+    "asir": 26.70919049,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1988,
+    "asir": 26.81985259,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1989,
+    "asir": 26.90943008,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1990,
+    "asir": 27.02347943,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1991,
+    "asir": 27.13656482,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1992,
+    "asir": 27.19199945,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1993,
+    "asir": 27.28587947,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1994,
+    "asir": 27.30091018,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1995,
+    "asir": 27.09840595,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1996,
+    "asir": 26.78193087,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1997,
+    "asir": 26.33808634,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1998,
+    "asir": 25.66115533,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 1999,
+    "asir": 24.89780591,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2000,
+    "asir": 24.12623879,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2001,
+    "asir": 23.26504803,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2002,
+    "asir": 22.44000274,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2003,
+    "asir": 21.63906831,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2004,
+    "asir": 20.86590552,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2005,
+    "asir": 20.15901688,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2006,
+    "asir": 19.48496969,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2007,
+    "asir": 18.88517333,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2008,
+    "asir": 18.42970583,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2009,
+    "asir": 18.01139075,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2010,
+    "asir": 17.57939531,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2011,
+    "asir": 17.18927786,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2012,
+    "asir": 16.77615269,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2013,
+    "asir": 16.30852373,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2014,
+    "asir": 15.84886117,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2015,
+    "asir": 15.41682247,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2017,
+    "asir": 14.5687131,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2018,
+    "asir": 14.17014332,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2019,
+    "asir": 13.79596315,
+    "type": 1
+  },
+  {
+    "country": "Spain",
+    "year": 2020,
+    "asir": 13.43983117,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2004,
+    "asir": 22.81109503,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2005,
+    "asir": 23.50666946,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2006,
+    "asir": 22.65322243,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2007,
+    "asir": 19.75415289,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2008,
+    "asir": 18.75536235,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2009,
+    "asir": 19.72657464,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2010,
+    "asir": 20.0412077,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2011,
+    "asir": 18.24490356,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2012,
+    "asir": 18.84834267,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2013,
+    "asir": 19.26768882,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2014,
+    "asir": 18.26009995,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2015,
+    "asir": 16.57373502,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2016,
+    "asir": 16.15274492,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2017,
+    "asir": 15.81176993,
+    "type": 1
+  },
+  {
+    "country": "Cyprus",
+    "year": 2018,
+    "asir": 16.08029646,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1985,
+    "asir": 33.43763916,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1986,
+    "asir": 32.91607234,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1987,
+    "asir": 32.41788561,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1988,
+    "asir": 31.98682511,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1989,
+    "asir": 31.65259431,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1990,
+    "asir": 31.29227653,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1991,
+    "asir": 31.03589533,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1992,
+    "asir": 30.99283144,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1993,
+    "asir": 31.24102773,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1994,
+    "asir": 32.49593322,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1995,
+    "asir": 33.82835816,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1996,
+    "asir": 34.62262223,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1997,
+    "asir": 34.84258074,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1998,
+    "asir": 35.01942253,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 1999,
+    "asir": 35.39400585,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2000,
+    "asir": 35.71294063,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2001,
+    "asir": 36.02144051,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2002,
+    "asir": 36.34214644,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2003,
+    "asir": 37.12151208,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2004,
+    "asir": 37.80159994,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2005,
+    "asir": 37.83439716,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2006,
+    "asir": 37.30605225,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2007,
+    "asir": 36.54426524,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2008,
+    "asir": 36.02211283,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2009,
+    "asir": 35.34165935,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2010,
+    "asir": 33.97946584,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2011,
+    "asir": 32.50900022,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2012,
+    "asir": 31.18557716,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2013,
+    "asir": 30.02602548,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2014,
+    "asir": 29.28155381,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2015,
+    "asir": 28.84240337,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2016,
+    "asir": 28.52652441,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2017,
+    "asir": 28.21458019,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2018,
+    "asir": 28.01163107,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2019,
+    "asir": 27.86514272,
+    "type": 1
+  },
+  {
+    "country": "Slovenia",
+    "year": 2020,
+    "asir": 27.79073738,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1985,
+    "asir": 25.33748856,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1986,
+    "asir": 26.47931917,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1987,
+    "asir": 27.37465388,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1988,
+    "asir": 28.05953529,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1989,
+    "asir": 28.5560841,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1990,
+    "asir": 28.75721498,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1991,
+    "asir": 28.76010236,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1992,
+    "asir": 28.52837152,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1993,
+    "asir": 28.41530669,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1994,
+    "asir": 28.7516966,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1995,
+    "asir": 29.31108956,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1996,
+    "asir": 30.57921296,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1997,
+    "asir": 31.83460957,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1998,
+    "asir": 32.61039859,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 1999,
+    "asir": 33.03196335,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2000,
+    "asir": 32.20830557,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2001,
+    "asir": 31.23694194,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2002,
+    "asir": 30.92556533,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2003,
+    "asir": 30.7093214,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2004,
+    "asir": 31.04191149,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2005,
+    "asir": 31.1138748,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2006,
+    "asir": 31.15206427,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2007,
+    "asir": 30.81345292,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2008,
+    "asir": 30.55772744,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2009,
+    "asir": 31.087348,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2010,
+    "asir": 31.61298913,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2011,
+    "asir": 31.59747283,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2012,
+    "asir": 31.47768977,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2013,
+    "asir": 31.24612587,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2014,
+    "asir": 30.90696292,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2015,
+    "asir": 30.51146536,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2016,
+    "asir": 30.04344783,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2017,
+    "asir": 29.53731013,
+    "type": 1
+  },
+  {
+    "country": "Croatia",
+    "year": 2019,
+    "asir": 28.33562479,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1981,
+    "asir": 25.60172891,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1982,
+    "asir": 26.72538269,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1985,
+    "asir": 28.77795879,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1986,
+    "asir": 29.18440507,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1987,
+    "asir": 29.48176359,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1988,
+    "asir": 29.26284499,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1989,
+    "asir": 28.96739377,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1990,
+    "asir": 29.97868526,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1991,
+    "asir": 31.2536533,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1992,
+    "asir": 31.59361802,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1993,
+    "asir": 31.81852719,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1994,
+    "asir": 31.92852375,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1995,
+    "asir": 32.35136714,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1996,
+    "asir": 34.24687211,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1997,
+    "asir": 36.22065297,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1998,
+    "asir": 37.72353337,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 1999,
+    "asir": 38.97957858,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2000,
+    "asir": 38.61491379,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2001,
+    "asir": 38.14396289,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2002,
+    "asir": 38.80970428,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2003,
+    "asir": 40.29489124,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2004,
+    "asir": 41.96026562,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2005,
+    "asir": 43.30395489,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2006,
+    "asir": 44.44943588,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2007,
+    "asir": 44.94957451,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2008,
+    "asir": 45.08381113,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2009,
+    "asir": 44.83831625,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2010,
+    "asir": 44.50746421,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2011,
+    "asir": 44.47770257,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2012,
+    "asir": 44.32715272,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2013,
+    "asir": 43.86640705,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2014,
+    "asir": 43.21631539,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2015,
+    "asir": 42.3611513,
+    "type": 1
+  },
+  {
+    "country": "Estonia",
+    "year": 2016,
+    "asir": 41.30270744,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1980,
+    "asir": 20.29805471,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1981,
+    "asir": 21.55752525,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1982,
+    "asir": 22.6685965,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1983,
+    "asir": 23.6103058,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1984,
+    "asir": 24.40983214,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1985,
+    "asir": 25.10935618,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1986,
+    "asir": 25.65443987,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1987,
+    "asir": 26.04699116,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1988,
+    "asir": 26.41370968,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1989,
+    "asir": 26.71892185,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1990,
+    "asir": 27.02520507,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1991,
+    "asir": 27.47185865,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1992,
+    "asir": 27.97182662,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1993,
+    "asir": 28.45965216,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1994,
+    "asir": 28.70379501,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1995,
+    "asir": 29.0094075,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1996,
+    "asir": 29.53649549,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1997,
+    "asir": 30.16528002,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1998,
+    "asir": 31.21566588,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 1999,
+    "asir": 32.67807129,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2000,
+    "asir": 34.43614629,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2001,
+    "asir": 37.18759616,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2002,
+    "asir": 40.61332619,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2003,
+    "asir": 43.34788891,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2004,
+    "asir": 45.44008687,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2005,
+    "asir": 47.02713281,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2006,
+    "asir": 47.29283998,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2007,
+    "asir": 46.76547852,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2008,
+    "asir": 46.2289015,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2009,
+    "asir": 45.22537062,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2010,
+    "asir": 44.14550148,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2011,
+    "asir": 43.96024189,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2012,
+    "asir": 44.05605392,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2013,
+    "asir": 44.11259288,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2014,
+    "asir": 44.08542935,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2015,
+    "asir": 43.98924419,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2016,
+    "asir": 43.75957784,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2017,
+    "asir": 43.46511063,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2018,
+    "asir": 43.07387308,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2019,
+    "asir": 42.56851102,
+    "type": 1
+  },
+  {
+    "country": "Latvia",
+    "year": 2020,
+    "asir": 41.96658523,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1981,
+    "asir": 21.04076996,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1982,
+    "asir": 21.58003151,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1985,
+    "asir": 23.59798963,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1986,
+    "asir": 24.41153765,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1987,
+    "asir": 25.3127342,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1988,
+    "asir": 26.29905229,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1989,
+    "asir": 27.35565419,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1990,
+    "asir": 28.5298159,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1991,
+    "asir": 30.25380253,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1992,
+    "asir": 32.05212033,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1993,
+    "asir": 33.3652625,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1994,
+    "asir": 34.50959938,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1995,
+    "asir": 35.48458444,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1996,
+    "asir": 36.06859811,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1997,
+    "asir": 36.59045809,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1998,
+    "asir": 37.57876124,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 1999,
+    "asir": 38.49940412,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2000,
+    "asir": 38.93063782,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2001,
+    "asir": 39.34370594,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2002,
+    "asir": 39.93800549,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2003,
+    "asir": 40.54996639,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2004,
+    "asir": 41.20568562,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2005,
+    "asir": 42.28764626,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2006,
+    "asir": 43.29890136,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2007,
+    "asir": 43.77554461,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2008,
+    "asir": 44.01817933,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2009,
+    "asir": 43.88052198,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2010,
+    "asir": 42.91349312,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2011,
+    "asir": 41.80000039,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2012,
+    "asir": 41.24177455,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2013,
+    "asir": 40.76718643,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2014,
+    "asir": 40.16789314,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2015,
+    "asir": 39.35830285,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2016,
+    "asir": 38.50109373,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2017,
+    "asir": 37.65620937,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2018,
+    "asir": 36.77252025,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2019,
+    "asir": 35.84781409,
+    "type": 1
+  },
+  {
+    "country": "Lithuania",
+    "year": 2020,
+    "asir": 34.88068308,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1981,
+    "asir": 12.32116357,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1982,
+    "asir": 12.57433258,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1985,
+    "asir": 14.06762143,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1986,
+    "asir": 14.72070585,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1987,
+    "asir": 15.54142874,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1988,
+    "asir": 16.41738313,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1989,
+    "asir": 17.09117886,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1990,
+    "asir": 17.60805937,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1991,
+    "asir": 18.12019703,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1992,
+    "asir": 18.86362936,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1993,
+    "asir": 19.68546003,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1994,
+    "asir": 20.77502644,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1995,
+    "asir": 21.83495127,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1997,
+    "asir": 22.99001406,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1998,
+    "asir": 23.37294846,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 1999,
+    "asir": 23.82368056,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 2000,
+    "asir": 24.58273221,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 2001,
+    "asir": 25.42161409,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 2002,
+    "asir": 26.3601675,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 2003,
+    "asir": 27.23617242,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 2007,
+    "asir": 29.63083248,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 2008,
+    "asir": 30.34067153,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 2009,
+    "asir": 30.81099558,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 2010,
+    "asir": 30.69202091,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 2011,
+    "asir": 30.51540555,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 2013,
+    "asir": 30.33164625,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 2014,
+    "asir": 30.23584387,
+    "type": 1
+  },
+  {
+    "country": "Belarus",
+    "year": 2018,
+    "asir": 30.00626216,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1981,
+    "asir": 11.41576252,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1982,
+    "asir": 11.97376852,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1985,
+    "asir": 13.63085609,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1986,
+    "asir": 14.16666216,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1987,
+    "asir": 14.68852963,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1988,
+    "asir": 15.22707986,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1989,
+    "asir": 15.74896927,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1990,
+    "asir": 16.18108914,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1991,
+    "asir": 16.55703988,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1992,
+    "asir": 16.855272,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1993,
+    "asir": 17.11758281,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1994,
+    "asir": 17.33725196,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1995,
+    "asir": 17.60818999,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1996,
+    "asir": 17.89253133,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1997,
+    "asir": 18.18612716,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1998,
+    "asir": 18.5010229,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 1999,
+    "asir": 18.84750733,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2000,
+    "asir": 19.24595251,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2001,
+    "asir": 19.73514817,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2002,
+    "asir": 20.27083107,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2003,
+    "asir": 20.88043328,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2004,
+    "asir": 21.52360936,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2005,
+    "asir": 22.1840958,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2006,
+    "asir": 22.78313229,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2007,
+    "asir": 23.38201634,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2008,
+    "asir": 24.01747226,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2009,
+    "asir": 24.65263625,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2010,
+    "asir": 25.33353339,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2011,
+    "asir": 25.97000695,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2012,
+    "asir": 26.45827791,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2014,
+    "asir": 27.2607433,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2015,
+    "asir": 27.59047315,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2017,
+    "asir": 28.10219089,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2018,
+    "asir": 28.29515479,
+    "type": 1
+  },
+  {
+    "country": "Ukraine",
+    "year": 2019,
+    "asir": 28.44564598,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1980,
+    "asir": 19.80915194,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1981,
+    "asir": 20.08053466,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1982,
+    "asir": 20.3763599,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1983,
+    "asir": 20.70599117,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1984,
+    "asir": 21.05331827,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1985,
+    "asir": 21.43944401,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1986,
+    "asir": 21.85875407,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1987,
+    "asir": 22.24238402,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1988,
+    "asir": 22.53721822,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1989,
+    "asir": 22.82384847,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1990,
+    "asir": 23.10514633,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1991,
+    "asir": 23.37865732,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1992,
+    "asir": 23.76808909,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1993,
+    "asir": 24.33236527,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1994,
+    "asir": 24.91355244,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1995,
+    "asir": 25.5422771,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1996,
+    "asir": 26.18604933,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 1999,
+    "asir": 27.91775335,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2000,
+    "asir": 28.2517096,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2001,
+    "asir": 28.35145838,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2002,
+    "asir": 28.31351442,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2003,
+    "asir": 28.24435393,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2004,
+    "asir": 28.1055882,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2005,
+    "asir": 27.92639383,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2006,
+    "asir": 27.80490626,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2007,
+    "asir": 27.68771588,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2008,
+    "asir": 27.55532927,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2009,
+    "asir": 27.30625876,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2010,
+    "asir": 27.07572499,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2011,
+    "asir": 26.96584939,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2012,
+    "asir": 26.91122804,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2013,
+    "asir": 26.99614194,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2014,
+    "asir": 27.26261191,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2015,
+    "asir": 27.61291761,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2016,
+    "asir": 28.01334016,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2017,
+    "asir": 28.49035451,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2018,
+    "asir": 29.0215521,
+    "type": 1
+  },
+  {
+    "country": "Poland",
+    "year": 2019,
+    "asir": 29.61541205,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1986,
+    "asir": 33.98959355,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1987,
+    "asir": 33.98357122,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1988,
+    "asir": 33.98719305,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1989,
+    "asir": 34.0081181,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1990,
+    "asir": 34.03802027,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1991,
+    "asir": 34.03270461,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1992,
+    "asir": 34.03784329,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1993,
+    "asir": 34.13726048,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1994,
+    "asir": 34.28114448,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1995,
+    "asir": 34.47969685,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1996,
+    "asir": 34.67203934,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1997,
+    "asir": 34.70901015,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1998,
+    "asir": 34.75901207,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 1999,
+    "asir": 34.83100374,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2000,
+    "asir": 35.22483472,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2001,
+    "asir": 35.53099792,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2002,
+    "asir": 35.54836716,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2003,
+    "asir": 35.2769083,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2004,
+    "asir": 34.34086388,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2005,
+    "asir": 33.18206125,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2006,
+    "asir": 31.61386324,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2007,
+    "asir": 30.01369349,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2008,
+    "asir": 28.48881334,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2009,
+    "asir": 27.75266391,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2010,
+    "asir": 27.2336782,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2011,
+    "asir": 26.97697272,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2012,
+    "asir": 26.75848384,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2013,
+    "asir": 26.16759845,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2014,
+    "asir": 25.51826935,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2015,
+    "asir": 24.76281336,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2016,
+    "asir": 24.06825171,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2017,
+    "asir": 23.56667482,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2018,
+    "asir": 23.15549863,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2019,
+    "asir": 22.88669073,
+    "type": 1
+  },
+  {
+    "country": "Czechia",
+    "year": 2020,
+    "asir": 22.73575639,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 1992,
+    "asir": 24.75104521,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 1993,
+    "asir": 25.88711804,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 1994,
+    "asir": 27.22041997,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 1995,
+    "asir": 28.653198,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 1996,
+    "asir": 30.53257336,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 1997,
+    "asir": 32.28891074,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 1998,
+    "asir": 33.45684716,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 1999,
+    "asir": 33.35021913,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2000,
+    "asir": 32.6713233,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2001,
+    "asir": 31.20310294,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2002,
+    "asir": 30.28429176,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2003,
+    "asir": 29.72469322,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2004,
+    "asir": 30.43394394,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2005,
+    "asir": 30.62593229,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2006,
+    "asir": 30.61386708,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2007,
+    "asir": 29.70431695,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2008,
+    "asir": 28.76912063,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2009,
+    "asir": 28.44733222,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2010,
+    "asir": 28.5209509,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2012,
+    "asir": 30.99229893,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2013,
+    "asir": 31.78904748,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2014,
+    "asir": 32.3305348,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2016,
+    "asir": 31.82381938,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2017,
+    "asir": 31.27034529,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2018,
+    "asir": 30.47235017,
+    "type": 1
+  },
+  {
+    "country": "Slovakia",
+    "year": 2019,
+    "asir": 29.4875896,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1980,
+    "asir": 14.69160729,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1981,
+    "asir": 15.20706277,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1982,
+    "asir": 15.6994135,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1983,
+    "asir": 16.16867246,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1984,
+    "asir": 16.616274,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1985,
+    "asir": 17.02553004,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1986,
+    "asir": 17.39860082,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1987,
+    "asir": 17.7649503,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1988,
+    "asir": 18.16579186,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1989,
+    "asir": 18.55494513,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1990,
+    "asir": 18.87242052,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1991,
+    "asir": 19.15034665,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1992,
+    "asir": 19.42527421,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1993,
+    "asir": 19.80448077,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1994,
+    "asir": 20.15788928,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1995,
+    "asir": 20.3119084,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1996,
+    "asir": 20.37889919,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1997,
+    "asir": 20.46830901,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1998,
+    "asir": 20.56878772,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 1999,
+    "asir": 20.69030307,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2000,
+    "asir": 20.85310599,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2001,
+    "asir": 21.01939512,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2002,
+    "asir": 21.2435162,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2003,
+    "asir": 21.71781038,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2004,
+    "asir": 22.20055038,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2005,
+    "asir": 22.4138002,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2006,
+    "asir": 22.54003122,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2007,
+    "asir": 22.67309766,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2008,
+    "asir": 22.84225923,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2009,
+    "asir": 23.01299974,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2010,
+    "asir": 23.19346325,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2011,
+    "asir": 23.35982442,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2012,
+    "asir": 23.46231937,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2013,
+    "asir": 23.45408397,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2014,
+    "asir": 23.44638398,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2015,
+    "asir": 23.50191469,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2016,
+    "asir": 23.55888897,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2017,
+    "asir": 23.6180141,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2018,
+    "asir": 23.68382741,
+    "type": 1
+  },
+  {
+    "country": "Bulgaria",
+    "year": 2019,
+    "asir": 23.7581263,
+    "type": 1
+  }
+]

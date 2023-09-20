@@ -28,7 +28,6 @@
 <script>
 
 // from https://github.com/MartinHeinz/charts/blob/master/beeswarm/beeswarm.js
-
 import { reactive,computed,onMounted } from "vue";
 import { useStore } from 'vuex' ;
 import axios from 'axios'
@@ -39,11 +38,11 @@ export default {
 	setup(){ 
 		onMounted(() => {
 
-   	})
+   		})
    	
-   	const store = useStore()
+   		const store = useStore()
   	
-  	return {
+  		return {
 	  
 	  }
 	},
