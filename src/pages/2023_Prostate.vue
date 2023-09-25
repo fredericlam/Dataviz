@@ -12,7 +12,7 @@
 					<div id="graphic"></div>
 
 					<div class="source"> 
-						<input type="button" value="Mortality" v-on:click="redraw([0,1])"/> Source: 2023/10 - xxxxx yyyyyyy zzzzzz llllll mmmm 
+						<input type="button" value="Animate" v-on:click="redraw([0,1])"/> Source: 2023/10 - xxxxx yyyyyyy zzzzzz llllll mmmm 
 					</div>
 				</div>
 
@@ -371,8 +371,6 @@ export default {
           .transition()
           .duration(this.transition_duration)
           .call(this.x_axis);
-
-      
 
       this.line = d3.line()
           .x((d)=>{ return this.x_scale( d.year ); })
