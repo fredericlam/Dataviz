@@ -59,7 +59,7 @@ export default {
 	    	y_axis : [] ,
 
 	    	color_scale : {} , 
-	    	colors : ["#4682B4","#dc143c"] ,
+	    	colors : ["#0b80b7","#dc143c"] ,
 
 	    	// options 
 	    	scales : {
@@ -73,8 +73,10 @@ export default {
 			all_values : [] , 
 			dataset : [] ,
 
-			stroke_width : 2
-	    }
+			stroke_width : 2 , 
+
+			annotations : []
+    }
 	},
 	created(){	
 
@@ -89,52 +91,85 @@ export default {
 
 		// create svg
 		this.svg = d3.select('#graphic').append("svg")
+			.attr('xmlns',"http://www.w3.org/2000/svg")
 			.attr('id','graphic')
-	      	.attr("width", this.width )
-	      	.attr("height", this.height )
-	      	.attr("viewBox", [0, 0, this.width, this.height])
-	      	//.attr("style", "max-width: 100%; height: auto;")
+    	.attr("width", this.width )
+    	.attr("height", this.height )
+    	.attr("viewBox", [0, 0, this.width, this.height])
+    	//.attr("style", "max-width: 100%; height: auto;")
 
 	    this.tooltip = d3.select('#graphic').append('div')
 			.attr('class','tooltip_viz') 
 			.style('opacity',0)
 		; 
 
-	    // this.y_scale = d3.scaleLinear()
-    		//.range([this.margin.top, this.height - this.margin.bottom- this.margin.top]);
 
-    	this.svg.append("g")
-		    .attr("class", "y axis")
-		   	.attr("transform", `translate(${this.margin.left},0)`) 
-		   	.attr("text-anchor","end")
+		this.defs = this.svg.append('defs')
+
+		let markers = [
+			{ id : 'startarrow' , points : '10 0, 10 7, 0 3.5' , fill : this.colors[0] },
+			{ id : 'endarrow', points : '0 0, 10 3.5, 0 7', fill : this.colors[1] }
+		] ; 
+
+		markers = [
+			{ id : 'arrow-inc' , viewBox : '0 0 10 10' , fill : this.colors[0] },
+			{ id : 'arrow-mort' , viewBox : '0 0 10 10' , fill : this.colors[1] }
+		] ; 
+
+		let node_markers = this.defs.selectAll('.marker')
+	    	.data( markers , d => d.id );
+
+	  node_markers
+	  	.enter()
+	  	.append('marker')
+	  	.attr('id',d => d.id)
+	  	.attr('viewBox','0 0 10 10')
+	  	.attr('markerWidth',5)
+			.attr('markerHeight',5)
+			.attr('refX',5)
+			.attr('refY',5)
+			.attr('orient','auto-start-reverse')
+			.append('path')
+			.attr('d','M 0 0 L 10 5 L 0 10 z') 
+			.attr('fill',d => d.fill)
+		; 
+
+			/*.append('polygon')
+			.attr('points',d => d.points)
+			.attr('fill',d => d.fill)*/
+
+    // this.y_scale = d3.scaleLinear()
+  		//.range([this.margin.top, this.height - this.margin.bottom- this.margin.top]);
+
+  	this.svg.append("g")
+	    .attr("class", "y axis")
+	   	.attr("transform", `translate(${this.margin.left},0)`) 
+	   	.attr("text-anchor","end")
 
 		this.svg.append("g")
-		    .attr("class", "x axis")
-		    .attr("transform", `translate(0,${this.height-this.margin.bottom})`) 
+		  .attr("class", "x axis")
+		  .attr("transform", `translate(0,${this.height-this.margin.bottom})`) 
 
 		this.group_lines = this.svg.append('g')
-	        .attr('class','group_lines')
+	    .attr('class','group_lines')
 
-		this.legend_lines = this.svg.append('g')
-	        .attr('class','legend_lines') 
+    this.svg.append("text")
+    	.attr('class','legendAxis')
+    	.attr("y",this.margin.left-100)
+    	.attr("x",-(this.height/2))
+    	.attr("transform","rotate(-90)")
+    	.text("Age-standardized rate (World)")
 
-	    this.svg.append("text")
-        	.attr('class','legendAxis')
-        	.attr("y",this.margin.left-100)
-        	.attr("x",-(this.height/2))
-        	.attr("transform","rotate(-90)")
-        	.text("Age-standardized rate (World)")
+    this.svg.append("text")
+    	.attr('class','legendAxis')
+    	.attr("x",(this.width/2)-this.margin.left+this.margin.right)
+    	.attr("y",this.height-20)
+    	.text("Year")
 
-        this.svg.append("text")
-        	.attr('class','legendAxis')
-        	.attr("x",(this.width/2)-this.margin.left+this.margin.right)
-        	.attr("y",this.height-20)
-        	.text("Year")
+   	// legend incidence mortality
+    let pos_y_legend = this.height-40 ; 
 
-       	// legend incidence mortality
-        let pos_y_legend = this.height-40 ; 
-
-        var ordinal = d3.scaleOrdinal()
+    var ordinal = d3.scaleOrdinal()
 		  .domain(["Incidence", "Mortality"])
 		  .range( this.colors )
 		;
@@ -152,8 +187,7 @@ export default {
 	      //.labelAlign("middle")
 	      .shapePadding(10);
 
-		this.svg.select(".legendColorLine")
-		  .call(legendSizeLine);
+		//this.svg.select(".legendColorLine").call(legendSizeLine);
 
 		let promise = axios.get( "../data/Prostate_2023.json" ) ; 
 
@@ -238,134 +272,186 @@ export default {
 		*/
 		redraw : function( param_type ){
 
+			this.annotations = [] ; 
+
+			this.svg.selectAll('g.legend_lines').remove();
+
+			this.legend_lines = this.svg.append('g')
+        .attr('class','legend_lines') 
+        .style('opacity',0)
+
 			this.dataset.map( m => {
 				m.sort = m.year  ; 
 				return m ; 
 			})
 
 		 	this.x_scale = d3.scaleLinear()
-			 	.domain( this.conf_data.x )
-	        	.range([ this.margin.left , this.width - this.margin.right ]) 
-	        	.nice()
-	        	// .paddingOuter(1)
-	        ;
+		 		.domain( this.conf_data.x )
+      	.range([ this.margin.left , this.width - this.margin.right ]) 
+      	.nice()
+      	// .paddingOuter(1)
+      ;
 	        
-	       	this.domains = d3.extent( this.dataset.filter( f => param_type.includes(f.type) ) , (d)=> {
-            	return +d.asir ;
-        	}); 
+     	this.domains = d3.extent( this.dataset.filter( f => param_type.includes(f.type) ) , (d)=> {
+        	return +d.asir ;
+    	}); 
 
-        	let y_min = 0 , y_max = this.domains[1] ;
-        	
-	       	this.y_scale = d3.scaleLinear().range([this.height-this.margin.bottom,this.margin.top]) //
+    	let y_min = 0 , y_max = this.domains[1] ;
+    	
+     	this.y_scale = d3.scaleLinear().range([this.height-this.margin.bottom,this.margin.top]) //
 
-	        this.y_scale.domain( [ y_min,y_max ] ).nice() ;
+      this.y_scale.domain( [ y_min,y_max ] ).nice() ;
 
-            this.y_axis = d3.axisLeft(this.y_scale)
-                .ticks(10)
-                .tickSize(-(this.width-this.margin.left-this.margin.right))
-                .tickSizeOuter(10)
-            ;
+      this.y_axis = d3.axisLeft(this.y_scale)
+        .ticks(10)
+        .tickSize(-(this.width-this.margin.left-this.margin.right))
+        .tickSizeOuter(10)
+      ;
 
-            // double lines
-            this.legend_lines_accolades = [] ; 
+	    // double lines
+	    this.legend_lines_accolades = [] ; 
 
-            if ( param_type.length > 1  )
-            {
-	            param_type.forEach( t => {
+	    if ( param_type.length > 0  )
+	    {
+	      param_type.forEach( t => {
 
-	            	// legend_lines
-	            	let line = {
-	            		id : `lin-accolade-${t}` ,
-	            		min : d3.min(this.dataset.filter( f => f.type == t ),d=>d.asir) , 
-	            		max : d3.max(this.dataset.filter( f => f.type == t ),d=>d.asir) , 
-	            		color : this.colors[t], 
-	            		threshold : ( t == 0 ) ? 10 : 5 
-	            	};
+	      	let min = d3.min(this.dataset.filter( f => f.type == t ),d=>d.asir) , 
+	      	max = d3.max(this.dataset.filter( f => f.type == t ),d=>d.asir) , 
+	      	mean = (max-min)/2 ; 
 
-	            	this.legend_lines_accolades.push(line) ; 
+	      	// legend_lines
+	      	let line = {
+	      		id : `lin-accolade-${t}` ,
+	      		min : min , 
+	      		max : max , 
+	      		mean : mean , 
+	      		type : t , 
+	      		color : this.colors[t], 
+	      		threshold : ( t == 1 ) ? 20 : 5 
+	      	};
 
-	            })
+	      	this.legend_lines_accolades.push(line) ; 
 
-	            console.info("this.legend_lines",this.legend_lines_accolades) ; 
-	        }
- 			
-            this.x_axis = d3.axisBottom(this.x_scale)
-            	//.ticks(10)
-            	.tickFormat(d=>{
-            		return d
-            	})
+	      	this.annotations.push(
+					  {
+					    note : { title: "" , label : ( t == 0 ) ? 'Range of incidence   ' : 'Range of mortality   '  },
+					    x : this.width-this.margin.right+line.threshold ,
+					    y : this.y_scale( mean ) ,
+					    dy : -50 ,
+					    dx : 50 ,
+					    type : d3.annotationCalloutCircle ,
+					    connector : { end: "arrow" },
+					    subject: {
+						   radius: 0 ,
+						   radiusPadding: 0
+							},
+							color : this.colors[t]
+					  }
+					) ;
 
-	        d3.transition(this.svg).select(".y.axis")
-	            .transition()
-	            .duration(750)
-	            .call(this.y_axis);
+	      })
 
-	        d3.transition(this.svg).select(".x.axis")
-	            .transition()
-	            .duration(750)
-	            .call(this.x_axis);
+        // console.info("annotations",this.annotations) ; 
+      }
+		
+      this.x_axis = d3.axisBottom(this.x_scale)
+      	//.ticks(10)
+      	.tickFormat(d=>{
+      		return d
+      	})
 
-	        this.transition_duration = 1000 ; 
+      this.transition_duration = 7000 ; 
 
-	        this.line = d3.line()
-	            .x((d)=>{ return this.x_scale( d.year ); })
-	            .y((d)=>{ return this.y_scale( d.asir ); })
-	            .curve( d3.curveBasis )
-	        ;
+      d3.transition(this.svg).select(".y.axis")
+          .transition()
+          .duration(this.transition_duration)
+          .call(this.y_axis);
 
-	        this.lines = this.group_lines.selectAll('.path_lines_d')
-            	.data( this.lines_dataset.filter( f => param_type.includes( f.type ) ) , d => d.id );
+      d3.transition(this.svg).select(".x.axis")
+          .transition()
+          .duration(this.transition_duration)
+          .call(this.x_axis);
+
+      
+
+      this.line = d3.line()
+          .x((d)=>{ return this.x_scale( d.year ); })
+          .y((d)=>{ return this.y_scale( d.asir ); })
+          .curve( d3.curveBasis )
+      ;
+
+      this.lines = this.group_lines.selectAll('.path_lines_d')
+        	.data( this.lines_dataset.filter( f => param_type.includes( f.type ) ) , d => d.id );
+
+      let lines_tran = this.lines
+        .enter()
+        .append("path")
+        .attr('class','path_lines_d')
+        .attr('id',d => d.id )
+        .attr("d",d => this.line(d.values) )
+        .attr("stroke",d => d.color )
+        .style("stroke-width", this.stroke_width )
+        .attr('stroke-dasharray',0)
+        .attr("fill", "none") 
+      ;
+		       	
+      lines_tran.call(line_transition, this.transition_duration ); 
+
+      this.lines
+          .transition()
+          .duration( this.transition_duration )
+          .attr("d", d => this.line(d.values) )
+
+      this.lines
+          .exit()
+          .remove() ; 
 
 
-            let lines_tran = this.lines
-	            .enter()
-	            .append("path")
-	            .attr('class','path_lines_d')
-	            .attr('id',d => d.id )
-	            .attr("d",d => this.line(d.values) )
-	            .attr("stroke",d => d.color )
-	            .style("stroke-width", this.stroke_width )
-	            .attr('stroke-dasharray',0)
-	            .attr("fill", "none") 
-	        ;
-				       	
-	        lines_tran.call(line_transition, this.transition_duration ); 
+     	this.lines_accolades = this.legend_lines.selectAll('.line_accolade')
+        	.data( this.legend_lines_accolades , d => d.id );
 
-	        this.lines
-	            .transition()
-	            .duration( this.transition_duration )
-	            .attr("d", d => this.line(d.values) )
+      let lines_accolades = this.lines_accolades
+      	.enter()
+      	.append('line')
+      	.attr('x1',d => this.width-this.margin.right+d.threshold)
+      	.attr('x2',d => this.width-this.margin.right+d.threshold)
+    		.attr('class','line_accolade')
+    		.attr('id',d => d.id)
+    		.attr('marker-start', d => (d.type == 0)?'url(#arrow-inc)':'url(#arrow-mort)')
+    		.attr('marker-end', d => (d.type == 0)?'url(#arrow-inc)':'url(#arrow-mort)')
+     	
+      lines_accolades
+        .transition()
+      	.delay(this.transition_duration)
+      	.attr('x1',d => this.width-this.margin.right+d.threshold)
+      	.attr('y1',d => this.y_scale(d.min))
+      	.attr('x2',d => this.width-this.margin.right+d.threshold)
+      	.attr('y2',d => this.y_scale(d.max))
+      	.attr("stroke",(d,i)=>d.color)
+      	.attr("stroke-width", 1 )
 
-	        this.lines
-	            .exit()
-	            .remove() ; 
+     	lines_accolades
+          .exit()
+          .remove() ; 
 
+      setTimeout(() => {
+      	// Todo...
+      
+	      let makeAnnotations = d3.annotation().annotations( this.annotations );
 
-         	this.lines_accolades = this.legend_lines.selectAll('.line_accolade')
-            	.data( this.legend_lines_accolades , d => d.id );
+				this.g_annotations = this.legend_lines
+			  	.append("g")
+			  	.attr("class", "annotation-group")
+			  	/*.transition()
+				  .duration(0)
+				  .delay(this.transition_duration)*/
+			  	.call( makeAnnotations )
 
-	        let lines_accolades = this.lines_accolades
-	        	.enter()
-	        	.append('line')
-	        	.attr('x1',d => this.width-this.margin.right+d.threshold)
-	        	.attr('x2',d => this.width-this.margin.right+d.threshold)
-	      		.attr('class','line_accolade')
-	      		.attr('id',d => d.id)
-	       	
-	        lines_accolades
-	            .transition()
-	        	.delay(this.transition_duration)
-	        	.attr('x1',d => this.width-this.margin.right+d.threshold)
-	        	.attr('y1',d => this.y_scale(d.min))
-	        	.attr('x2',d => this.width-this.margin.right+d.threshold)
-	        	.attr('y2',d => this.y_scale(d.max))
-	        	.attr("stroke",(d,i)=>d.color)
-	        	.attr("stroke-width", this.stroke_width )
+			  this.legend_lines.style('opacity',1)
 
-	       	lines_accolades
-	            .exit()
-	            .remove() ; 
-	    }
+			}, this.transition_duration )
+
+    }
 	
 	} // end redraw
 
