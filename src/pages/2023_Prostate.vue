@@ -7,12 +7,12 @@
 
 				<div class="col">
 
-					<h1>Prostate Cancer <span id="year">{{ year }}</span></h1>
+					<!--<h1>Prostate Cancer <span id="year">{{ year }}</span></h1>-->
 
 					<div id="graphic"></div>
 
 					<div class="source"> 
-						<input type="button" value="Animate" v-on:click="redraw([0,1])"/> Source: 2023/10 - xxxxx yyyyyyy zzzzzz llllll mmmm 
+						<input type="button" value="Animate" v-on:click="redraw([0,1])"/> Source: Globocan 2018
 					</div>
 				</div>
 
@@ -33,7 +33,7 @@ import { useStore } from 'vuex' ;
 import axios from 'axios'
 
 export default {
-	name : 'Cervix' , 
+	name : 'ProstatCancer' , 
 	components : { } , 
 	setup(){ 
 		onMounted(() => {
@@ -75,7 +75,9 @@ export default {
 
 			stroke_width : 2 , 
 
-			annotations : []
+			annotations : [] , 
+
+			styles: {}
     }
 	},
 	created(){	
@@ -150,6 +152,9 @@ export default {
 		  .attr("class", "x axis")
 		  .attr("transform", `translate(0,${this.height-this.margin.bottom})`) 
 
+		this.group_areas = this.svg.append('g')
+	    .attr('class','group_areas')
+
 		this.group_lines = this.svg.append('g')
 	    .attr('class','group_lines')
 
@@ -158,7 +163,7 @@ export default {
     	.attr("y",this.margin.left-100)
     	.attr("x",-(this.height/2))
     	.attr("transform","rotate(-90)")
-    	.text("Age-standardized rate (World)")
+    	.text("Age-standardised rate per 100,000")
 
     this.svg.append("text")
     	.attr('class','legendAxis')
@@ -233,6 +238,8 @@ export default {
 						})
 
 						line.color = (line.type==0)?this.colors[0]:this.colors[1] ; 
+						line.stroke_width = (line.type==0)?'1px':'1px' ; 
+						line.opacity = (line.type==0)?'1':'0.5' ; 
 						line.dash = ( line.type == 0 ) ? false : true ; 
 						line.dash_width = 0 ;
 						line.values = values ; 
@@ -245,14 +252,14 @@ export default {
 				this.redraw( [1] ) ; 
 			}))
 	        
-	        // eslint-disable-next-line
-	        .catch( error => {
-	            console.error("Error catched",error) ; 
-	            this.error = true
-	        })
-	        .finally(() => {
-	        
-	        })
+      // eslint-disable-next-line
+      .catch( error => {
+          console.error("Error catched",error) ; 
+          this.error = true
+      })
+      .finally(() => {
+      
+      })
 	},
 
 	unmounted(){
@@ -334,13 +341,19 @@ export default {
 
 	      	this.annotations.push(
 					  {
-					    note : { title: "" , label : ( t == 0 ) ? 'Range of incidence   ' : 'Range of mortality   '  },
+					    note : { 
+					    	title: "" , label : ( t == 0 ) ? 'Range of incidence   ' : 'Range of mortality   '
+					    },
 					    x : this.width-this.margin.right+line.threshold ,
 					    y : this.y_scale( mean ) ,
-					    dy : -50 ,
-					    dx : 50 ,
+					    dy : ( t == 0 ) ? -50 : -3 ,
+					    dx :( t == 0 ) ? 20 : 30 ,
 					    type : d3.annotationCalloutCircle ,
-					    connector : { end: "arrow" },
+					    /*connector : { 
+					    	end: "dot",
+		            type: "curve" 
+		          },*/
+		          disable: ["connector"], // doesn't draw the connector
 					    subject: {
 						   radius: 0 ,
 						   radiusPadding: 0
@@ -360,7 +373,7 @@ export default {
       		return d
       	})
 
-      this.transition_duration = 7000 ; 
+      this.transition_duration = 7000 ; // 7000 ; 
 
       d3.transition(this.svg).select(".y.axis")
           .transition()
@@ -372,10 +385,90 @@ export default {
           .duration(this.transition_duration)
           .call(this.x_axis);
 
+      this.area = d3.area()
+          .x((d, i) =>{ return this.x_scale( d.year_max ); })
+          .y0((d, i) =>{ return this.y_scale( d.pl ); })
+          .y1((d, i) =>{ return this.y_scale( d.asir ); })
+          .curve( d3.curveLinear );
+
+      let areas = this.lines_dataset.filter( f => param_type.includes( f.type ) )
+      	.map( a => {
+      		a.values.map( v => {
+      			v.pl = ( v.type == 1 ) ? 10 : 50 ; 
+      			v.year_max = v.year ; 
+      			return v ; 
+      		})
+      		return a; 
+      	}) 
+
+      if ( param_type.length > 1)
+      {
+      	// console.log("this.lines_dataset",this.lines_dataset) ; 
+      	let all_years = this.lines_dataset[19].values.map( y => y.year ) , max_per_years = [] ; 
+      	all_years.map( y =>{
+      		let all_per_year = [] ; 
+      		this.lines_dataset.forEach( l => {
+      			let row = l.values.find( f => f.year == y ) ; 
+      			if ( row != undefined ) all_per_year.push( row.asir )  ; 
+      		})
+      		// console.info(" => " , y , all_per_year) ; 
+      		max_per_years.push({ year : y , max_asir : d3.max(all_per_year) + 10 });
+      		return y ; 
+      	})
+
+      	// console.log("max_per_years",max_per_years) ; 
+
+	      let areas_base = [{
+	      	color: this.colors[0] ,
+					type : 'Incidence',
+					id: "area-incidence",
+					values : this.lines_dataset[19].values.map( d => {
+						let row =  max_per_years.find( y => y.year == d.year ) ; 
+						let max_asir = 0 ; 
+						if ( row != undefined ) max_asir = row.max_asir ; 
+						return { 
+							pl : 20 , 
+							year_max : ( d.year < 2017 ) ? d.year : 2017 , 
+							asir : max_asir
+						}
+					}),
+					opacity : 0.6 
+	      },{
+	      	color: this.colors[1] ,
+					type : 'Mortality',
+					id: "area-mortality",
+					values : this.lines_dataset[19].values.map( d => {
+						return { pl : 10 , year_max : d.year , asir : 48 }
+					}),
+					opacity : 0.4
+	      }]
+
+	      areas = areas_base ; 
+
+	      console.info("areas",areas) ; 
+
+	      this.g_areas = this.group_areas.selectAll(".area")
+	        .data( areas , d => 'area_'+d.id ) ;
+
+	      this.g_areas
+	        .exit()
+	        .remove()
+
+	      this.g_areas
+		      .enter()
+		      .append("path")
+		      .attr('class','area')
+		      .attr("id",d=>d.id)
+		      .attr("d", (d) => this.area(d.values)  )
+		      .style("fill", (d) => d.color )
+		      .style("opacity",d=>d.opacity)
+	      ;
+	    }
+
       this.line = d3.line()
-          .x((d)=>{ return this.x_scale( d.year ); })
-          .y((d)=>{ return this.y_scale( d.asir ); })
-          .curve( d3.curveBasis )
+        .x((d)=>{ return this.x_scale( d.year ); })
+        .y((d)=>{ return this.y_scale( d.asir ); })
+        .curve( d3.curveBasis )
       ;
 
       this.lines = this.group_lines.selectAll('.path_lines_d')
@@ -388,7 +481,8 @@ export default {
         .attr('id',d => d.id )
         .attr("d",d => this.line(d.values) )
         .attr("stroke",d => d.color )
-        .style("stroke-width", this.stroke_width )
+        .style("stroke-width", d => d.stroke_width ) // this.stroke_width )
+        .style("opacity", d => d.opacity )
         .attr('stroke-dasharray',0)
         .attr("fill", "none") 
       ;
@@ -403,6 +497,8 @@ export default {
       this.lines
           .exit()
           .remove() ; 
+
+      
 
 
      	this.lines_accolades = this.legend_lines.selectAll('.line_accolade')
@@ -431,6 +527,8 @@ export default {
      	lines_accolades
           .exit()
           .remove() ; 
+
+
 
       setTimeout(() => {
       	// Todo...
@@ -558,6 +656,16 @@ svg{
 		stroke : #000 ;
 		stroke-width: 2px; 
 		fill: #fff ;
+	}
+}
+
+g.legend_lines{
+	line{
+		stroke-width: 4px!important;
+	}
+	text{
+		font-size: 18px;
+		font-weight: 500;
 	}
 }
 
