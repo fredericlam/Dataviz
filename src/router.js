@@ -33,6 +33,12 @@ const routes = [
     component: () => import('./pages/2023_Prostate.vue') , 
     meta: { breadcrumb: [ { name: 'prostate_2023' } ] }
   },
+  {
+    path: '/cost',
+    name: 'cost',
+    component: () => import('./pages/Cost.vue') , 
+    meta: { breadcrumb: [ { name: 'cost' } ] }
+  },
   // aliases
   { path: "/:catchAll(.*)", redirect: '/404' }
 ] ; 
