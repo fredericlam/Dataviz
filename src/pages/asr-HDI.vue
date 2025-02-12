@@ -38,6 +38,21 @@ export default {
 	setup(){ 
 		onMounted(() => {
 
+			let scripts = [
+		      '/js/d3.v5.min.js'
+		    ] 
+
+		    var tag_script 
+		    for ( var s in scripts ){
+		      // eslint-disable-next-line
+		      var tag_script = document.createElement("script")
+		      tag_script.type  = "text/javascript"
+		      tag_script.src   = scripts[s]
+		      tag_script.async = true
+		      // tag_script = loadAsynScript(scripts[s]) ; 
+		      document.body.appendChild(tag_script)
+		    }
+		    
    		})
    	
    		const store = useStore()

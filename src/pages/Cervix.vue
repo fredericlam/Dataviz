@@ -108,6 +108,22 @@ export default {
 	setup(){ 
 		onMounted(() => {
 
+			let scripts = [
+	      '/js/d3@7.js'
+	    ] 
+
+	    var tag_script 
+	    for ( var s in scripts ){
+	      // eslint-disable-next-line
+	      var tag_script = document.createElement("script")
+	      tag_script.type  = "text/javascript"
+	      tag_script.src   = scripts[s]
+	      tag_script.async = true
+	      // tag_script = loadAsynScript(scripts[s]) ; 
+	      document.body.appendChild(tag_script)
+	    }
+
+
    	})
    	
    	const store = useStore()
@@ -167,115 +183,119 @@ export default {
 	},
 	mounted(){
 
-		this.width = $('#graphic').width() ; 
-		this.height = ( $(window).height() < 600 ) ? $(window).height() - 80 : 600 ; 
-		
-		// console.info("this.height",$(window).height(),this.height) ; 
+		setTimeout(()=>{
 
-		// create svg
-		this.svg = d3.select('#graphic').append("svg")
-			.attr('id','graphic')
-	      	.attr("width", this.width )
-	      	.attr("height", this.height )
-	      	.attr("viewBox", [0, 0, this.width, this.height])
-	      	//.attr("style", "max-width: 100%; height: auto;")
+			this.width = $('#graphic').width() ; 
+			this.height = ( $(window).height() < 600 ) ? $(window).height() - 80 : 600 ; 
+			
+			// console.info("this.height",$(window).height(),this.height) ; 
 
-	    this.tooltip = d3.select('#graphic').append('div')
-			.attr('class','tooltip_viz') 
-			.style('opacity',0)
-		; 
+			// create svg
+			this.svg = d3.select('#graphic').append("svg")
+				.attr('id','graphic')
+		      	.attr("width", this.width )
+		      	.attr("height", this.height )
+		      	.attr("viewBox", [0, 0, this.width, this.height])
+		      	//.attr("style", "max-width: 100%; height: auto;")
 
-	    // this.y_scale = d3.scaleLinear()
-    		//.range([this.margin.top, this.height - this.margin.bottom- this.margin.top]);
+		    this.tooltip = d3.select('#graphic').append('div')
+				.attr('class','tooltip_viz') 
+				.style('opacity',0)
+			; 
 
-    	this.svg.append("g")
-		    .attr("class", "y axis")
-		   	.attr("transform", `translate(${this.margin.left},0)`) 
-		   	.attr("text-anchor","end")
-		   	// + (this.height - this.margin.bottom) + ")");
-		
-		this.g_circles = this.svg.append('g')
-	        .attr('class','group_circles') 
-		    //.attr("transform", `translate(${this.margin.left},0)`) 
-		   	// ${this.margin.top})`) 
+		    // this.y_scale = d3.scaleLinear()
+	    		//.range([this.margin.top, this.height - this.margin.bottom- this.margin.top]);
 
-		this.svg.append("g")
-		    .attr("class", "x axis")
-		    .attr("transform", `translate(0,${this.height-this.margin.bottom})`) 
+	    	this.svg.append("g")
+			    .attr("class", "y axis")
+			   	.attr("transform", `translate(${this.margin.left},0)`) 
+			   	.attr("text-anchor","end")
+			   	// + (this.height - this.margin.bottom) + ")");
+			
+			this.g_circles = this.svg.append('g')
+		        .attr('class','group_circles') 
+			    //.attr("transform", `translate(${this.margin.left},0)`) 
+			   	// ${this.margin.top})`) 
 
-		this.xLine = this.svg.append("line")
-		    .attr("stroke", "rgb(96,125,139)")
-		    .attr("stroke-dasharray", "1,2");
+			this.svg.append("g")
+			    .attr("class", "x axis")
+			    .attr("transform", `translate(0,${this.height-this.margin.bottom})`) 
 
-		this.chartState.measure = this.count.total ;
-		this.chartState.scale 	= this.scales.lin ;
-		this.chartState.legend 	= this.legend.total ;
+			this.xLine = this.svg.append("line")
+			    .attr("stroke", "rgb(96,125,139)")
+			    .attr("stroke-dasharray", "1,2");
 
-		let promise = axios.get( "../data/dataset.json" ) ; 
+			this.chartState.measure = this.count.total ;
+			this.chartState.scale 	= this.scales.lin ;
+			this.chartState.legend 	= this.legend.total ;
 
-		axios.all( [promise] )
-			.then( axios.spread(( dataset_promise ) => {
+			let promise = axios.get( "../data/dataset.json" ) ; 
 
-				this.dataset = dataset_promise.data.map( d => {
-					return {
-						id : `dot-${d.country_iso2}-${d.edu_3cat}` , 
-						iso : d.country_iso2 , 
-						country : d.country , 
-						year : parseFloat(d.midyear) , 
-						edu : d.edu_3cat , 
-						asr : ( d.asmr == 'NA') ? 'NA' : parseFloat(d.asmr.replace(',','.'))
-					}
-				}) ;
+			axios.all( [promise] )
+				.then( axios.spread(( dataset_promise ) => {
 
-				// console.table(this.dataset) ; 
-				this.filters.years = Array.from( d3.group( this.dataset , d => d.year ) )
-					.map( m =>{ 
-						return { year : m[0] } 
+					this.dataset = dataset_promise.data.map( d => {
+						return {
+							id : `dot-${d.country_iso2}-${d.edu_3cat}` , 
+							iso : d.country_iso2 , 
+							country : d.country , 
+							year : parseFloat(d.midyear) , 
+							edu : d.edu_3cat , 
+							asr : ( d.asmr == 'NA') ? 'NA' : parseFloat(d.asmr.replace(',','.'))
+						}
+					}) ;
+
+					// console.table(this.dataset) ; 
+					this.filters.years = Array.from( d3.group( this.dataset , d => d.year ) )
+						.map( m =>{ 
+							return { year : m[0] } 
+						})
+
+					this.filters.populations_ordered = Array.from( d3.group( this.dataset , d => d.iso ) )
+						.map( m =>{ 
+							return { iso : m[0] , label : m[1][0].country } 
+						})
+						.sort((a, b)=> {
+							if(a.iso < b.iso) { return -1; }
+	    					else if(a.iso > b.iso) { return 1; }
+						})
+
+					this.filters.educations = Array.from( d3.group( this.dataset , d => d.edu ) )
+						.map( m =>{ 
+							this.steps[ m[0] ] = false ;  
+							return { edu : m[0] } 
+						})
+
+					/*this.steps = this.filters.educations.map( f =>{
+						return { value : f.edu , active : false } ; 
+					})*/
+
+					this.color_scale = d3.scaleOrdinal()
+						.range(this.colors)
+						.domain(this.filters.educations)
+
+					this.filters.colors = [] ; 	
+					this.colors.forEach((c,i)=>{
+						this.filters.colors.push({ color : c , edu : this.filters.educations[i].edu }) ; 
 					})
+					this.filters.colors.reverse() ;	
 
-				this.filters.populations_ordered = Array.from( d3.group( this.dataset , d => d.iso ) )
-					.map( m =>{ 
-						return { iso : m[0] , label : m[1][0].country } 
-					})
-					.sort((a, b)=> {
-						if(a.iso < b.iso) { return -1; }
-    					else if(a.iso > b.iso) { return 1; }
-					})
+					// console.table(this.steps) ;
 
-				this.filters.educations = Array.from( d3.group( this.dataset , d => d.edu ) )
-					.map( m =>{ 
-						this.steps[ m[0] ] = false ;  
-						return { edu : m[0] } 
-					})
+					this.redraw( true );
+					
+				}))
+		        
+		        // eslint-disable-next-line
+		        .catch( error => {
+		            console.error("Error catched",error) ; 
+		            this.error = true
+		        })
+		        .finally(() => {
+		        
+		        })
 
-				/*this.steps = this.filters.educations.map( f =>{
-					return { value : f.edu , active : false } ; 
-				})*/
-
-				this.color_scale = d3.scaleOrdinal()
-					.range(this.colors)
-					.domain(this.filters.educations)
-
-				this.filters.colors = [] ; 	
-				this.colors.forEach((c,i)=>{
-					this.filters.colors.push({ color : c , edu : this.filters.educations[i].edu }) ; 
-				})
-				this.filters.colors.reverse() ;	
-
-				// console.table(this.steps) ;
-
-				this.redraw( true );
-				
-			}))
-	        
-	        // eslint-disable-next-line
-	        .catch( error => {
-	            console.error("Error catched",error) ; 
-	            this.error = true
-	        })
-	        .finally(() => {
-	        
-	        })
+		}, 250 );
 
 	},
 
