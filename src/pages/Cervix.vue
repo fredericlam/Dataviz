@@ -79,6 +79,10 @@
 
 					<div id="graphic"></div>
 
+					<div class="source">
+						<strong><u>Source</u></strong> : GCO, the Globocan Cancer Observatory / Cancer Today - Globocan 2018
+					</div>
+
 				</div>
 
 			</div><!-- end row -->

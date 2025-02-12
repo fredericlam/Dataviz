@@ -15,13 +15,13 @@
 							<div class="col" v-for="(data,i) in dataset"><!-- .filter( d => d.is_total == false ) -->
 								<div :class="['block','block-'+i]">
 									<i v-if="data.icon" :class="['fas',data.icon]"></i>
-									<h2>{{ data.label }}</h2>
+									<h2 v-html="data.label"></h2>
 									<div class="svg-container" :id="'svg-'+i">
 
 									</div>
 									<h3>
 										<span class="cost" :style="{ fontSize : data.fontSize }">{{ data.cost}}</span>
-										<span class="unit">billion US$</span>
+										<span class="unit">billion US$ {{ data.extra }} </span>
 									</h3>
 								</div>
 							</div>
@@ -75,7 +75,7 @@ export default {
 	    		{ label : 'Productivity loss mortality' , cost : 240 , icon : 'fa-hospital', is_total : false , fontSize : '2em'} , 
 	    		{ label : 'Productivity loss morbidity' , cost : 98 , icon : 'fa-briefcase', is_total : false , fontSize : '1em'} , 
 	    		{ label : 'Informal care' , cost : 96 , is_total : false , icon : 'fa-hands-helping' , fontSize : '1em'  } , 
-	    		{ label : 'Total cost' , cost : 922 , is_total : true , icon : 'fa-dollar-sign' , fontSize : '4em' }
+	    		{ label : 'Total cost' , cost : 922 , is_total : true , icon : 'fa-dollar-sign' , fontSize : '4em' , extra : ' - 1.15% GDP' }
 	    	]
 	    }
 	},

@@ -202,6 +202,13 @@ $font : 'Poppins' , serif; //'Signika Negative', sans-serif ;
     }
 }
 
+
+.source{
+  font-style: italic ; 
+  text-align: right ; 
+  padding-right: 20px; 
+}
+
 @media (min-width: 768px) and (max-width: 1141px){
   .container, .container-md, .container-sm {
       max-width: 100%;

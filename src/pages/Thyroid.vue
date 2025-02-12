@@ -13,10 +13,10 @@
 
 					<div id="graphic"></div>
 
-					<p>
-						<span v-if="is_age_specific==false">Data source: <a href="https://gco.iarc.fr" target="_blank">The Global Cancer Observatory</a>, <a href="https://gco.iarc.fr/overtime" target="_blank">Cancer Overtime</a> </span>
-						<span v-if="is_age_specific==true">Data source: <a href="https://ci5.iarc.fr/ci5plus" target="_blank">CI5PLUS: Cancer Incidence in Five Continents Time Trends</a></span>
-					</p>
+					<div class="source">
+						<span v-if="is_age_specific==false"><strong><u>Data source</u></strong>: <a href="https://gco.iarc.fr" target="_blank">The Global Cancer Observatory</a>, <a href="https://gco.iarc.fr/overtime" target="_blank">Cancer Overtime</a> </span>
+						<span v-if="is_age_specific==true"><strong><u>Data source</u></strong>: <a href="https://ci5.iarc.fr/ci5plus" target="_blank">CI5PLUS: Cancer Incidence in Five Continents Time Trends</a></span>
+					</div>
 
 				</div>
 
@@ -49,8 +49,17 @@
 
 								<div class="col-md-12">
 									<p class="step2">
+										<a href="#" class="link_step">
+										<span class="step_marker step_marker_white" :style="{ 'background-color': pops[2].color }">
+											<i class='fas fa-check'></i>Italy</span>
+										</a>
+									</p>
+								</div>
+
+								<div class="col-md-12" style="margin-top: 200px">
+									<p class="step2">
 										<a href="#" class="link_step" v-on:click="startAnimation()" >
-											<span class="step_marker step_marker_white"  :style="{ 'background-color': pops[2].color }">
+											<span class="step_marker step_marker_white"  :style="{ 'background-color': pops[3].color }">
 											<i class='fas fa-check' v-if="animate==true"></i>Republic of Korea</span>
 										</a>
 									</p>
@@ -107,7 +116,7 @@ import { useStore } from 'vuex' ;
 import axios from 'axios'
 
 export default {
-	name : 'Cervix' , 
+	name : 'Thyroid' , 
 	components : { } , 
 	setup(){ 
 		onMounted(() => {
@@ -126,7 +135,7 @@ export default {
 	    	// svg conf
 	    	width: 0 ,
 	    	height : 0 , 
-	    	margin : {top: 10, right: 150, bottom: 80, left: 40} ,
+	    	margin : {top: 10, right: 200, bottom: 80, left: 40} ,
 
 	    	x_scale : [] , 
 	    	x_axis : [] ,
@@ -170,15 +179,16 @@ export default {
 			animate : false ,
 
 			axis : {
-				x : [ 1955 , 2018 ]
+				x : [ 1943 , 2020 ]
 			},
 			pops : [
-				{ country : 25000 , label : 'France' , color : "#ffbc42" } ,
-				{ country : 84000 , label : 'USA' , color : "#d81159" } ,
-				{ country : 41000 , label : 'Korea' , color : "#218380" }
+				{ country : 250 , label : 'France' , color : "#ffbc42" } ,
+				{ country : 840 , label : 'USA' , color : "#d81159" } ,
+				{ country : 380 , label : 'Italy' , color : "#287afb" } ,
+				{ country : 410 , label : 'Korea' , color : "#218380" }
 			] , 
 
-			target_country : 41000 , 
+			target_country : 410 , 
 
 			is_age_specific : false , 
 
@@ -206,7 +216,7 @@ export default {
 		this.width = $('#graphic').width() ; 
 		this.height = ( $(window).height() < 600 ) ? $(window).height() - 80 : 600 ; 
 
-		this.width = this.height + 150 ; 
+		this.width = this.height + 250 ; 
 		
 		// console.info("this.height",$(window).height(),this.height) ; 
 
@@ -250,7 +260,7 @@ export default {
 
 
 
-		let promise = axios.get( "../data/dataset-thyroid.json" ) ; 
+		let promise = axios.get( "../data/dataset-thyroid-v2.json" ) ; 
 
 		if ( this.is_age_specific == true ){
 			promise = axios.get( "../data/dataset-age-specific.json" ) ; 
@@ -258,6 +268,8 @@ export default {
 
 		axios.all( [promise] )
 			.then( axios.spread(( dataset_promise ) => {
+
+				console.info( "dataset_promise" , dataset_promise.data )
 
 				let tmp_dataset = [] , key_  ; 
 
@@ -350,7 +362,7 @@ export default {
 						return { year : m[0] } 
 					})
 
-				// console.info("this.filters.years",this.filters.years) ; 
+				console.info("this.filters.years",this.filters.years) ; 
 
 				this.filters.colors = [] ; 	
 				
