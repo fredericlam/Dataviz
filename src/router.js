@@ -22,9 +22,9 @@ const routes = [
     meta: { breadcrumb: [ { name: 'thyroid-age-specific' } ] }
   },
   {
-    path: '/china_hdi',
-    name: 'china_hdi',
-    component: () => import('./pages/ChinaHDI.vue') , 
+    path: '/asr_hdi',
+    name: 'asr_hdi',
+    component: () => import('./pages/asr-HDI.vue') , 
     meta: { breadcrumb: [ { name: 'china_hdi' } ] }
   },
   {

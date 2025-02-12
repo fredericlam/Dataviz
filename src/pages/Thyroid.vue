@@ -199,189 +199,207 @@ export default {
 	},
 	mounted(){
 
+		let scripts = [
+	      '/js/d3@7.js'
+	    ] 
 
-		this.is_age_specific = ( this.$router.currentRoute.value.name == 'thyroid_age' ) ? true : false  
-
-		if ( this.is_age_specific == true ){
-			this.pops = [
-				{ label : '1999-2000' , color : "#ef476f" , checked : false } ,
-				{ label : '2001-2003' , color : "#ffd166" , checked : false } ,
-				{ label : '2004-2006' , color : "#06d6a0" , checked : false } ,
-				{ label : '2007-2009' , color : "#118ab2" , checked : false } ,
-				{ label : '2010-2012' , color : "#073b4c" , checked : false , class : 'span_white' } ,
-
-			] ; 
-		}
-
-		this.width = $('#graphic').width() ; 
-		this.height = ( $(window).height() < 600 ) ? $(window).height() - 80 : 600 ; 
-
-		this.width = this.height + 250 ; 
-		
-		// console.info("this.height",$(window).height(),this.height) ; 
-
-		// create svg
-		this.svg = d3.select('#graphic').append("svg")
-			.attr('id','graphic')
-	      	.attr("width", this.width )
-	      	.attr("height", this.height )
-	      	.attr("viewBox", [0, 0, this.width, this.height])
-	      	//.attr("style", "max-width: 100%; height: auto;")
-
-	    this.tooltip = d3.select('#graphic').append('div')
-			.attr('class','tooltip_viz') 
-			.style('opacity',0)
-		; 
-
-	    // this.y_scale = d3.scaleLinear()
-    		//.range([this.margin.top, this.height - this.margin.bottom- this.margin.top]);
-
-    	this.svg.append("g")
-		    .attr("class", "y axis")
-		   	.attr("transform", `translate(${this.margin.left},0)`) 
-		   	.attr("text-anchor","end")
-		   	// + (this.height - this.margin.bottom) + ")");
-		
-		this.group_lines = this.svg.append('g')
-	        .attr('class','group_lines') 
-		    //.attr("transform", `translate(${this.margin.left},0)`) 
-		   	// ${this.margin.top})`) 
-
-		this.legend_lines = this.svg.append('g')
-	        .attr('class','legend_lines') 
-
-		this.svg.append("g")
-		    .attr("class", "x axis")
-		    .attr("transform", `translate(0,${this.height-this.margin.bottom})`) 
-
-		this.chartState.measure = this.count.total ;
-		this.chartState.scale 	= this.scales.lin ;
-		this.chartState.legend 	= this.legend.total ;
+	    var tag_script 
+	    for ( var s in scripts ){
+	      // eslint-disable-next-line
+	      var tag_script = document.createElement("script")
+	      tag_script.type  = "text/javascript"
+	      tag_script.src   = scripts[s]
+	      tag_script.async = true
+	      // tag_script = loadAsynScript(scripts[s]) ; 
+	      document.body.appendChild(tag_script)
+	    }
 
 
+	    setTimeout(()=>{
+	    	
+			this.is_age_specific = ( this.$router.currentRoute.value.name == 'thyroid_age' ) ? true : false  
 
-		let promise = axios.get( "../data/dataset-thyroid-v2.json" ) ; 
+			if ( this.is_age_specific == true ){
+				this.pops = [
+					{ label : '1999-2000' , color : "#ef476f" , checked : false } ,
+					{ label : '2001-2003' , color : "#ffd166" , checked : false } ,
+					{ label : '2004-2006' , color : "#06d6a0" , checked : false } ,
+					{ label : '2007-2009' , color : "#118ab2" , checked : false } ,
+					{ label : '2010-2012' , color : "#073b4c" , checked : false , class : 'span_white' } ,
 
-		if ( this.is_age_specific == true ){
-			promise = axios.get( "../data/dataset-age-specific.json" ) ; 
-		}
+				] ; 
+			}
 
-		axios.all( [promise] )
-			.then( axios.spread(( dataset_promise ) => {
+			this.width = $('#graphic').width() ; 
+			this.height = ( $(window).height() < 600 ) ? $(window).height() - 80 : 600 ; 
 
-				console.info( "dataset_promise" , dataset_promise.data )
+			this.width = this.height + 250 ; 
+			
+			// console.info("this.height",$(window).height(),this.height) ; 
 
-				let tmp_dataset = [] , key_  ; 
+			// create svg
+			this.svg = d3.select('#graphic').append("svg")
+				.attr('id','graphic')
+		      	.attr("width", this.width )
+		      	.attr("height", this.height )
+		      	.attr("viewBox", [0, 0, this.width, this.height])
+		      	//.attr("style", "max-width: 100%; height: auto;")
+
+		    this.tooltip = d3.select('#graphic').append('div')
+				.attr('class','tooltip_viz') 
+				.style('opacity',0)
+			; 
+
+		    // this.y_scale = d3.scaleLinear()
+	    		//.range([this.margin.top, this.height - this.margin.bottom- this.margin.top]);
+
+	    	this.svg.append("g")
+			    .attr("class", "y axis")
+			   	.attr("transform", `translate(${this.margin.left},0)`) 
+			   	.attr("text-anchor","end")
+			   	// + (this.height - this.margin.bottom) + ")");
+			
+			this.group_lines = this.svg.append('g')
+		        .attr('class','group_lines') 
+			    //.attr("transform", `translate(${this.margin.left},0)`) 
+			   	// ${this.margin.top})`) 
+
+			this.legend_lines = this.svg.append('g')
+		        .attr('class','legend_lines') 
+
+			this.svg.append("g")
+			    .attr("class", "x axis")
+			    .attr("transform", `translate(0,${this.height-this.margin.bottom})`) 
+
+			this.chartState.measure = this.count.total ;
+			this.chartState.scale 	= this.scales.lin ;
+			this.chartState.legend 	= this.legend.total ;
 
 
-				if ( this.is_age_specific == true )
-				{
-					key_ = 'period' ; 
-					tmp_dataset = dataset_promise.data
-						.map( d => {
-							let m = d.age.split('-') ;
-							return {
-								id : `plot-${d.age}-period-${d.period}` , 
-								period : d.period , 
-								type : 0 ,
-								age : d.age ,
-								y : parseFloat(m[0])  ,
-								asr : parseFloat(d.rate)
+
+			let promise = axios.get( "../data/dataset-thyroid-v2.json" ) ; 
+
+			if ( this.is_age_specific == true ){
+				promise = axios.get( "../data/dataset-age-specific.json" ) ; 
+			}
+
+			axios.all( [promise] )
+				.then( axios.spread(( dataset_promise ) => {
+
+					console.info( "dataset_promise" , dataset_promise.data )
+
+					let tmp_dataset = [] , key_  ; 
+
+
+					if ( this.is_age_specific == true )
+					{
+						key_ = 'period' ; 
+						tmp_dataset = dataset_promise.data
+							.map( d => {
+								let m = d.age.split('-') ;
+								return {
+									id : `plot-${d.age}-period-${d.period}` , 
+									period : d.period , 
+									type : 0 ,
+									age : d.age ,
+									y : parseFloat(m[0])  ,
+									asr : parseFloat(d.rate)
+								}
+							}) ;
+					}
+					else
+					{
+						key_ = 'country' ; 
+						tmp_dataset = dataset_promise.data.dataset
+							//.filter( f => f.type == 0 )
+							.map( d => {
+								return {
+									id : `dot-${d.id}-${d.type}-${d.sex}` , 
+									//iso : d.country_iso2 , 
+									country : d.country , 
+									year : d.year , 
+									sex : d.sex , 
+									type : d.type ,
+									asr : parseFloat(d.asr)
+								}
+							}) ;
+					}
+
+					// console.info("tmp_dataset",tmp_dataset) ; 
+
+					let lines_dataset =  d3.group(tmp_dataset, d => d[key_] , d => d.type ) ;
+					let line , values = [] ; 
+
+					// console.info("lines_dataset",lines_dataset) ; 
+
+					lines_dataset.forEach( c => {
+						
+						
+						c.forEach( t => {
+							values = [] ; 
+
+							//console.info( t ) ; 
+
+							t.forEach( s => {
+								let obj = { asr : s.asr , year : s.year , country : s.country , period : s.period , age : s.age , y : s.y } ;
+								this.all_values.push(obj) ; 
+								values.push(obj) ;
+								line = {
+									id : s.id ,
+									country : s.country , 
+									period : s.period ,
+									type : s.type , 
+									sex : s.sex , 
+									age : s.age , 
+									y : s.y
+								}
+							})
+
+							let item = this.pops.find( p => line.country == p.country )
+
+							if ( this.is_age_specific == true ){
+								item = this.pops.find( p => line.period == p.label )
 							}
-						}) ;
-				}
-				else
-				{
-					key_ = 'country' ; 
-					tmp_dataset = dataset_promise.data.dataset
-						//.filter( f => f.type == 0 )
-						.map( d => {
-							return {
-								id : `dot-${d.id}-${d.type}-${d.sex}` , 
-								//iso : d.country_iso2 , 
-								country : d.country , 
-								year : d.year , 
-								sex : d.sex , 
-								type : d.type ,
-								asr : parseFloat(d.asr)
-							}
-						}) ;
-				}
 
-				// console.info("tmp_dataset",tmp_dataset) ; 
+							line.color = item.color ; 
+							line.dash = ( line.type == 0 ) ? false : true ; 
+							line.values = values ; 
 
-				let lines_dataset =  d3.group(tmp_dataset, d => d[key_] , d => d.type ) ;
-				let line , values = [] ; 
+							this.dataset.push( line ) ; 
+						});
 
-				// console.info("lines_dataset",lines_dataset) ; 
-
-				lines_dataset.forEach( c => {
-					
-					
-					c.forEach( t => {
-						values = [] ; 
-
-						//console.info( t ) ; 
-
-						t.forEach( s => {
-							let obj = { asr : s.asr , year : s.year , country : s.country , period : s.period , age : s.age , y : s.y } ;
-							this.all_values.push(obj) ; 
-							values.push(obj) ;
-							line = {
-								id : s.id ,
-								country : s.country , 
-								period : s.period ,
-								type : s.type , 
-								sex : s.sex , 
-								age : s.age , 
-								y : s.y
-							}
-						})
-
-						let item = this.pops.find( p => line.country == p.country )
-
-						if ( this.is_age_specific == true ){
-							item = this.pops.find( p => line.period == p.label )
-						}
-
-						line.color = item.color ; 
-						line.dash = ( line.type == 0 ) ? false : true ; 
-						line.values = values ; 
-
-						this.dataset.push( line ) ; 
-					});
-
-					//line.values = values ; 
-					//
-				})
-
-				// console.info("this.dataset",this.dataset,this.all_values) ; 
-				// console.table(this.dataset) ; 
-				this.filters.years = Array.from( d3.group( this.all_values , d => d.year ) )
-					.map( m =>{ 
-						return { year : m[0] } 
+						//line.values = values ; 
+						//
 					})
 
-				console.info("this.filters.years",this.filters.years) ; 
+					// console.info("this.dataset",this.dataset,this.all_values) ; 
+					// console.table(this.dataset) ; 
+					this.filters.years = Array.from( d3.group( this.all_values , d => d.year ) )
+						.map( m =>{ 
+							return { year : m[0] } 
+						})
 
-				this.filters.colors = [] ; 	
-				
-				setTimeout(() => {
-					this.redraw( true );
-				}, 7000 )
-				
-				
-			}))
-	        
-	        // eslint-disable-next-line
-	        .catch( error => {
-	            console.error("Error catched",error) ; 
-	            this.error = true
-	        })
-	        .finally(() => {
-	        
-	        })
+					console.info("this.filters.years",this.filters.years) ; 
 
+					this.filters.colors = [] ; 	
+					
+					setTimeout(() => {
+						this.redraw( true );
+					}, 7000 )
+					
+					
+				}))
+		        
+		        // eslint-disable-next-line
+		        .catch( error => {
+		            console.error("Error catched",error) ; 
+		            this.error = true
+		        })
+		        .finally(() => {
+		        
+		        })
+
+	    },250)
 	},
 
 	unmounted(){

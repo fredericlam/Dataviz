@@ -7,12 +7,12 @@
 
 				<div class="col">
 
-					<h1>All cancers combined, both sexes, Worlwide, GLOBOCAN <span id="year">{{ year }}</span></h1>
+					<h1>ASR (World), Incidence, Mortality, all cancers, both sexes, Worlwide, by HDI</h1>
 
 					<div id="graphic"></div>
 
 					<div class="source"> 
-						Source: 2023/09 -<a href="https://gco.iarc.fr">GCO</a> - <a href="https://gco.iarc.fr/today">Globocan {{ year }}</a> - Ferlay J, Ervik M, Lam F, Colombet M, Mery L, Piñeros M, Znaor A, Soerjomataram I, Bray F (2020). Global Cancer Observatory: Cancer Today. Lyon, France: International Agency for Research on Cancer. Available from: https://gco.iarc.fr/today, accessed [DD Month YYYY].
+						Source: 2023/09 -<a href="https://gco.iarc.who.int">GCO</a> - <a href="https://gco.iarc.fr/today">Globocan {{ year }}</a> - Ferlay J, Ervik M, Lam F, Colombet M, Mery L, Piñeros M, Znaor A, Soerjomataram I, Bray F (2020). Global Cancer Observatory: Cancer Today. Lyon, France: International Agency for Research on Cancer. Available from: https://gco.iarc.fr/today, accessed [DD Month YYYY].
 					</div>
 				</div>
 
@@ -111,96 +111,114 @@ export default {
 	},
 	mounted(){
 
-		this.width = $('#graphic').width() ; 
-		this.height = ( $(window).height() < 600 ) ? $(window).height() - 80 : 800 ; 
-		
-		// console.info("this.height",$(window).height(),this.height) ; 
+		let scripts = [
+	      '/js/d3@7.js'
+	    ] 
 
-		// create svg
-		this.svg = d3.select('#graphic').append("svg")
-			.attr('id','graphic')
-	      	.attr("width", this.width )
-	      	.attr("height", this.height )
-	      	.attr("viewBox", [0, 0, this.width, this.height])
-	      	//.attr("style", "max-width: 100%; height: auto;")
+	    var tag_script 
+	    for ( var s in scripts ){
+	      // eslint-disable-next-line
+	      var tag_script = document.createElement("script")
+	      tag_script.type  = "text/javascript"
+	      tag_script.src   = scripts[s]
+	      tag_script.async = true
+	      // tag_script = loadAsynScript(scripts[s]) ; 
+	      document.body.appendChild(tag_script)
+	    }
 
-	    this.tooltip = d3.select('#graphic').append('div')
-			.attr('class','tooltip_viz') 
-			.style('opacity',0)
-		; 
 
-	    // this.y_scale = d3.scaleLinear()
-    		//.range([this.margin.top, this.height - this.margin.bottom- this.margin.top]);
+	    setTimeout(()=>{
 
-    	this.svg.append("g")
-		    .attr("class", "y axis")
-		   	.attr("transform", `translate(${this.margin.left},0)`) 
-		   	.attr("text-anchor","end")
-		   	// + (this.height - this.margin.bottom) + ")");
-		
-		this.g_circles = this.svg.append('g')
-	        .attr('class','group_circles') 
-		    //.attr("transform", `translate(${this.margin.left},0)`) 
-		   	// ${this.margin.top})`) 
+			this.width = $('#graphic').width() ; 
+			this.height = ( $(window).height() < 600 ) ? $(window).height() - 80 : 800 ; 
+			
+			// console.info("this.height",$(window).height(),this.height) ; 
 
-		this.svg.append("g")
-		    .attr("class", "x axis")
-		    .attr("transform", `translate(0,${this.height-this.margin.bottom})`) 
+			// create svg
+			this.svg = d3.select('#graphic').append("svg")
+				.attr('id','graphic')
+		      	.attr("width", this.width )
+		      	.attr("height", this.height )
+		      	.attr("viewBox", [0, 0, this.width, this.height])
+		      	//.attr("style", "max-width: 100%; height: auto;")
 
-		this.xLine = this.svg.append("line")
-		    .attr("stroke", "rgb(96,125,139)")
-		    .attr("stroke-dasharray", "1,2");
+		    this.tooltip = d3.select('#graphic').append('div')
+				.attr('class','tooltip_viz') 
+				.style('opacity',0)
+			; 
 
-		this.chartState.measure = this.count.total ;
-		this.chartState.scale 	= this.scales.lin ;
-		this.chartState.legend 	= this.legend.total ;
+		    // this.y_scale = d3.scaleLinear()
+	    		//.range([this.margin.top, this.height - this.margin.bottom- this.margin.top]);
 
-		let promise = axios.get( "../data/hdi_2020_i_m.json" ) ; 
+	    	this.svg.append("g")
+			    .attr("class", "y axis")
+			   	.attr("transform", `translate(${this.margin.left},0)`) 
+			   	.attr("text-anchor","end")
+			   	// + (this.height - this.margin.bottom) + ")");
+			
+			this.g_circles = this.svg.append('g')
+		        .attr('class','group_circles') 
+			    //.attr("transform", `translate(${this.margin.left},0)`) 
+			   	// ${this.margin.top})`) 
 
-		axios.all( [promise] )
-			.then( axios.spread(( dataset_promise ) => {
-				
-				this.dataset = dataset_promise.data
-					.filter( f => f.hdi_value < 1 )
-					.map( d => {
-						return {
-							id : `dot-${d.country}-${d.type}-${d.sex}-${d.cancer}` , 
-							label : d.label , 
-							continent : d.continent , 
-							country : d.country , 
-							type : d.type , 
-							sex : d.sex , 
-							asr : d.asr , 
-							total_population : d.total_population , 
-							hdi : d.hdi , 
-							hdi_value : d.hdi_value , 
-							cancer : d.cancer , 
-							color : this.colors[d.type]
-						}
-					})
-					.sort((a,b)=>{
-						return a.hdi_value - b.hdi_value
-					})
-				;
+			this.svg.append("g")
+			    .attr("class", "x axis")
+			    .attr("transform", `translate(0,${this.height-this.margin.bottom})`) 
 
-				// console.log(this.dataset);
+			this.xLine = this.svg.append("line")
+			    .attr("stroke", "rgb(96,125,139)")
+			    .attr("stroke-dasharray", "1,2");
 
-				setTimeout(() => {
-					// Todo ...
-					this.redraw( );
-				}, 200 )
-				
-			}))
-	        
-	        // eslint-disable-next-line
-	        .catch( error => {
-	            console.error("Error catched",error) ; 
-	            this.error = true
-	        })
-	        .finally(() => {
-	        
-	        })
+			this.chartState.measure = this.count.total ;
+			this.chartState.scale 	= this.scales.lin ;
+			this.chartState.legend 	= this.legend.total ;
 
+			let promise = axios.get( "../data/hdi_2020_i_m.json" ) ; 
+
+			axios.all( [promise] )
+				.then( axios.spread(( dataset_promise ) => {
+					
+					this.dataset = dataset_promise.data
+						.filter( f => f.hdi_value < 1 )
+						.map( d => {
+							return {
+								id : `dot-${d.country}-${d.type}-${d.sex}-${d.cancer}` , 
+								label : d.label , 
+								continent : d.continent , 
+								country : d.country , 
+								type : d.type , 
+								sex : d.sex , 
+								asr : d.asr , 
+								total_population : d.total_population , 
+								hdi : d.hdi , 
+								hdi_value : d.hdi_value , 
+								cancer : d.cancer , 
+								color : this.colors[d.type]
+							}
+						})
+						.sort((a,b)=>{
+							return a.hdi_value - b.hdi_value
+						})
+					;
+
+					// console.log(this.dataset);
+
+					setTimeout(() => { this.initGraphic() }, 1000 )
+					setTimeout(() => { this.showLegend() }, 1000 )
+					setTimeout(() => { this.drawLines()} , 5000 )
+					setTimeout(() => { this.setAnnotations()} , 7500 )
+
+				}))
+		        
+		        // eslint-disable-next-line
+		        .catch( error => {
+		            console.error("Error catched",error) ; 
+		            this.error = true
+		        })
+		        .finally(() => {
+		        
+		        })
+		},250)
 	},
 
 	unmounted(){
@@ -261,7 +279,7 @@ export default {
 
 			this.g_circles.selectAll(".country")
 				.transition()
-	            .duration(500)
+	            .duration(2500)
 	            .attr("cy",c => {
 	            	return  this.height-this.margin.bottom
 	            })
@@ -356,7 +374,7 @@ export default {
 		* @param (bool) init or not
 		* @return (no return )
 		*/
-		redraw : function( init ){
+		initGraphic : function( init ){
 
 			// console.info("Sorting","sort_by",this.sort_by,"sort_dir",this.sort_dir)
 
@@ -438,12 +456,12 @@ export default {
 
 	        d3.transition(this.svg).select(".y.axis")
 	            .transition()
-	            .duration(750)
+	            .duration(2500)
 	            .call(this.y_axis);
 
 	        d3.transition(this.svg).select(".x.axis")
 	            .transition()
-	            .duration(750)
+	            .duration(2500)
 	            .call(this.x_axis);
 
 	        
@@ -453,7 +471,7 @@ export default {
 
 	        this.circles.exit()
 	            .transition()
-	            .duration(250)
+	            .duration(2500)
 	            .remove();
 
 	        this.circles.enter()
@@ -467,12 +485,22 @@ export default {
 	            .style("stroke-width","2px") //function(d){ return colors(d.continent)})
 	            .style("opacity",0)
 	            .transition()
-	            .duration(1250)
+	            .duration(2500)
 	            .attr("cx", d=>this.x_scale(d.hdi_value))
             	.attr("cy",d=>this.y_scale(d.asr))
 	            .style("opacity",1)
 
-	        // return ; 
+	        
+			
+			// console.info("regressionPoints",regressionPoints);
+
+			return ; 
+		
+		},
+
+		drawLines : function(){
+
+			// return ; 
 	        let inc_data = this.dataset.filter( d => d.type == 0 ).sort( (a,b) => a.hdi_value - b.hdi_value ) ; 
 	        let mort_data = this.dataset.filter( d => d.type == 1 ).sort( (a,b) => a.hdi_value - b.hdi_value ) ; 
 	        
@@ -492,17 +520,17 @@ export default {
 				return {  x : mort_data[i].hdi_value , y : l }
 			})
 
-			console.info("loess_values",inc_data_loess) ; 
+			// console.info("loess_values",inc_data_loess) ; 
 		
 
-	        let linearRegression = { 
-	        	inc : ss.linearRegression(inc_data.map(d => [d.hdi_value, d.asr])) , 
-	        	mort : ss.linearRegression(mort_data.map(d => [d.hdi_value, d.asr])) 
+	        let linearRegression_output = { 
+	        	inc : linearRegression(inc_data.map(d => [d.hdi_value, d.asr])) , 
+	        	mort : linearRegression(mort_data.map(d => [d.hdi_value, d.asr])) 
 	        }
 
-	        let linearRegressionLine = {
-	        	inc : ss.linearRegressionLine(linearRegression.inc),
-	        	mort : ss.linearRegressionLine(linearRegression.mort)
+	        let linearRegressionLine_output = {
+	        	inc : linearRegressionLine(linearRegression_output.inc),
+	        	mort : linearRegressionLine(linearRegression_output.mort)
 	        }
 
 			const xCoordinates = {
@@ -513,15 +541,13 @@ export default {
 			let regressionPoints =  {
 				inc : xCoordinates.inc.map( d => ({
 						x : d , // We pick x and y arbitrarily, just make sure they match d3.line accessors
-						y : linearRegressionLine.inc(d)
+						y : linearRegressionLine_output.inc(d)
 					})) , 
 				mort : xCoordinates.mort.map( d => ({
 						x : d , // We pick x and y arbitrarily, just make sure they match d3.line accessors
-						y : linearRegressionLine.mort(d)
+						y : linearRegressionLine_output.mort(d)
 					})) 
 			}
-			
-			// console.info("regressionPoints",regressionPoints);
 
 			this.line_incidence = d3.line()
 			  .x(d => this.x_scale(d.x))
@@ -571,7 +597,7 @@ export default {
 	        
 	        this.g_circles.selectAll(".country")
 	        	
-	        	/*.on("mousemove", (event, d) => {
+	        	.on("mousemove", (event, d) => {
 
 	        		let pointer = d3.pointer(event,this.g_circles.node())
 
@@ -604,19 +630,21 @@ export default {
 		        		.style("left", 0)
 		        		.style("opacity", 0);
 		            //this.xLine.attr("opacity", 0);
-	        	}) */
+	        	}) 
 	        ;
 
 	        // if ( init == true ) return ; 
 
 	        this.circles
 	            .transition()
-	            .duration(1250)
+	            .duration(2250)
 	            .attr("cx", d=>this.x_scale(d.hdi_value))
             	.attr("cy",d=>this.y_scale(d.asr))
 	            .style("opacity",1)
 	            //.attr('attr-edu', e => e.edu )
+	    },
 
+	    setAnnotations : function(){
 
 	        // annotations
 	        this.points.forEach( point => {
@@ -672,6 +700,10 @@ export default {
 			  	.append("g")
 			  	.attr("class", "annotation-group")
 			  	.call( makeAnnotations )
+
+		},
+
+		showLegend : function(){
 	           
 	        // lines hdi
 	        this.g_hdi_lines = this.svg.append("g").attr("class","g_hdi_lines")

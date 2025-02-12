@@ -7,13 +7,16 @@
 
 				<div class="col">
 
-					<!--<h1>Prostate Cancer <span id="year">{{ year }}</span></h1>-->
+					<h1>ASR (World), Incidence, Mortality, Prostate Cancer <span id="year">{{ year }}</span></h1>
 
 					<div id="graphic"></div>
 
+					<input type="button" value="Animate" v-on:click="redraw([0,1])"/> 
+
 					<div class="source"> 
-						<input type="button" value="Animate" v-on:click="redraw([0,1])"/> Source: Globocan 2018
+						Source: 2023/09 -<a href="https://gco.iarc.who.int">GCO</a> - <a href="https://gco.iarc.fr/today">Globocan {{ year }}</a> - Ferlay J, Ervik M, Lam F, Colombet M, Mery L, Piñeros M, Znaor A, Soerjomataram I, Bray F (2020). Global Cancer Observatory: Cancer Today. Lyon, France: International Agency for Research on Cancer. Available from: https://gco.iarc.fr/today, accessed [DD Month YYYY].
 					</div>
+
 				</div>
 
 			</div><!-- end row -->
@@ -33,18 +36,33 @@ import { useStore } from 'vuex' ;
 import axios from 'axios'
 
 export default {
-	name : 'ProstatCancer' , 
+	name : 'ProstateCancer' , 
 	components : { } , 
 	setup(){ 
 		onMounted(() => {
 
-   		})
-   	
-   		const store = useStore()
+			let scripts = [
+	      '/js/d3.v5.min.js'
+	    ] 
+
+	    var tag_script 
+	    for ( var s in scripts ){
+	      // eslint-disable-next-line
+	      var tag_script = document.createElement("script")
+	      tag_script.type  = "text/javascript"
+	      tag_script.src   = scripts[s]
+	      tag_script.async = true
+	      // tag_script = loadAsynScript(scripts[s]) ; 
+	      document.body.appendChild(tag_script)
+	    }
+
+ 		})
+ 	
+ 		const store = useStore()
+	
+		return {
   	
-  		return {
-	  	
-	  	}
+  	}
 	},
 	data() {
 	    return {
@@ -86,180 +104,196 @@ export default {
 	},
 	mounted(){
 
-		this.width = $('#graphic').width() ; 
-		this.height = ( $(window).height() < 600 ) ? $(window).height() - 80 : 800 ; 
-		
-		// console.info("this.height",$(window).height(),this.height) ; 
+		setTimeout(()=>{
 
-		// create svg
-		this.svg = d3.select('#graphic').append("svg")
-			.attr('xmlns',"http://www.w3.org/2000/svg")
-			.attr('id','graphic')
-    	.attr("width", this.width )
-    	.attr("height", this.height )
-    	.attr("viewBox", [0, 0, this.width, this.height])
-    	//.attr("style", "max-width: 100%; height: auto;")
+			this.width = $('#graphic').width() ; 
+			this.height = ( $(window).height() < 600 ) ? $(window).height() - 80 : 800 ; 
+			
+			// console.info("this.height",$(window).height(),this.height) ; 
 
-	    this.tooltip = d3.select('#graphic').append('div')
-			.attr('class','tooltip_viz') 
-			.style('opacity',0)
-		; 
+			// create svg
+			this.svg = d3.select('#graphic').append("svg")
+				.attr('xmlns',"http://www.w3.org/2000/svg")
+				.attr('id','graphic')
+	    	.attr("width", this.width )
+	    	.attr("height", this.height )
+	    	.attr("viewBox", [0, 0, this.width, this.height])
+	    	//.attr("style", "max-width: 100%; height: auto;")
+
+		    this.tooltip = d3.select('#graphic').append('div')
+				.attr('class','tooltip_viz') 
+				.style('opacity',0)
+			; 
 
 
-		this.defs = this.svg.append('defs')
+			this.defs = this.svg.append('defs')
 
-		let markers = [
-			{ id : 'startarrow' , points : '10 0, 10 7, 0 3.5' , fill : this.colors[0] },
-			{ id : 'endarrow', points : '0 0, 10 3.5, 0 7', fill : this.colors[1] }
-		] ; 
+			let markers = [
+				{ id : 'startarrow' , points : '10 0, 10 7, 0 3.5' , fill : this.colors[0] },
+				{ id : 'endarrow', points : '0 0, 10 3.5, 0 7', fill : this.colors[1] }
+			] ; 
 
-		markers = [
-			{ id : 'arrow-inc' , viewBox : '0 0 10 10' , fill : this.colors[0] },
-			{ id : 'arrow-mort' , viewBox : '0 0 10 10' , fill : this.colors[1] }
-		] ; 
+			markers = [
+				{ id : 'arrow-inc' , viewBox : '0 0 10 10' , fill : this.colors[0] },
+				{ id : 'arrow-mort' , viewBox : '0 0 10 10' , fill : this.colors[1] }
+			] ; 
 
-		let node_markers = this.defs.selectAll('.marker')
-	    	.data( markers , d => d.id );
+			let node_markers = this.defs.selectAll('.marker')
+		    	.data( markers , d => d.id );
 
-	  node_markers
-	  	.enter()
-	  	.append('marker')
-	  	.attr('id',d => d.id)
-	  	.attr('viewBox','0 0 10 10')
-	  	.attr('markerWidth',5)
-			.attr('markerHeight',5)
-			.attr('refX',5)
-			.attr('refY',5)
-			.attr('orient','auto-start-reverse')
-			.append('path')
-			.attr('d','M 0 0 L 10 5 L 0 10 z') 
-			.attr('fill',d => d.fill)
-		; 
+		  node_markers
+		  	.enter()
+		  	.append('marker')
+		  	.attr('id',d => d.id)
+		  	.attr('viewBox','0 0 10 10')
+		  	.attr('markerWidth',5)
+				.attr('markerHeight',5)
+				.attr('refX',5)
+				.attr('refY',5)
+				.attr('orient','auto-start-reverse')
+				.append('path')
+				.attr('d','M 0 0 L 10 5 L 0 10 z') 
+				.attr('fill',d => d.fill)
+			; 
 
-			/*.append('polygon')
-			.attr('points',d => d.points)
-			.attr('fill',d => d.fill)*/
+				/*.append('polygon')
+				.attr('points',d => d.points)
+				.attr('fill',d => d.fill)*/
 
-    // this.y_scale = d3.scaleLinear()
-  		//.range([this.margin.top, this.height - this.margin.bottom- this.margin.top]);
+	    // this.y_scale = d3.scaleLinear()
+	  		//.range([this.margin.top, this.height - this.margin.bottom- this.margin.top]);
 
-  	this.svg.append("g")
-	    .attr("class", "y axis")
-	   	.attr("transform", `translate(${this.margin.left},0)`) 
-	   	.attr("text-anchor","end")
+	  	this.svg.append("g")
+		    .attr("class", "y axis")
+		   	.attr("transform", `translate(${this.margin.left},0)`) 
+		   	.attr("text-anchor","end")
 
-		this.svg.append("g")
-		  .attr("class", "x axis")
-		  .attr("transform", `translate(0,${this.height-this.margin.bottom})`) 
+			this.svg.append("g")
+			  .attr("class", "x axis")
+			  .attr("transform", `translate(0,${this.height-this.margin.bottom})`) 
 
-		this.group_areas = this.svg.append('g')
-	    .attr('class','group_areas')
+			this.group_areas = this.svg.append('g')
+		    .attr('class','group_areas')
 
-		this.group_lines = this.svg.append('g')
-	    .attr('class','group_lines')
+			this.group_lines = this.svg.append('g')
+		    .attr('class','group_lines')
 
-    this.svg.append("text")
-    	.attr('class','legendAxis')
-    	.attr("y",this.margin.left-100)
-    	.attr("x",-(this.height/2))
-    	.attr("transform","rotate(-90)")
-    	.text("Age-standardised rate per 100,000")
+	    this.svg.append("text")
+	    	.attr('class','legendAxis')
+	    	.attr("y",this.margin.left-100)
+	    	.attr("x",-(this.height/2))
+	    	.attr("transform","rotate(-90)")
+	    	.text("Age-standardised rate per 100,000")
 
-    this.svg.append("text")
-    	.attr('class','legendAxis')
-    	.attr("x",(this.width/2)-this.margin.left+this.margin.right)
-    	.attr("y",this.height-20)
-    	.text("Year")
+	    this.svg.append("text")
+	    	.attr('class','legendAxis')
+	    	.attr("x",(this.width/2)-this.margin.left+this.margin.right)
+	    	.attr("y",this.height-20)
+	    	.text("Year")
 
-   	// legend incidence mortality
-    let pos_y_legend = this.height-40 ; 
+	   	// legend incidence mortality
+	    let pos_y_legend = this.height-40 ; 
 
-    var ordinal = d3.scaleOrdinal()
-		  .domain(["Incidence", "Mortality"])
-		  .range( this.colors )
-		;
+	    var ordinal = d3.scaleOrdinal()
+			  .domain(["Incidence", "Mortality"])
+			  .range( this.colors )
+			;
 
-		this.svg.append("g")
-		  .attr("class", "legendColorLine")
-		  .attr("transform", `translate(${this.width-200},${pos_y_legend})`);
+			this.svg.append("g")
+			  .attr("class", "legendColorLine")
+			  .attr("transform", `translate(${this.width-200},${pos_y_legend})`);
 
-		var legendSizeLine = d3.legendColor()
-	      .scale(ordinal)
-	      //.labelWrap(30)
-	      .shape("rect")
-	      .shapeWidth(100)
-	      .shapeHeight(2)
-	      //.labelAlign("middle")
-	      .shapePadding(10);
+			var legendSizeLine = d3.legendColor()
+		      .scale(ordinal)
+		      //.labelWrap(30)
+		      .shape("rect")
+		      .shapeWidth(100)
+		      .shapeHeight(2)
+		      //.labelAlign("middle")
+		      .shapePadding(10);
 
-		//this.svg.select(".legendColorLine").call(legendSizeLine);
+			let promise = axios.get( "../data/Prostate_2023.json" ) ; 
 
-		let promise = axios.get( "../data/Prostate_2023.json" ) ; 
-
-		axios.all( [promise] )
-			.then( axios.spread(( dataset_promise ) => {
-				
-				this.dataset = dataset_promise.data
-				
-				this.conf_data = {
-					dataset : this.dataset , 
-					x : [ d3.min(this.dataset,d=>d.year) , d3.max(this.dataset,d=>d.year) ] ,
-					y : [ d3.min(this.dataset,d=>d.asir) , d3.max(this.dataset,d=>d.asir) ] ,
-					// lines : d3.group( this.dataset , d => d.country , d => d.type )
-					lines : d3.nest().key( d => d.country ).key( d => d.type ).entries( this.dataset )
-				} ; 
-
-				let line , values = [] ; 
-				
-				this.conf_data.lines.forEach( c => {
+			axios.all( [promise] )
+				.then( axios.spread(( dataset_promise ) => {
 					
-					// c.forEach( d3.v7 )
-					c.values.forEach( t => {
-						values = [] ; 
+					this.dataset = dataset_promise.data
+					
+					this.conf_data = {
+						dataset : this.dataset , 
+						x : [ d3.min(this.dataset,d=>d.year) , d3.max(this.dataset,d=>d.year) ] ,
+						y : [ d3.min(this.dataset,d=>d.asir) , d3.max(this.dataset,d=>d.asir) ] ,
+						// lines : d3.groups( this.dataset , d => d.country , d => d.type )
+						lines : d3.nest().key( d => d.country ).key( d => d.type ).entries( this.dataset )
+					} ; 
 
-						//console.info( t ) ; 
-						// t.forEach( d3.v7 )
-						t.values.forEach( s => {
-							let obj = { 
-								id : `line-${s.type}-${s.country}`, 
-								asir : s.asir , 
-								year : s.year , 
-								type : s.type , 
-								country : s.country 
-							} ;
-							this.all_values.push(obj) ; 
-							values.push(obj) ;
+					let line , values = [] ; 
 
-							line = {
-								id : obj.id ,
-								country : s.country , 
-								type : s.type
-							}
-						})
 
-						line.color = (line.type==0)?this.colors[0]:this.colors[1] ; 
-						line.stroke_width = (line.type==0)?'1px':'1px' ; 
-						line.opacity = (line.type==0)?'1':'0.5' ; 
-						line.dash = ( line.type == 0 ) ? false : true ; 
-						line.dash_width = 0 ;
-						line.values = values ; 
+					/* this.conf_data.lines.forEach( line => {
+						
+						console.info({
+							country : line[0],
+							data : line[1]
+						}) ;
 
-						this.lines_dataset.push( line ) ; 
-					});
-				})
+					})
+					
+					// console.info("lines", this.conf_data.lines ) ; 
+					return ;*/
 
-				// console.log("this.lines_dataset",this.lines_dataset) ; 
-				this.redraw( [1] ) ; 
-			}))
-	        
-      // eslint-disable-next-line
-      .catch( error => {
-          console.error("Error catched",error) ; 
-          this.error = true
-      })
-      .finally(() => {
-      
-      })
+					this.conf_data.lines.forEach( c => {
+						
+						// c.forEach( d3.v7 )
+						c.values.forEach( t => {
+							values = [] ; 
+
+							//console.info( t ) ; 
+							// t.forEach( d3.v7 )
+							t.values.forEach( s => {
+								let obj = { 
+									id : `line-${s.type}-${s.country}`, 
+									asir : s.asir , 
+									year : s.year , 
+									type : s.type , 
+									country : s.country 
+								} ;
+								this.all_values.push(obj) ; 
+								values.push(obj) ;
+
+								line = {
+									id : obj.id ,
+									country : s.country , 
+									type : s.type
+								}
+							})
+
+							line.color = (line.type==0)?this.colors[0]:this.colors[1] ; 
+							line.stroke_width = (line.type==0)?'1px':'1px' ; 
+							line.opacity = (line.type==0)?'1':'0.5' ; 
+							line.dash = ( line.type == 0 ) ? false : true ; 
+							line.dash_width = 0 ;
+							line.values = values ; 
+
+							this.lines_dataset.push( line ) ; 
+						});
+					})
+
+					// console.log("this.lines_dataset",this.lines_dataset) ; 
+					this.redraw( [1] ) ; 
+				}))
+		        
+	      // eslint-disable-next-line
+	      .catch( error => {
+	          console.error("Error catched",error) ; 
+	          this.error = true
+	      })
+	      .finally(() => {
+	      
+	      })
+
+		},250)
+
 	},
 
 	unmounted(){

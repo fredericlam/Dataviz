@@ -4470,7 +4470,8 @@ function approxEqual(actual, expected, tolerance) {
     return relativeError(actual, expected) <= tolerance;
 }
 
-exports.BayesianClassifier = BayesianClassifier;
+
+/*exports.BayesianClassifier = BayesianClassifier;
 exports.PerceptronModel = PerceptronModel;
 exports.addToMean = addToMean;
 exports.approxEqual = approxEqual;
@@ -4567,5 +4568,5 @@ exports.tTestTwoSample = tTestTwoSample;
 exports.uniqueCountSorted = uniqueCountSorted;
 exports.variance = variance;
 exports.wilcoxonRankSum = wilcoxonRankSum;
-exports.zScore = zScore;
+exports.zScore = zScore;*/
 //# sourceMappingURL=simple-statistics.js.map

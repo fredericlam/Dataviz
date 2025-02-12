@@ -28,9 +28,10 @@
 						</div>
 					</div>
 
-					<p>
-						<span>Data source: <a href="https://gco.iarc.fr" target="_blank">The Global Cancer Observatory</a>, <a href="https://gco.iarc.fr/overtime" target="_blank">Cancer Overtime</a> </span>
-					</p>
+					<br/>
+					<div class="source">
+						<strong>Data source</strong>: <a href="https://gco.iarc.fr" target="_blank">The Global Cancer Observatory</a>, <a href="https://gco.iarc.fr/overtime" target="_blank">Cancer Overtime</a>
+					</div>
 
 				</div>
 
@@ -58,13 +59,29 @@ export default {
 	setup(){ 
 		onMounted(() => {
 
-   	})
+			let scripts = [
+		      '/js/d3.v5.min.js'
+		    ] 
+
+		    var tag_script 
+		    for ( var s in scripts ){
+		      // eslint-disable-next-line
+		      var tag_script = document.createElement("script")
+		      tag_script.type  = "text/javascript"
+		      tag_script.src   = scripts[s]
+		      tag_script.async = true
+		      // tag_script = loadAsynScript(scripts[s]) ; 
+		      document.body.appendChild(tag_script)
+		    }
+
+
+   		})
    	
-   	const store = useStore()
+   		const store = useStore()
   	
-  	return {
+  		return {
 	  
-	  }
+	  	}
 	},
 	data() {
 	    return {
@@ -83,27 +100,28 @@ export default {
 	},
 	mounted(){
 
-		this.dataset.forEach( (b,i) => {
+		setTimeout(()=>{
+			this.dataset.forEach( (b,i) => {
 
-			let w = 290 , h = 290 ; 
-			let svg = d3.select(`#svg-${i}`).append('svg')
-				.attr('id','svg-el-'+i)
-				.attr('width',w)
-				.attr('height',h) ; 
+				let w = 290 , h = 290 ; 
+				let svg = d3.select(`#svg-${i}`).append('svg')
+					.attr('id','svg-el-'+i)
+					.attr('width',w)
+					.attr('height',h) ; 
 
-			let scale = this.x_scale = d3.scaleLinear()
-				//.domain( [0,1000] ) //
-				.domain( [0,1900] ) //
-				.range([0,w])
+				let scale = this.x_scale = d3.scaleLinear()
+					//.domain( [0,1000] ) //
+					.domain( [0,1900] ) //
+					.range([0,w])
 
 
-			svg.append('circle')
-				.attr('r',scale(b.cost))
-				.attr('cx',w/2)
-				.attr('cy',h/2)
-				.attr('fill','#2B3356') // #fff
-		})
-
+				svg.append('circle')
+					.attr('r',scale(b.cost))
+					.attr('cx',w/2)
+					.attr('cy',h/2)
+					.attr('fill','#2B3356') // #fff
+			})
+		},250)
 	},
 
 	unmounted(){
