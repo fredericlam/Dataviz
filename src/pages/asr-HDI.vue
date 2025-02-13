@@ -252,8 +252,8 @@ export default {
 
 					setTimeout(() => { this.initGraphic() }, 1000 )
 					setTimeout(() => { this.showLegend() }, 1000 )
-					setTimeout(() => { this.drawLines()} , 5000 )
-					setTimeout(() => { this.setAnnotations() ; } , 7500 )
+					setTimeout(() => { this.drawLines()} , 3000 )
+					setTimeout(() => { this.setAnnotations() ; } , 5000 )
 
 				}))
 		        
