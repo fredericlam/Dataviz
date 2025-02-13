@@ -140,7 +140,7 @@ export default {
 
 			selectedCountry : 250 , 
 
-			points : [160,752,76] , // 76,
+			points : [160,752,170] , // 76,
 
 			annotations : [] , 
 
