@@ -121,7 +121,7 @@ export default {
 					.attr('cy',h/2)
 					.attr('fill','#2B3356') // #fff
 			})
-		},250)
+		},750)
 	},
 
 	unmounted(){

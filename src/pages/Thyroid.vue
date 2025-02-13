@@ -399,7 +399,7 @@ export default {
 		        
 		        })
 
-	    },250)
+	    },750)
 	},
 
 	unmounted(){

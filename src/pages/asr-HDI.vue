@@ -7,13 +7,28 @@
 
 				<div class="col">
 
-					<h1>ASR (World), Incidence, Mortality, all cancers, both sexes, Worlwide, by HDI</h1>
+					<h1>
+						ASR (World), Incidence / Mortality, all cancers, both sexes
+						<div class="sub_title">
+						Each circle represent a country, colored by incidence or mortality. Size of circle are mapped with the population size (<a href="/data/hdi_2020_i_m.json" target="_blank">Click here for the complete dataset in json file</a>).
+						</div>
 
-					<form name="">
+						<form name="filters" class="form form-title">
+
+							<FloatLabel class="w-full md:w-80">
+
+								<MultiSelect v-model="points" :options="countries" optionLabel="label" optionValue="country" filter placeholder="Select countries" size="small" class="w-full md:w-80" @change="onChange($event)" />
+							</FloatLabel>
+
+							<!--<Button label="Submit" size="small" />-->
+						</form>
+					</h1>
+					
+					<!--<form name="">
 						<select name="points" multiple="true" v-model="points">
 							
 						</select>
-					</form>
+					</form>-->
 
 					<div id="graphic"></div>
 
@@ -36,10 +51,14 @@
 // from https://github.com/MartinHeinz/charts/blob/master/beeswarm/beeswarm.js
 import { reactive,computed,onMounted } from "vue";
 import axios from 'axios'
+import Button from "primevue/button"
+import Select from 'primevue/select';
+import MultiSelect from 'primevue/multiselect';
+import FloatLabel from 'primevue/floatlabel';
 
 export default {
 	name : 'ASR-HDI-Component' , 
-	components : { } , 
+	components : { Button , Select , MultiSelect , FloatLabel } , 
 	setup(){ 
 		onMounted(() => {
 
@@ -119,10 +138,13 @@ export default {
 				{ key : 4 , point_text : .9 , index_min : 0.800 , index_max : 1 , name : 'Very High HDI' , hide_line : true }
 			], 
 
+			selectedCountry : 250 , 
 
 			points : [160,752,76] , // 76,
 
-			annotations : []
+			annotations : [] , 
+
+			countries : []
 
 	    }
 	},
@@ -180,6 +202,28 @@ export default {
 
 			axios.all( [promise] )
 				.then( axios.spread(( dataset_promise ) => {
+
+					this.countries = d3.nest()
+						.key( d => d.country )
+						.entries( dataset_promise.data ) 
+						.map( m => {
+							return {
+								country : parseFloat( m.key ) , 
+								label : m.values[0].label
+							} ; 
+						})
+						.sort((a,b)=>{
+							if (a.label < b.label) {
+						    	return -1;
+						  	}
+						  	if (a.label > b.label) {
+						    	return 1;
+					  		}
+						  	return 0;
+						})
+					; 
+
+					// console.info(" countries " , this.countries )
 					
 					this.dataset = dataset_promise.data
 						.filter( f => f.hdi_value < 1 )
@@ -209,7 +253,7 @@ export default {
 					setTimeout(() => { this.initGraphic() }, 1000 )
 					setTimeout(() => { this.showLegend() }, 1000 )
 					setTimeout(() => { this.drawLines()} , 5000 )
-					setTimeout(() => { this.setAnnotations()} , 7500 )
+					setTimeout(() => { this.setAnnotations() ; } , 7500 )
 
 				}))
 		        
@@ -221,7 +265,7 @@ export default {
 		        .finally(() => {
 		        
 		        })
-		},250)
+		},750)
 	},
 
 	unmounted(){
@@ -647,7 +691,23 @@ export default {
 	            //.attr('attr-edu', e => e.edu )
 	    },
 
+	    onChange : function( event ){
+
+	    	/* console.info("onChange",{
+	    		event : event , 
+	    		points : this.points
+	    	})*/
+
+	    	this.setAnnotations() ; 
+
+	    },
+
 	    setAnnotations : function(){
+
+	    	d3.selectAll('.annotation-group .annotations').remove();
+	    	this.annotations = [] ; 
+
+	    	// console.log("this.points",this.points) ; 
 
 	        // annotations
 	        this.points.forEach( point => {
@@ -704,6 +764,7 @@ export default {
 			  	.attr("class", "annotation-group")
 			  	.call( makeAnnotations )
 
+			$('form[name="filters"]').show() 
 		},
 
 		showLegend : function(){
@@ -808,12 +869,16 @@ export default {
 <style lang="scss">
 
 h1{
-	padding: 20px 0 80px 40px;
+	padding: 20px 0 50px 40px;
 	font-size: 1.6em;
 	text-align: left ;
 	font-weight: 900;
-	text-transform: uppercase; 
 }
+
+form[name="filters"]{
+	display: none ; 
+}
+
 
 .model{
 	padding-bottom: 100px ;

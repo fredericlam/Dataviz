@@ -180,7 +180,7 @@ export default {
 		*/
 		redraw : function(){
 
-			console.info("start redraw",new Date().getTime())
+			// console.info("start redraw",new Date().getTime())
 
 			// Set scale type based on button clicked
 	        if (this.chartState.scale === this.scales.lin) {

@@ -95,6 +95,11 @@ $font : 'Poppins' , serif; //'Signika Negative', sans-serif ;
   }
 }
 
+form.form-title{
+  position: absolute ; 
+  right: 40px ; 
+}
+
 .tooltip_viz{
     background: #f5f5f5;
     border: solid 1px #eee;
@@ -202,6 +207,19 @@ $font : 'Poppins' , serif; //'Signika Negative', sans-serif ;
     }
 }
 
+h1{
+  position: relative ;
+  .sub_title{
+    font-size: .6em ; 
+    padding-top: 10px ; 
+    font-weight: 400 ; 
+    width: 50% ; 
+  }
+}
+
+a{
+  color: #cccccc ; 
+}
 
 .source{
   font-style: italic ; 
