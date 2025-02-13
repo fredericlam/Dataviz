@@ -30,7 +30,7 @@
 <style lang="scss">
 
 body{
-  overflow: hidden;
+
 }
 
 $font : 'Poppins' , serif; //'Signika Negative', sans-serif ;  
@@ -206,6 +206,8 @@ $font : 'Poppins' , serif; //'Signika Negative', sans-serif ;
 .source{
   font-style: italic ; 
   text-align: right ; 
+  font-size: 11px; 
+  font-weight: 400 ; 
   padding-right: 20px; 
 }
 

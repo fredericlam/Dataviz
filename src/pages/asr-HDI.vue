@@ -9,10 +9,16 @@
 
 					<h1>ASR (World), Incidence, Mortality, all cancers, both sexes, Worlwide, by HDI</h1>
 
+					<form name="">
+						<select name="points" multiple="true" v-model="points">
+							
+						</select>
+					</form>
+
 					<div id="graphic"></div>
 
 					<div class="source"> 
-						Source: 2023/09 -<a href="https://gco.iarc.who.int">GCO</a> - <a href="https://gco.iarc.fr/today">Globocan {{ year }}</a> - Ferlay J, Ervik M, Lam F, Colombet M, Mery L, Piñeros M, Znaor A, Soerjomataram I, Bray F (2020). Global Cancer Observatory: Cancer Today. Lyon, France: International Agency for Research on Cancer. Available from: https://gco.iarc.fr/today, accessed [DD Month YYYY].
+						Source: 2023/09 - <a href="https://gco.iarc.who.int">GCO</a> - <a href="https://gco.iarc.fr/today">Globocan {{ year }}</a> - Ferlay J, Ervik M, Lam F, Colombet M, Mery L, Piñeros M, Znaor A, Soerjomataram I, Bray F (2020). <br> Global Cancer Observatory: Cancer Today. Lyon, France: International Agency for Research on Cancer. Available from: https://gco.iarc.fr/today, accessed [DD Month YYYY].
 					</div>
 				</div>
 
@@ -29,11 +35,10 @@
 
 // from https://github.com/MartinHeinz/charts/blob/master/beeswarm/beeswarm.js
 import { reactive,computed,onMounted } from "vue";
-import { useStore } from 'vuex' ;
 import axios from 'axios'
 
 export default {
-	name : 'Cervix' , 
+	name : 'ASR-HDI-Component' , 
 	components : { } , 
 	setup(){ 
 		onMounted(() => {
@@ -54,9 +59,7 @@ export default {
 		    }
 		    
    		})
-   	
-   		const store = useStore()
-  	
+   		  	
   		return {
 	  
 	  }
@@ -116,7 +119,8 @@ export default {
 				{ key : 4 , point_text : .9 , index_min : 0.800 , index_max : 1 , name : 'Very High HDI' , hide_line : true }
 			], 
 
-			points : [160,752] , // 76,
+
+			points : [160,752,76] , // 76,
 
 			annotations : []
 
@@ -802,10 +806,11 @@ export default {
 </script>
 
 <style lang="scss">
+
 h1{
-	padding: 20px 0 10px 40px;
-	font-size: 1.4em;
-	text-align: center ;
+	padding: 20px 0 80px 40px;
+	font-size: 1.6em;
+	text-align: left ;
 	font-weight: 900;
 	text-transform: uppercase; 
 }
@@ -929,9 +934,5 @@ svg{
 	}
 }
 
-.source{
-	padding: 0 50px 20px 60px;
-	font-size: .8em; 
-}
 
 </style>
