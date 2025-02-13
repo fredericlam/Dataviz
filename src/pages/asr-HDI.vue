@@ -8,9 +8,9 @@
 				<div class="col">
 
 					<h1>
-						ASR (World), Incidence / Mortality, all cancers, both sexes
+						Age-standardized rate (World), all cancers, both sexes
 						<div class="sub_title">
-						Each circle represent a country, colored by incidence or mortality. Size of circle are mapped with the population size (<a href="/data/hdi_2020_i_m.json" target="_blank">Click here for the complete dataset in json file</a>).
+						Each circle represent a country, colored by <span class="highlight h-red">incidence</span> or <span class="highlight h-blue">mortality</span>. Size of circle are mapped with the population size (<a href="/data/hdi_2020_i_m.json" target="_blank">Click here for the complete dataset in json file</a>).
 						</div>
 
 						<form name="filters" class="form form-title">
@@ -976,6 +976,17 @@ svg{
 		path{
 			display: none ; 
 		}
+	}
+}
+
+span.highlight{
+	font-weight: 800 ; 
+	text-decoration: underline;
+	&.h-red{
+		color : #4682B4 ; 
+	}
+	&.h-blue{
+		color : #dc143c ; 
 	}
 }
 
