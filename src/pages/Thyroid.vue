@@ -8,8 +8,18 @@
 
 				<div class="col-md-9">
 
-					<h1 v-if="is_age_specific==false">Age-standardized rate (World) per 100 000<br/> incidence & mortality , females</h1>
-			<h1 v-if="is_age_specific==true">Rates per 100 000 by period, Age-specific<br/> Korea (5 registries), incidence , females</h1>
+					<div class="title-row" v-if="is_age_specific==false">
+						<h1>Age-standardized rate (World) per 100 000<br/> incidence & mortality , {{ selectedSex == 2 ? 'females' : 'males' }}</h1>
+						<div class="sex-toggle">
+							<button
+								:class="['btn-toggle', { active: selectedSex == 2 }]"
+								@click="toggleSex(2)">Females</button>
+							<button
+								:class="['btn-toggle', { active: selectedSex == 1 }]"
+								@click="toggleSex(1)">Males</button>
+						</div>
+					</div>
+					<h1 v-if="is_age_specific==true">Rates per 100 000 by period, Age-specific<br/> Korea (5 registries), incidence , {{ selectedSex == 2 ? 'females' : 'males' }}</h1>
 
 					<div id="graphic"></div>
 
@@ -26,40 +36,40 @@
 						<form>
 							
 							<div class="row" v-if="is_age_specific==false">
-								
-								<div class="col-md-12">
+
+								<!-- France & USA -->
+								<div class="col-md-12" v-for="(pop, i) in pops.filter(p => p.group == 'main')" :key="pop.country">
 									<p class="step1">
 										<a href="#" class="link_step">
-											<span class="step_marker" :style="{ 'background-color': pops[0].color }">
+											<span class="step_marker step_marker_white" :style="{ 'background-color': pop.color }">
 												<i class='fas fa-check'></i>
-											France 
+												{{ pop.label }}
 											</span>
 										</a>
 									</p>
 								</div>
 
-								<div class="col-md-12">
-									<p class="step2">
+								<!-- Top incidence countries -->
+								<div class="col-md-12 legend-title">
+									<strong>Top 4 {{ selectedSex == 2 ? 'females' : 'males' }}</strong>
+								</div>
+
+								<div class="col-md-12" v-for="(pop, i) in pops.filter(p => p.group == 'top')" :key="pop.country">
+									<p class="step1">
 										<a href="#" class="link_step">
-										<span class="step_marker step_marker_white" :style="{ 'background-color': pops[1].color }">
-											<i class='fas fa-check'></i>USA</span>
+											<span class="step_marker step_marker_white" :style="{ 'background-color': pop.color }">
+												<i class='fas fa-check'></i>
+												{{ pop.label }}
+											</span>
 										</a>
 									</p>
 								</div>
 
-								<div class="col-md-12">
+								<!-- Korea separate at bottom -->
+								<div class="col-md-12" style="margin-top: 80px">
 									<p class="step2">
-										<a href="#" class="link_step">
-										<span class="step_marker step_marker_white" :style="{ 'background-color': pops[2].color }">
-											<i class='fas fa-check'></i>Italy</span>
-										</a>
-									</p>
-								</div>
-
-								<div class="col-md-12" style="margin-top: 200px">
-									<p class="step2">
-										<a href="#" class="link_step" v-on:click="startAnimation()" >
-											<span class="step_marker step_marker_white"  :style="{ 'background-color': pops[3].color }">
+										<a href="#" class="link_step" v-on:click="startAnimation()">
+										<span class="step_marker step_marker_white" :style="{ 'background-color': pops.find(p => p.group == 'korea').color }">
 											<i class='fas fa-check' v-if="animate==true"></i>Republic of Korea</span>
 										</a>
 									</p>
@@ -164,8 +174,9 @@ export default {
 			    perCap: "Per Capita Deaths"
 			},
 
-			all_values : [] , 
+			all_values : [] ,
 			dataset : [] ,
+			rawDataset : null , // store raw data for sex toggle
 
 			chartState : {} , 
 
@@ -179,18 +190,24 @@ export default {
 			animate : false ,
 
 			axis : {
-				x : [ 1943 , 2020 ]
+				x : [ 1980 , 2020 ]
 			},
 			pops : [
-				{ country : 250 , label : 'France' , color : "#ffbc42" } ,
-				{ country : 840 , label : 'USA' , color : "#d81159" } ,
-				{ country : 380 , label : 'Italy' , color : "#287afb" } ,
-				{ country : 410 , label : 'Korea' , color : "#218380" }
-			] , 
+				{ country : 250 , label : 'France' , color : "#ffbc42" , highlight : true , group: 'main' } ,
+				{ country : 840 , label : 'USA' , color : "#d81159" , highlight : true , group: 'main' } ,
+				{ country : 196 , label : 'Cyprus' , color : "#e63946" , highlight : true , group: 'top' } ,
+				{ country : 218 , label : 'Ecuador' , color : "#f4a261" , highlight : true , group: 'top' } ,
+				{ country : 160 , label : 'China' , color : "#2a9d8f" , highlight : true , group: 'top' } ,
+				{ country : 792 , label : 'Türkiye' , color : "#9b5de5" , highlight : true , group: 'top' } ,
+				{ country : 410 , label : 'Republic of Korea' , color : "#90be6d" , highlight : true , group: 'korea' }
+			] ,
+			defaultLineColor : '#cccccc' , 
 
-			target_country : 410 , 
+			target_country : 410 ,
 
-			is_age_specific : false , 
+			is_age_specific : false ,
+
+			selectedSex : 2 , // 1 = male, 2 = female (default)
 
 			lines_checkbox : []
 	    }
@@ -277,7 +294,8 @@ export default {
 
 
 
-			let promise = axios.get( "../data/dataset-thyroid-v2.json" ) ; 
+			// let promise = axios.get( "../data/dataset-thyroid-v2.json" ) ; 
+			let promise = axios.get( "../data/dataset-thyroid-v3.json" ) ; 
 
 			if ( this.is_age_specific == true ){
 				promise = axios.get( "../data/dataset-age-specific.json" ) ; 
@@ -288,101 +306,12 @@ export default {
 
 					console.info( "dataset_promise" , dataset_promise.data )
 
-					let tmp_dataset = [] , key_  ; 
+					// Store raw data for sex toggle
+					this.rawDataset = dataset_promise.data ;
 
+					// Process data based on selected sex
+					this.processData() ;
 
-					if ( this.is_age_specific == true )
-					{
-						key_ = 'period' ; 
-						tmp_dataset = dataset_promise.data
-							.map( d => {
-								let m = d.age.split('-') ;
-								return {
-									id : `plot-${d.age}-period-${d.period}` , 
-									period : d.period , 
-									type : 0 ,
-									age : d.age ,
-									y : parseFloat(m[0])  ,
-									asr : parseFloat(d.rate)
-								}
-							}) ;
-					}
-					else
-					{
-						key_ = 'country' ; 
-						tmp_dataset = dataset_promise.data.dataset
-							//.filter( f => f.type == 0 )
-							.map( d => {
-								return {
-									id : `dot-${d.id}-${d.type}-${d.sex}` , 
-									//iso : d.country_iso2 , 
-									country : d.country , 
-									year : d.year , 
-									sex : d.sex , 
-									type : d.type ,
-									asr : parseFloat(d.asr)
-								}
-							}) ;
-					}
-
-					// console.info("tmp_dataset",tmp_dataset) ; 
-
-					let lines_dataset =  d3.group(tmp_dataset, d => d[key_] , d => d.type ) ;
-					let line , values = [] ; 
-
-					// console.info("lines_dataset",lines_dataset) ; 
-
-					lines_dataset.forEach( c => {
-						
-						
-						c.forEach( t => {
-							values = [] ; 
-
-							//console.info( t ) ; 
-
-							t.forEach( s => {
-								let obj = { asr : s.asr , year : s.year , country : s.country , period : s.period , age : s.age , y : s.y } ;
-								this.all_values.push(obj) ; 
-								values.push(obj) ;
-								line = {
-									id : s.id ,
-									country : s.country , 
-									period : s.period ,
-									type : s.type , 
-									sex : s.sex , 
-									age : s.age , 
-									y : s.y
-								}
-							})
-
-							let item = this.pops.find( p => line.country == p.country )
-
-							if ( this.is_age_specific == true ){
-								item = this.pops.find( p => line.period == p.label )
-							}
-
-							line.color = item.color ; 
-							line.dash = ( line.type == 0 ) ? false : true ; 
-							line.values = values ; 
-
-							this.dataset.push( line ) ; 
-						});
-
-						//line.values = values ; 
-						//
-					})
-
-					// console.info("this.dataset",this.dataset,this.all_values) ; 
-					// console.table(this.dataset) ; 
-					this.filters.years = Array.from( d3.group( this.all_values , d => d.year ) )
-						.map( m =>{ 
-							return { year : m[0] } 
-						})
-
-					console.info("this.filters.years",this.filters.years) ; 
-
-					this.filters.colors = [] ; 	
-					
 					setTimeout(() => {
 						this.redraw( true );
 					}, 7000 )
@@ -407,6 +336,121 @@ export default {
 	},
 
 	methods : {
+
+		/**
+		* Process raw data based on selected sex
+		*/
+		processData : function() {
+			// Clear existing data
+			this.dataset = [] ;
+			this.all_values = [] ;
+
+			if ( !this.rawDataset ) return ;
+
+			let tmp_dataset = [] , key_ ;
+
+			if ( this.is_age_specific == true )
+			{
+				key_ = 'period' ;
+				tmp_dataset = this.rawDataset
+					.map( d => {
+						let m = d.age.split('-') ;
+						return {
+							id : `plot-${d.age}-period-${d.period}` ,
+							period : d.period ,
+							type : 0 ,
+							age : d.age ,
+							y : parseFloat(m[0]) ,
+							asr : parseFloat(d.rate)
+						}
+					}) ;
+			}
+			else
+			{
+				key_ = 'country' ;
+				tmp_dataset = this.rawDataset.dataset
+					.filter( f => f.sex == this.selectedSex )
+					.map( d => {
+						return {
+							id : `dot-${d.id}-${d.type}-${d.sex}` ,
+							country : d.country ,
+							year : d.year ,
+							sex : d.sex ,
+							type : d.type ,
+							asr : parseFloat(d.asr)
+						}
+					}) ;
+			}
+
+			let lines_dataset = d3.group(tmp_dataset, d => d[key_] , d => d.type ) ;
+			let line , values = [] ;
+
+			lines_dataset.forEach( c => {
+				c.forEach( t => {
+					values = [] ;
+
+					t.forEach( s => {
+						let obj = { asr : s.asr , year : s.year , country : s.country , period : s.period , age : s.age , y : s.y } ;
+						this.all_values.push(obj) ;
+						values.push(obj) ;
+						line = {
+							id : s.id ,
+							country : s.country ,
+							period : s.period ,
+							type : s.type ,
+							sex : s.sex ,
+							age : s.age ,
+							y : s.y
+						}
+					})
+
+					let item = this.pops.find( p => line.country == p.country )
+
+					if ( this.is_age_specific == true ){
+						item = this.pops.find( p => line.period == p.label )
+					}
+
+					// Use default grey for non-highlighted countries, colored for highlighted ones
+					if ( item && item.highlight ) {
+						line.color = item.color
+						line.highlight = true
+					} else {
+						line.color = this.defaultLineColor
+						line.highlight = false
+					}
+					line.dash = ( line.type == 0 ) ? false : true ;
+					line.values = values ;
+
+					this.dataset.push( line ) ;
+				});
+			})
+
+			this.filters.years = Array.from( d3.group( this.all_values , d => d.year ) )
+				.map( m => {
+					return { year : m[0] }
+				})
+
+			this.filters.colors = [] ;
+		},
+
+		/**
+		* Toggle between male and female data
+		* @param {number} sex - 1 for male, 2 for female
+		*/
+		toggleSex : function( sex ) {
+			if ( this.selectedSex == sex ) return ;
+
+			this.selectedSex = sex ;
+
+			// Clear existing lines from SVG
+			this.group_lines.selectAll('.path_lines').remove() ;
+			this.legend_lines.selectAll('.line_legend').remove() ;
+			this.legend_lines.selectAll('.text_legend').remove() ;
+
+			// Reprocess data and redraw
+			this.processData() ;
+			this.redraw( true ) ;
+		},
 
 		resetAll : function(){
 
@@ -458,25 +502,20 @@ export default {
 			// console.info("dataset",this.dataset,this.all_values) ; 
 			let dataset_in = [] , all_values_in = [] ; 
 
-			if ( this.animate == true ){
-				dataset_in = this.dataset ;
-				all_values_in = this.all_values ; 
+			if ( this.is_age_specific == true ){
+				dataset_in = this.dataset
+					.filter( c => {
+						return this.lines_checkbox.includes( c.period )
+					})
+				all_values_in = this.all_values
+			} else if ( this.animate == true ) {
+				// Show all countries including Korea
+				dataset_in = this.dataset
+				all_values_in = this.all_values
 			} else {
-
-				if ( this.is_age_specific == true ){
-
-					dataset_in = this.dataset
-						.filter( c => {
-							return this.lines_checkbox.includes( c.period ) 
-						})
-
-					all_values_in = this.all_values
-				
-				}
-				else{
-					dataset_in = this.dataset.filter( c => c.country != this.target_country )
-					all_values_in = this.all_values.filter( c => c.country != this.target_country )
-				}
+				// Hide Korea by default
+				dataset_in = this.dataset.filter( c => c.country != this.target_country )
+				all_values_in = this.all_values.filter( c => c.country != this.target_country )
 			}
 			
 			// console.log("dataset_in",dataset_in);
@@ -638,41 +677,45 @@ export default {
 	        else 
 	        	legends_texts_domain = { 0 : 'incidence' , 1 : 'Mortality'} ; 
 	        
-	        // console.info("dataset_in",dataset_in) ; 
+	        // console.info("dataset_in",dataset_in) ;
 	        dataset_in.forEach((d,i)=>{
 
-	        	let last_pos = d.values[d.values.length-1] , text_pos , pos_start , row_txt , item = { 'label' : 'undefined' } ; 
+	        	let last_pos = d.values[d.values.length-1] , text_pos , pos_start , row_txt , item = null ;
 
 	        	if ( this.is_age_specific == true ){
 	        		if ( d.period != "1999-2000"){
 	        			last_pos = d.values.find( d => d.y == 50 ) ;
 	        		}
-	        		text_pos =  {x:95,y:last_pos.asr} ; 
-	        		pos_start = {x:last_pos.y,y:last_pos.asr}  ; 
+	        		text_pos =  {x:95,y:last_pos.asr} ;
+	        		pos_start = {x:last_pos.y,y:last_pos.asr}  ;
 	        	} else {
-	        		item = this.pops.find( p => d.country == p.country )
+	        		item = this.pops.find( p => d.country == p.country && p.highlight )
 	        		let is_targeted = dataset_in.find( c => c.country == this.target_country )
-	        		let y_end = last_pos.asr + ( ( is_targeted != undefined && d.country == 84000 ) ? 5 : 0 ) ; //( is_targeted != undefined ) ? 60 : 16 ; 
-	        		text_pos = (d.type == 1 ) ? {y:0.5,x:2021} : {y:y_end,x:2021} ; 
-	        		pos_start = {x:last_pos.year,y:last_pos.asr}  ; 
+	        		let y_end = last_pos.asr + ( ( is_targeted != undefined && d.country == 84000 ) ? 5 : 0 ) ; //( is_targeted != undefined ) ? 60 : 16 ;
+	        		text_pos = (d.type == 1 ) ? {y:0.5,x:2021} : {y:y_end,x:2021} ;
+	        		pos_start = {x:last_pos.year,y:last_pos.asr}  ;
 	        	}
 
-	        	let display = false ; 
-
-	        	if ( this.is_age_specific == false && d.type == 0 ){
-	        		display = true ; 
+	        	// Only display legend for highlighted countries (France, USA, Korea)
+	        	let display = false ;
+	        	if ( this.is_age_specific == false && d.type == 0 && d.highlight ){
+	        		display = true ;
 	        	}
 
-	        	this.sorted_legends.push({
-	        		id : `line-${d.type}-${d.id}`,
-	        		label : item.label ,
-	        		type : d.type ,
-	        		color : d.color ,
-	        		period : d.period ,
-	        		pos_start : pos_start , 
-	        		pos_end : text_pos ,
-	        		display : display
-	        	}) ;	        	
+	        	// Only add to legends if highlighted
+	        	if ( item && item.highlight ) {
+		        	this.sorted_legends.push({
+		        		id : `line-${d.type}-${d.id}`,
+		        		label : item.label ,
+		        		type : d.type ,
+		        		color : d.color ,
+		        		period : d.period ,
+		        		pos_start : pos_start ,
+		        		pos_end : text_pos ,
+		        		display : display ,
+		        		highlight : true
+		        	}) ;
+		        }
 	        })
 
 	        if ( this.is_age_specific == true ){
@@ -691,18 +734,21 @@ export default {
 		    }
 		    else
 		    {
-		    	console.info("this.sorted_legends",this.sorted_legends) ; 	
+		    	console.info("this.sorted_legends",this.sorted_legends) ;
 
-		    	this.legends_texts = this.sorted_legends.map( m => {
-		    		return { 
-	        			key 	: m.type , 
-	        			label 	: ( (m.type == 0) ? m.label + ', ' : '') + legends_texts_domain[ m.type ] , 
-	        			pos 	: m.pos_end , 
-	        			color 	: m.color 
-	        		} ; 
-		    	})
+		    	this.legends_texts = this.sorted_legends
+		    		.map( m => {
+			    		return {
+		        			key 	: m.type ,
+		        			label 	: ( (m.type == 0) ? m.label + ', ' : '') + legends_texts_domain[ m.type ] ,
+		        			pos 	: m.pos_end ,
+		        			color 	: m.color ,
+		        			lastValue : m.pos_start.y // last ASR value for sorting
+		        		} ;
+			    	})
+			    	.sort( (a, b) => b.lastValue - a.lastValue ) // sort by last value descending
 
-		    	console.info("this.legends_texts",this.legends_texts) ; 	
+		    	console.info("this.legends_texts",this.legends_texts) ;
 		    }
 
 	        //console.info("this.legends_texts",this.legends_texts) ; 
@@ -793,7 +839,51 @@ h1{
 	font-size: 1.4em;
 	text-align: left ;
 	font-weight: 900;
-	text-transform: uppercase; 
+	text-transform: uppercase;
+}
+
+.title-row {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding-right: 20px;
+
+	h1 {
+		margin: 0;
+	}
+}
+
+.sex-toggle {
+	display: flex;
+	gap: 5px;
+	margin-top: 20px;
+
+	.btn-toggle {
+		padding: 8px 16px;
+		border: 2px solid #ccc;
+		background: #fff;
+		cursor: pointer;
+		font-weight: 600;
+		font-size: 0.9em;
+		transition: all 0.2s ease-in-out;
+
+		&:hover {
+			border-color: #999;
+		}
+
+		&.active {
+			background: #333;
+			color: #fff;
+			border-color: #333;
+		}
+	}
+}
+
+.legend-title {
+	padding: 10px 5px;
+	margin-bottom: 5px;
+	font-size: 0.9em;
+	color: #666;
 }
 
 a.link_step{
