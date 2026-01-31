@@ -499,8 +499,22 @@ export default {
 		redraw : function( init , label ){
 
 			// legend
-			// console.info("dataset",this.dataset,this.all_values) ; 
-			let dataset_in = [] , all_values_in = [] ; 
+			// console.info("dataset",this.dataset,this.all_values) ;
+			let dataset_in = [] , all_values_in = [] ;
+
+			// Adjust width when Korea is shown (longer label)
+			if ( this.animate == true ) {
+				this.margin.right = 280 ;
+				this.width = this.height + 330 ;
+			} else {
+				this.margin.right = 200 ;
+				this.width = this.height + 250 ;
+			}
+
+			// Update SVG dimensions
+			this.svg
+				.attr("width", this.width)
+				.attr("viewBox", [0, 0, this.width, this.height]) ;
 
 			if ( this.is_age_specific == true ){
 				dataset_in = this.dataset
@@ -517,7 +531,7 @@ export default {
 				dataset_in = this.dataset.filter( c => c.country != this.target_country )
 				all_values_in = this.all_values.filter( c => c.country != this.target_country )
 			}
-			
+
 			// console.log("dataset_in",dataset_in);
 		 	
 	        if ( this.is_age_specific == true ){
