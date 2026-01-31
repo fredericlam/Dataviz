@@ -1,38 +1,36 @@
 <template>
 
 	<div class="container">
-		
+
 		<div class="model" id="model1">
 
-			<div class="row">
+			<!-- HEADER: Title and Toggle -->
+			<header class="page-header">
+				<h1 v-if="is_age_specific==false">Age-standardized rate (World) per 100 000, incidence & mortality, {{ selectedSex == 2 ? 'females' : 'males' }}</h1>
+				<h1 v-if="is_age_specific==true">Rates per 100 000 by period, Age-specific, Korea (5 registries), incidence, {{ selectedSex == 2 ? 'females' : 'males' }}</h1>
+				<div class="sex-toggle">
+					<button
+						:class="['btn-toggle', { active: selectedSex == 2 }]"
+						@click="toggleSex(2)">Females</button>
+					<button
+						:class="['btn-toggle', { active: selectedSex == 1 }]"
+						@click="toggleSex(1)">Males</button>
+				</div>
+			</header>
 
-				<div class="col-md-9">
+			<!-- CONTENT: Graphic + Legend -->
+			<div class="content-row">
 
-					<div class="title-row" v-if="is_age_specific==false">
-						<h1>Age-standardized rate (World) per 100 000<br/> incidence & mortality , {{ selectedSex == 2 ? 'females' : 'males' }}</h1>
-						<div class="sex-toggle">
-							<button
-								:class="['btn-toggle', { active: selectedSex == 2 }]"
-								@click="toggleSex(2)">Females</button>
-							<button
-								:class="['btn-toggle', { active: selectedSex == 1 }]"
-								@click="toggleSex(1)">Males</button>
-						</div>
-					</div>
-					<h1 v-if="is_age_specific==true">Rates per 100 000 by period, Age-specific<br/> Korea (5 registries), incidence , {{ selectedSex == 2 ? 'females' : 'males' }}</h1>
-
+				<div class="graphic-col">
 					<div id="graphic"></div>
-
 					<div class="source">
-						<span v-if="is_age_specific==false"><strong><u>Data source</u></strong>: <a href="https://gco.iarc.fr" target="_blank">The Global Cancer Observatory</a>, <a href="https://gco.iarc.fr/overtime" target="_blank">Cancer Overtime</a> </span>
-						<span v-if="is_age_specific==true"><strong><u>Data source</u></strong>: <a href="https://ci5.iarc.fr/ci5plus" target="_blank">CI5PLUS: Cancer Incidence in Five Continents Time Trends</a></span>
+						<span v-if="is_age_specific==false"><strong>Data source</strong>: <a href="https://gco.iarc.who.int" target="_blank">Global Cancer Observatory</a>, <a href="https://gco.iarc.who.int/overtime" target="_blank">Cancer Over Time</a></span>
+						<span v-if="is_age_specific==true"><strong>Data source</strong>: <a href="https://ci5.iarc.fr/ci5plus" target="_blank">CI5plus: Cancer Incidence in Five Continents Time Trends</a></span>
 					</div>
-
 				</div>
 
-				<div class="col-md-3">
-
-					<div class="filters" style="margin-top: 60px;">
+				<div class="legend-col">
+					<div class="filters">
 						<form>
 							
 							<div class="row" v-if="is_age_specific==false">
@@ -65,8 +63,11 @@
 									</p>
 								</div>
 
+								<!-- Spacer to push Korea to bottom -->
+								<div class="flex-spacer"></div>
+
 								<!-- Korea separate at bottom -->
-								<div class="col-md-12" style="margin-top: 80px">
+								<div class="col-md-12 korea-section">
 									<p class="step2">
 										<a href="#" class="link_step" v-on:click="startAnimation()">
 										<span class="step_marker step_marker_white" :style="{ 'background-color': pops.find(p => p.group == 'korea').color }">
@@ -108,10 +109,9 @@
 
 				</div>
 
-			</div><!-- end row -->
+			</div><!-- end content-row -->
 
 		</div><!-- end model1 -->
-
 
 	</div>
 
@@ -145,7 +145,7 @@ export default {
 	    	// svg conf
 	    	width: 0 ,
 	    	height : 0 , 
-	    	margin : {top: 10, right: 200, bottom: 80, left: 40} ,
+	    	margin : {top: 30, right: 240, bottom: 70, left: 70} ,
 
 	    	x_scale : [] , 
 	    	x_axis : [] ,
@@ -190,7 +190,7 @@ export default {
 			animate : false ,
 
 			axis : {
-				x : [ 1980 , 2020 ]
+				x : [ 1980 , 2024 ]
 			},
 			pops : [
 				{ country : 250 , label : 'France' , color : "#ffbc42" , highlight : true , group: 'main' } ,
@@ -247,10 +247,23 @@ export default {
 				] ; 
 			}
 
-			this.width = $('#graphic').width() ; 
-			this.height = ( $(window).height() < 600 ) ? $(window).height() - 80 : 600 ; 
+			// Calculate dimensions - use full available height
+			const windowHeight = $(window).height() ;
+			const windowWidth = $(window).width() ;
 
-			this.width = this.height + 250 ; 
+			// Reserve space for header (~60px) and source (~30px) and padding
+			const headerHeight = 60 ;
+			const sourceHeight = 30 ;
+			const verticalPadding = 24 ;
+
+			// Use remaining height for the chart
+			this.height = windowHeight - headerHeight - sourceHeight - verticalPadding ;
+
+			// Width: full width minus legend column (220px) and padding
+			const legendWidth = 180 ;
+			const horizontalPadding = 48 ;
+			const availableWidth = windowWidth - legendWidth - horizontalPadding ;
+			this.width = Math.min( availableWidth, this.height * 1.6 ) ; 
 			
 			// console.info("this.height",$(window).height(),this.height) ; 
 
@@ -502,14 +515,19 @@ export default {
 			// console.info("dataset",this.dataset,this.all_values) ;
 			let dataset_in = [] , all_values_in = [] ;
 
-			// Adjust width when Korea is shown (longer label)
+			// Adjust right margin when Korea is shown (longer label)
 			if ( this.animate == true ) {
 				this.margin.right = 280 ;
-				this.width = this.height + 330 ;
 			} else {
 				this.margin.right = 200 ;
-				this.width = this.height + 250 ;
 			}
+
+			// Recalculate width based on viewport
+			const windowWidth = $(window).width() ;
+			const legendWidth = 180 ;
+			const horizontalPadding = 48 ;
+			const availableWidth = windowWidth - legendWidth - horizontalPadding ;
+			this.width = Math.min( availableWidth, this.height * 1.6 ) + ( this.animate ? 80 : 0 ) ;
 
 			// Update SVG dimensions
 			this.svg
@@ -706,7 +724,7 @@ export default {
 	        		item = this.pops.find( p => d.country == p.country && p.highlight )
 	        		let is_targeted = dataset_in.find( c => c.country == this.target_country )
 	        		let y_end = last_pos.asr + ( ( is_targeted != undefined && d.country == 84000 ) ? 5 : 0 ) ; //( is_targeted != undefined ) ? 60 : 16 ;
-	        		text_pos = (d.type == 1 ) ? {y:0.5,x:2021} : {y:y_end,x:2021} ;
+	        		text_pos = (d.type == 1 ) ? {y:0.5,x:2025} : {y:y_end,x:2025} ;
 	        		pos_start = {x:last_pos.year,y:last_pos.asr}  ;
 	        	}
 
@@ -848,160 +866,253 @@ export default {
 </script>
 
 <style lang="scss">
-h1{
-	padding: 20px 0 10px 40px;
-	font-size: 1.4em;
-	text-align: left ;
-	font-weight: 900;
-	text-transform: uppercase;
+// Base spacing unit: 8px
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+
+// Left alignment matches SVG left margin
+$align-left: 70px;
+
+.container {
+	max-width: 100% !important;
+	padding: 0;
+	height: 100vh;
+	overflow: hidden;
 }
 
-.title-row {
+#model1 {
+	height: 100vh;
 	display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
-	padding-right: 20px;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+// HEADER
+.page-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: $space-lg;
+	padding: $space-lg $space-xl;
+	border-bottom: 1px solid #eee;
+	flex-shrink: 0;
 
 	h1 {
+		padding: 0;
 		margin: 0;
+		font-size: 1.8em;
+		text-align: center;
+		font-weight: 700;
+		line-height: 1.3;
 	}
 }
 
-.sex-toggle {
+// CONTENT ROW
+.content-row {
+	flex: 1;
 	display: flex;
-	gap: 5px;
-	margin-top: 20px;
+	align-items: stretch;
+	min-height: 0;
+	overflow: hidden;
+}
 
-	.btn-toggle {
-		padding: 8px 16px;
-		border: 2px solid #ccc;
-		background: #fff;
-		cursor: pointer;
-		font-weight: 600;
-		font-size: 0.9em;
-		transition: all 0.2s ease-in-out;
+.graphic-col {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: $space-lg $space-xl;
+	min-width: 0;
+}
+
+.legend-col {
+	width: 180px;
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	padding: $space-sm $space-md;
+	border-left: 1px solid #eee;
+}
+
+#graphic {
+	flex: 1;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	position: relative;
+	min-height: 0;
+}
+
+.source {
+	display: flex;
+	align-items: center;
+	gap: $space-md;
+	padding: $space-md 0 $space-lg 0;
+	font-size: 0.85em;
+	color: #666;
+	flex-shrink: 0;
+	text-align: right ; 
+	width: 100% ; 
+	padding: 20px 60px ;
+	z-index: 999 ; 
+	.source-logo {
+		height: 32px;
+		width: auto;
+	}
+
+	a {
+		color: #0066cc;
+		text-decoration: none;
+		padding: 2px 4px;
+		border-radius: 2px;
+		transition: background-color 0.2s ease;
 
 		&:hover {
-			border-color: #999;
+			background-color: rgba(0, 102, 204, 0.1);
+			text-decoration: none;
+		}
+	}
+}
+
+// Sex toggle buttons - same height as legend buttons
+.sex-toggle {
+	display: flex;
+	gap: 2px;
+
+	.btn-toggle {
+		padding: $space-xs $space-sm;
+		border: none;
+		background: #ccc;
+		color: #333;
+		cursor: pointer;
+		font-weight: 700;
+		font-size: 0.85em;
+		transition: all 0.2s ease-in-out;
+		border-radius: 3px;
+		line-height: 16px;
+		&:hover {
+			background: #bbb;
 		}
 
 		&.active {
 			background: #333;
 			color: #fff;
-			border-color: #333;
 		}
+	}
+}
+
+// Sidebar legend
+.filters {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	form {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.row {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
 	}
 }
 
 .legend-title {
-	padding: 10px 5px;
-	margin-bottom: 5px;
-	font-size: 0.9em;
+	padding: $space-sm $space-md;
+	margin: $space-sm 0 $space-xs 0;
+	font-size: 0.8em;
 	color: #666;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
 }
 
-a.link_step{
-	display: inline-block ; 
-	font-size: 1em;
-	padding: 0 5px 0 5px;
-	height: 100%;
-	min-width: 250px;
+a.link_step {
+	display: block;
+	font-size: 0.85em;
+	padding: 0;
 	transition: all 0.2s ease-in-out;
-	&.span_white{
-		color: #fff !important;
-	}
-	&:hover{
-		background: #f0f0f0 ; 
-		text-decoration: none!important;
-	}
-	span.step_marker{
-		transition: all 0.2s ease-in-out;
-		padding: 10px 0px 10px 30px; 
-		display: block;
-		margin: auto ; 
-		text-align: left;
-		font-weight: 800;
-		i{
-			margin-right: 5px;
-		}
-	}
-	span.step_marker_white{
-		color: #fff ; 
+	text-decoration: none;
+
+	&:hover {
+		opacity: 0.85;
+		text-decoration: none;
 	}
 
-	label{
-		display: block; 
+	span.step_marker {
+		transition: all 0.2s ease-in-out;
+		padding: $space-xs $space-sm;
+		display: block;
+		text-align: left;
+		font-weight: 700;
+		font-size: 0.85em;
+		border-radius: 3px;
+		margin-bottom: 2px;
+
+		i {
+			margin-right: $space-xs;
+		}
+	}
+
+	span.step_marker_white {
+		color: #fff;
+	}
+
+	label {
+		display: block;
 		width: 100%;
 		cursor: pointer;
 	}
 
-	input[type="checkbox"]{
-		display: none ; 
-	}
-
-	input[type="checkbox"]:not(:checked) + span i{
+	input[type="checkbox"] {
 		display: none;
 	}
 
-	input[type="checkbox"]:checked + span i{
-		display: inline-block ;
+	input[type="checkbox"]:not(:checked) + span i {
+		display: none;
 	}
-}
-button#btn-reset{
-	float: right;
- 		margin-right: 40px;
-}
 
-#countries_list{
-	.list-group-item{
-		&:hover{
-			background: #f0f0f0 ; 
-		}
-		a.country_button{
-			text-decoration: none!important;
-			display: block;
-			font-size: .9em;
-			&:hover{
-				text-decoration: none!important;
-			}
-			img{
-				height: 10px;
-			}
-		}
+	input[type="checkbox"]:checked + span i {
+		display: inline-block;
 	}
 }
 
-#graphic{
-	position: relative ; 
+.step1, .step2 {
+	margin: 0;
+	padding: 0;
 }
 
+.flex-spacer {
+	flex: 1;
+	min-height: $space-md;
+}
 
-g.x.axis{
-	.tick{
-		text{
-			font-size: 1.2em;
-		}
+.korea-section {
+	margin-top: auto;
+	padding-bottom: $space-sm;
+}
+
+g.x.axis, g.y.axis {
+	.tick text {
+		font-size: 12px;
+		font-weight: 500;
 	}
 }
 
-g.y.axis{
-	.tick{
-		line{
-			stroke: #ccc ;
-		}
+g.y.axis {
+	.tick line {
+		stroke: #eee;
 	}
 }
 
-text.text_legend{
-	text-shadow: 1px 1px rgb(0 0 0 / 55%);
+text.text_legend {
+	font-size: 16px;
+	font-weight: 600;
+	text-shadow: none;
 }
-
-.filters{
-	padding-top: 20px;
-	.legend{
-		padding-left:0 ;
-	}
-}
-
 
 </style>

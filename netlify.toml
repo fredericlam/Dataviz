@@ -4,3 +4,12 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+[context.production]
+  environment = { NODE_VERSION = "20" }
+
+[context.deploy-preview]
+  environment = { NODE_VERSION = "20" }
+
+[context.branch-deploy]
+  environment = { NODE_VERSION = "20" }
