@@ -8,7 +8,7 @@
 			<header class="page-header">
 				<h1 v-if="is_age_specific==false">Age-standardized rate (World) per 100 000, incidence & mortality, {{ selectedSex == 2 ? 'females' : 'males' }}</h1>
 				<h1 v-if="is_age_specific==true">Rates per 100 000 by period, Age-specific, Korea (5 registries), incidence, {{ selectedSex == 2 ? 'females' : 'males' }}</h1>
-				<div class="sex-toggle">
+				<div class="sex-toggle" style="opacity: 0;">
 					<button
 						:class="['btn-toggle', { active: selectedSex == 2 }]"
 						@click="toggleSex(2)">Females</button>
@@ -193,11 +193,11 @@ export default {
 				x : [ 1980 , 2024 ]
 			},
 			pops : [
-				{ country : 250 , label : 'France' , color : "#ffbc42" , highlight : true , group: 'main' } ,
-				{ country : 840 , label : 'USA' , color : "#d81159" , highlight : true , group: 'main' } ,
-				{ country : 196 , label : 'Cyprus' , color : "#e63946" , highlight : true , group: 'top' } ,
-				{ country : 218 , label : 'Ecuador' , color : "#f4a261" , highlight : true , group: 'top' } ,
-				{ country : 160 , label : 'China' , color : "#2a9d8f" , highlight : true , group: 'top' } ,
+				{ country : 250 , label : 'France' , color : "#3b82f6" , highlight : true , group: 'main' } ,
+				{ country : 840 , label : 'USA' , color : "#1d4ed8" , highlight : true , group: 'main' } ,
+				{ country : 196 , label : 'Cyprus' , color : "#0891b2" , highlight : true , group: 'top' } ,
+				{ country : 218 , label : 'Ecuador' , color : "#0ea5e9" , highlight : true , group: 'top' } ,
+				{ country : 160 , label : 'China' , color : "#6366f1" , highlight : true , group: 'top' } ,
 				{ country : 792 , label : 'Türkiye' , color : "#9b5de5" , highlight : true , group: 'top' } ,
 				{ country : 410 , label : 'Republic of Korea' , color : "#90be6d" , highlight : true , group: 'korea' }
 			] ,
@@ -430,6 +430,10 @@ export default {
 					} else {
 						line.color = this.defaultLineColor
 						line.highlight = false
+					}
+					// Mortality lines (type == 1) are red and dotted
+					if ( line.type == 1 ) {
+						line.color = '#dc2626' ;
 					}
 					line.dash = ( line.type == 0 ) ? false : true ;
 					line.values = values ;
