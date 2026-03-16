@@ -35,45 +35,67 @@
 							
 							<div class="row" v-if="is_age_specific==false">
 
-								<!-- France & USA -->
-								<div class="col-md-12" v-for="(pop, i) in pops.filter(p => p.group == 'main')" :key="pop.country">
-									<p class="step1">
-										<a href="#" class="link_step">
-											<span class="step_marker step_marker_white" :style="{ 'background-color': pop.color }">
-												<i class='fas fa-check'></i>
-												{{ pop.label }}
-											</span>
-										</a>
-									</p>
+								<!-- Reset All Button -->
+								<div class="reset-btn-wrapper">
+									<button type="button" class="btn-reset-all" @click="resetAll">
+										<i class="fas fa-undo"></i> Reset all
+									</button>
 								</div>
 
-								<!-- Top incidence countries -->
-								<div class="col-md-12 legend-title">
-									<strong>Top 4 {{ selectedSex == 2 ? 'females' : 'males' }}</strong>
+								<!-- France & USA Block -->
+								<div class="filter-block" :class="{ 'filter-block-active': activeFilter == 'main' || pops.filter(p => p.group == 'main').some(p => selectedCountries.includes(p.country)) }">
+									<div class="col-md-12" v-for="(pop, i) in pops.filter(p => p.group == 'main')" :key="pop.country">
+										<p class="step1">
+											<a href="#" class="link_step" @click.prevent="toggleCountry(pop.country)">
+												<span class="step_marker step_marker_white" :class="{ 'country-selected': selectedCountries.includes(pop.country) || activeFilter == 'main' }" :style="{ 'background-color': pop.color }">
+													<i class='fas fa-check' v-if="selectedCountries.includes(pop.country) || activeFilter == 'main'"></i>
+													{{ pop.label }}
+												</span>
+											</a>
+										</p>
+									</div>
+									<div class="col-md-12 filter-btn-wrapper">
+										<button type="button" class="btn-filter" :class="{ active: activeFilter == 'main' }" @click="filterCountries('main')">
+											{{ activeFilter == 'main' ? 'Show all' : 'Show only both countries' }}
+										</button>
+									</div>
 								</div>
 
-								<div class="col-md-12" v-for="(pop, i) in pops.filter(p => p.group == 'top')" :key="pop.country">
-									<p class="step1">
-										<a href="#" class="link_step">
-											<span class="step_marker step_marker_white" :style="{ 'background-color': pop.color }">
-												<i class='fas fa-check'></i>
-												{{ pop.label }}
-											</span>
-										</a>
-									</p>
+								<!-- Top incidence countries Block -->
+								<div class="filter-block" :class="{ 'filter-block-active': activeFilter == 'top' || pops.filter(p => p.group == 'top').some(p => selectedCountries.includes(p.country)) }">
+									<div class="col-md-12 legend-title">
+										<strong>Top 4 {{ selectedSex == 2 ? 'females' : 'males' }}</strong>
+									</div>
+									<div class="col-md-12" v-for="(pop, i) in pops.filter(p => p.group == 'top')" :key="pop.country">
+										<p class="step1">
+											<a href="#" class="link_step" @click.prevent="toggleCountry(pop.country)">
+												<span class="step_marker step_marker_white" :class="{ 'country-selected': selectedCountries.includes(pop.country) || activeFilter == 'top' }" :style="{ 'background-color': pop.color }">
+													<i class='fas fa-check' v-if="selectedCountries.includes(pop.country) || activeFilter == 'top'"></i>
+													{{ pop.label }}
+												</span>
+											</a>
+										</p>
+									</div>
+									<div class="col-md-12 filter-btn-wrapper">
+										<button type="button" class="btn-filter" :class="{ active: activeFilter == 'top' }" @click="filterCountries('top')">
+											{{ activeFilter == 'top' ? 'Show all' : 'Show only these countries' }}
+										</button>
+									</div>
 								</div>
 
-								<!-- Spacer to push Korea to bottom -->
-								<div class="flex-spacer"></div>
-
-								<!-- Korea separate at bottom -->
-								<div class="col-md-12 korea-section">
+								<!-- Korea Block -->
+								<div class="filter-block" :class="{ 'filter-block-active': activeFilter == 'korea' || animate }">
 									<p class="step2">
-										<a href="#" class="link_step" v-on:click="startAnimation()">
-										<span class="step_marker step_marker_white" :style="{ 'background-color': pops.find(p => p.group == 'korea').color }">
-											<i class='fas fa-check' v-if="animate==true"></i>Republic of Korea</span>
+										<a href="#" class="link_step" @click.prevent="startAnimation()">
+										<span class="step_marker step_marker_white" :class="{ 'country-selected': animate || activeFilter == 'korea' }" :style="{ 'background-color': pops.find(p => p.group == 'korea').color }">
+											<i class='fas fa-check' v-if="animate || activeFilter == 'korea'"></i>Republic of Korea</span>
 										</a>
 									</p>
+									<div class="filter-btn-wrapper">
+										<button type="button" class="btn-filter" :class="{ active: activeFilter == 'korea' }" @click="filterCountries('korea')">
+											{{ activeFilter == 'korea' ? 'Show all' : 'Show only Rep.Korea' }}
+										</button>
+									</div>
 								</div>
 							</div>
 
@@ -209,7 +231,11 @@ export default {
 
 			selectedSex : 2 , // 1 = male, 2 = female (default)
 
-			lines_checkbox : []
+			lines_checkbox : [] ,
+
+			activeFilter : null , // null = show all (except Korea), 'main' = France & USA, 'top' = top 5, 'korea' = Rep Korea only
+
+			selectedCountries : [] // individually selected countries
 	    }
 	},
 	created(){	
@@ -327,7 +353,7 @@ export default {
 
 					setTimeout(() => {
 						this.redraw( true );
-					}, 7000 )
+					}, 2000 )
 					
 					
 				}))
@@ -470,19 +496,18 @@ export default {
 		},
 
 		resetAll : function(){
+			// Reset all filters and selections
+			this.activeFilter = null ;
+			this.selectedCountries = [] ;
+			this.animate = false ;
 
-			this.filters.educations.forEach( e => {
-				this.steps[ e.edu ] = false ; 
-			})
+			// Clear existing lines
+			this.group_lines.selectAll('.path_lines').remove() ;
+			this.legend_lines.selectAll('.line_legend').remove() ;
+			this.legend_lines.selectAll('.text_legend').remove() ;
 
-			this.g_circles.selectAll(".country")
-				.transition()
-	            .duration(500)
-	            .attr("cy",c => {
-	            	return  this.height-this.margin.bottom
-	            })
-	            .style("opacity",0)
-
+			// Redraw from initial state
+			this.redraw( true ) ;
 		},  
 		selectCountry( label ){
 
@@ -544,6 +569,24 @@ export default {
 						return this.lines_checkbox.includes( c.period )
 					})
 				all_values_in = this.all_values
+			} else if ( this.selectedCountries.length > 0 ) {
+				// Filter by individually selected countries - always include Korea if animate is true
+				let selectedWithKorea = [...this.selectedCountries] ;
+				if ( this.animate && !selectedWithKorea.includes( this.target_country ) ) {
+					selectedWithKorea.push( this.target_country ) ;
+				}
+				dataset_in = this.dataset.filter( c => selectedWithKorea.includes( c.country ) ) ;
+				all_values_in = this.all_values.filter( c => selectedWithKorea.includes( c.country ) ) ;
+			} else if ( this.activeFilter != null ) {
+				// Filter by active group - always include Korea if animate is true
+				let filterCountries = this.pops
+					.filter( p => p.group == this.activeFilter )
+					.map( p => p.country ) ;
+				if ( this.animate && !filterCountries.includes( this.target_country ) ) {
+					filterCountries.push( this.target_country ) ;
+				}
+				dataset_in = this.dataset.filter( c => filterCountries.includes( c.country ) ) ;
+				all_values_in = this.all_values.filter( c => filterCountries.includes( c.country ) ) ;
 			} else if ( this.animate == true ) {
 				// Show all countries including Korea
 				dataset_in = this.dataset
@@ -670,6 +713,64 @@ export default {
 
 	    	this.redraw();
 
+	    } ,
+
+	    /**
+	    * Filter countries by group
+	    * @param {string} group - 'main' (France & USA), 'top' (top countries), 'korea' (Rep Korea)
+	    */
+	    filterCountries : function( group ) {
+	    	// Toggle filter: if same filter clicked, clear it
+	    	if ( this.activeFilter == group ) {
+	    		this.activeFilter = null ;
+	    	} else {
+	    		this.activeFilter = group ;
+	    	}
+
+	    	// Clear individual selections when using "Show only" buttons
+	    	this.selectedCountries = [] ;
+
+	    	// Clear existing lines
+	    	this.group_lines.selectAll('.path_lines').remove() ;
+	    	this.legend_lines.selectAll('.line_legend').remove() ;
+	    	this.legend_lines.selectAll('.text_legend').remove() ;
+
+	    	// If Korea filter is active, also enable animate
+	    	if ( this.activeFilter == 'korea' ) {
+	    		this.animate = true ;
+	    	}
+	    	// Note: Korea (animate) is never reset by other filters - it stays visible once enabled
+
+	    	this.redraw( true ) ;
+	    } ,
+
+	    /**
+	    * Toggle individual country selection
+	    * @param {number} countryCode - country code to toggle
+	    */
+	    toggleCountry : function( countryCode ) {
+	    	// Clear "Show only" filter when selecting individual countries
+	    	this.activeFilter = null ;
+
+	    	// Korea is handled specially - it toggles animate and is always shown in addition to others
+	    	if ( countryCode == this.target_country ) {
+	    		this.animate = !this.animate ;
+	    	} else {
+	    		// Toggle country in selectedCountries array
+	    		const index = this.selectedCountries.indexOf( countryCode ) ;
+	    		if ( index > -1 ) {
+	    			this.selectedCountries.splice( index, 1 ) ;
+	    		} else {
+	    			this.selectedCountries.push( countryCode ) ;
+	    		}
+	    	}
+
+	    	// Clear existing lines
+	    	this.group_lines.selectAll('.path_lines').remove() ;
+	    	this.legend_lines.selectAll('.line_legend').remove() ;
+	    	this.legend_lines.selectAll('.text_legend').remove() ;
+
+	    	this.redraw( true ) ;
 	    } , 
 
 	    periodAnimation : function( label ){
@@ -711,7 +812,7 @@ export default {
 	        if ( this.is_age_specific == true )
 	        	legends_texts_domain = [{period:"2001-2003",pos_x:50},{period:"2004-2006",pos_x:50}] ; 
 	        else 
-	        	legends_texts_domain = { 0 : 'incidence' , 1 : 'Mortality'} ; 
+	        	legends_texts_domain = { 0 : '' , 1 : 'Mortality'} ; 
 	        
 	        // console.info("dataset_in",dataset_in) ;
 	        dataset_in.forEach((d,i)=>{
@@ -727,7 +828,9 @@ export default {
 	        	} else {
 	        		item = this.pops.find( p => d.country == p.country && p.highlight )
 	        		let is_targeted = dataset_in.find( c => c.country == this.target_country )
-	        		let y_end = last_pos.asr + ( ( is_targeted != undefined && d.country == 84000 ) ? 5 : 0 ) ; //( is_targeted != undefined ) ? 60 : 16 ;
+	        		// Offset Korea legend text 20 units higher to prevent overlap
+	        		let koreaOffset = ( d.country == this.target_country ) ? 20 : 0 ;
+	        		let y_end = last_pos.asr + koreaOffset + ( ( is_targeted != undefined && d.country == 84000 ) ? 5 : 0 ) ;
 	        		text_pos = (d.type == 1 ) ? {y:0.5,x:2025} : {y:y_end,x:2025} ;
 	        		pos_start = {x:last_pos.year,y:last_pos.asr}  ;
 	        	}
@@ -776,7 +879,7 @@ export default {
 		    		.map( m => {
 			    		return {
 		        			key 	: m.type ,
-		        			label 	: ( (m.type == 0) ? m.label + ', ' : '') + legends_texts_domain[ m.type ] ,
+		        			label 	: ( (m.type == 0) ? m.label + '' : '') + legends_texts_domain[ m.type ] ,
 		        			pos 	: m.pos_end ,
 		        			color 	: m.color ,
 		        			lastValue : m.pos_start.y // last ASR value for sorting
@@ -1056,9 +1159,25 @@ a.link_step {
 		font-size: 0.85em;
 		border-radius: 3px;
 		margin-bottom: 2px;
+		opacity: 0.5;
+		cursor: pointer;
 
 		i {
 			margin-right: $space-xs;
+			display: none;
+		}
+
+		&.country-selected {
+			opacity: 1;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+			i {
+				display: inline-block;
+			}
+		}
+
+		&:hover {
+			opacity: 0.8;
 		}
 	}
 
@@ -1095,9 +1214,90 @@ a.link_step {
 	min-height: $space-md;
 }
 
+// Filter blocks - grouped sections
+.filter-block {
+	width: 100%;
+	background: #f0f0f0;
+	border-radius: 6px;
+	padding: $space-sm;
+	margin-bottom: $space-sm;
+	border: 2px solid transparent;
+	transition: all 0.2s ease-in-out;
+
+	&.filter-block-active {
+		background: #e0e8f0;
+		border-color: #3b82f6;
+		box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+	}
+
+	.legend-title {
+		padding: 0 0 $space-xs 0;
+		margin: 0;
+	}
+}
+
 .korea-section {
-	margin-top: auto;
 	padding-bottom: $space-sm;
+}
+
+// Reset all button
+.reset-btn-wrapper {
+	width: 100%;
+	margin-bottom: $space-md;
+	padding-bottom: $space-sm;
+	border-bottom: 1px solid #ddd;
+}
+
+.btn-reset-all {
+	width: 100%;
+	padding: $space-sm $space-md;
+	border: none;
+	background: #dc2626;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 0.8em;
+	transition: all 0.2s ease-in-out;
+	border-radius: 4px;
+	line-height: 1.4;
+
+	i {
+		margin-right: $space-xs;
+	}
+
+	&:hover {
+		background: #b91c1c;
+	}
+}
+
+// Filter buttons
+.filter-btn-wrapper {
+	margin: $space-xs 0 0 0;
+}
+
+.btn-filter {
+	width: 100%;
+	padding: $space-xs $space-sm;
+	border: 1px solid #ccc;
+	background: #f5f5f5;
+	color: #333;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 0.7em;
+	transition: all 0.2s ease-in-out;
+	border-radius: 3px;
+	line-height: 1.4;
+
+	&:hover {
+		background: #e5e5e5;
+		border-color: #999;
+	}
+
+	&.active {
+		background: #333;
+		color: #fff;
+		border-color: #333;
+	}
 }
 
 g.x.axis, g.y.axis {
