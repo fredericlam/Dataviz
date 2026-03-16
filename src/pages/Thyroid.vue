@@ -42,7 +42,8 @@
 									</button>
 								</div>
 
-								<!-- France & USA Block -->
+								<!-- Step 1: France & USA Block -->
+								<div class="step-header">Step 1</div>
 								<div class="filter-block" :class="{ 'filter-block-active': activeFilter == 'main' || pops.filter(p => p.group == 'main').some(p => selectedCountries.includes(p.country)) }">
 									<div class="col-md-12" v-for="(pop, i) in pops.filter(p => p.group == 'main')" :key="pop.country">
 										<p class="step1">
@@ -61,29 +62,8 @@
 									</div>
 								</div>
 
-								<!-- Top incidence countries Block -->
-								<div class="filter-block" :class="{ 'filter-block-active': activeFilter == 'top' || pops.filter(p => p.group == 'top').some(p => selectedCountries.includes(p.country)) }">
-									<div class="col-md-12 legend-title">
-										<strong>Top 4 {{ selectedSex == 2 ? 'females' : 'males' }}</strong>
-									</div>
-									<div class="col-md-12" v-for="(pop, i) in pops.filter(p => p.group == 'top')" :key="pop.country">
-										<p class="step1">
-											<a href="#" class="link_step" @click.prevent="toggleCountry(pop.country)">
-												<span class="step_marker step_marker_white" :class="{ 'country-selected': selectedCountries.includes(pop.country) || activeFilter == 'top' }" :style="{ 'background-color': pop.color }">
-													<i class='fas fa-check' v-if="selectedCountries.includes(pop.country) || activeFilter == 'top'"></i>
-													{{ pop.label }}
-												</span>
-											</a>
-										</p>
-									</div>
-									<div class="col-md-12 filter-btn-wrapper">
-										<button type="button" class="btn-filter" :class="{ active: activeFilter == 'top' }" @click="filterCountries('top')">
-											{{ activeFilter == 'top' ? 'Show all' : 'Show only these countries' }}
-										</button>
-									</div>
-								</div>
-
-								<!-- Korea Block -->
+								<!-- Step 2: Korea Block -->
+								<div class="step-header">Step 2</div>
 								<div class="filter-block" :class="{ 'filter-block-active': activeFilter == 'korea' || animate }">
 									<p class="step2">
 										<a href="#" class="link_step" @click.prevent="startAnimation()">
@@ -94,6 +74,29 @@
 									<div class="filter-btn-wrapper">
 										<button type="button" class="btn-filter" :class="{ active: activeFilter == 'korea' }" @click="filterCountries('korea')">
 											{{ activeFilter == 'korea' ? 'Show all' : 'Show only Rep.Korea' }}
+										</button>
+									</div>
+								</div>
+
+								<!-- Step 3: Top incidence countries Block -->
+								<div class="step-header">Step 3</div>
+								<div class="filter-block" :class="{ 'filter-block-active': showTop || pops.filter(p => p.group == 'top').some(p => selectedCountries.includes(p.country)) }">
+									<div class="col-md-12 legend-title">
+										<strong>Top 4 {{ selectedSex == 2 ? 'females' : 'males' }}</strong>
+									</div>
+									<div class="col-md-12" v-for="(pop, i) in pops.filter(p => p.group == 'top')" :key="pop.country">
+										<p class="step1">
+											<a href="#" class="link_step" @click.prevent="toggleCountry(pop.country)">
+												<span class="step_marker step_marker_white" :class="{ 'country-selected': selectedCountries.includes(pop.country) || showTop }" :style="{ 'background-color': pop.color }">
+													<i class='fas fa-check' v-if="selectedCountries.includes(pop.country) || showTop"></i>
+													{{ pop.label }}
+												</span>
+											</a>
+										</p>
+									</div>
+									<div class="col-md-12 filter-btn-wrapper">
+										<button type="button" class="btn-filter" :class="{ active: showTop }" @click="toggleTopCountries">
+											{{ showTop ? 'Hide Top 4' : 'Show Top 4' }}
 										</button>
 									</div>
 								</div>
@@ -233,9 +236,11 @@ export default {
 
 			lines_checkbox : [] ,
 
-			activeFilter : null , // null = show all (except Korea), 'main' = France & USA, 'top' = top 5, 'korea' = Rep Korea only
+			activeFilter : 'main' , // 'main' = France & USA (default), 'korea' = Rep Korea only, null = show all
 
-			selectedCountries : [] // individually selected countries
+			selectedCountries : [] , // individually selected countries
+
+			showTop : false // toggle for showing Top 4 countries (additive like Korea)
 	    }
 	},
 	created(){	
@@ -496,10 +501,11 @@ export default {
 		},
 
 		resetAll : function(){
-			// Reset all filters and selections
-			this.activeFilter = null ;
+			// Reset all filters and selections to initial state (France & USA only)
+			this.activeFilter = 'main' ;
 			this.selectedCountries = [] ;
 			this.animate = false ;
+			this.showTop = false ;
 
 			// Clear existing lines
 			this.group_lines.selectAll('.path_lines').remove() ;
@@ -570,27 +576,52 @@ export default {
 					})
 				all_values_in = this.all_values
 			} else if ( this.selectedCountries.length > 0 ) {
-				// Filter by individually selected countries - always include Korea if animate is true
-				let selectedWithKorea = [...this.selectedCountries] ;
-				if ( this.animate && !selectedWithKorea.includes( this.target_country ) ) {
-					selectedWithKorea.push( this.target_country ) ;
+				// Filter by individually selected countries
+				// Scale includes selected countries + Korea if enabled (Korea affects scale)
+				let scaleCountries = [...this.selectedCountries] ;
+				if ( this.animate && !scaleCountries.includes( this.target_country ) ) {
+					scaleCountries.push( this.target_country ) ;
 				}
-				dataset_in = this.dataset.filter( c => selectedWithKorea.includes( c.country ) ) ;
-				all_values_in = this.all_values.filter( c => selectedWithKorea.includes( c.country ) ) ;
+				all_values_in = this.all_values.filter( c => scaleCountries.includes( c.country ) ) ;
+				
+				// Display includes Korea and Top 4 if enabled
+				let displayCountries = [...scaleCountries] ;
+				if ( this.showTop ) {
+					this.pops.filter( p => p.group == 'top' ).forEach( p => {
+						if ( !displayCountries.includes( p.country ) ) displayCountries.push( p.country ) ;
+					}) ;
+				}
+				dataset_in = this.dataset.filter( c => displayCountries.includes( c.country ) ) ;
 			} else if ( this.activeFilter != null ) {
-				// Filter by active group - always include Korea if animate is true
-				let filterCountries = this.pops
+				// Filter by active group
+				// Scale includes active filter + Korea if enabled (Korea affects scale)
+				let scaleCountries = this.pops
 					.filter( p => p.group == this.activeFilter )
 					.map( p => p.country ) ;
-				if ( this.animate && !filterCountries.includes( this.target_country ) ) {
-					filterCountries.push( this.target_country ) ;
+				if ( this.animate && !scaleCountries.includes( this.target_country ) ) {
+					scaleCountries.push( this.target_country ) ;
 				}
-				dataset_in = this.dataset.filter( c => filterCountries.includes( c.country ) ) ;
-				all_values_in = this.all_values.filter( c => filterCountries.includes( c.country ) ) ;
-			} else if ( this.animate == true ) {
-				// Show all countries including Korea
-				dataset_in = this.dataset
-				all_values_in = this.all_values
+				all_values_in = this.all_values.filter( c => scaleCountries.includes( c.country ) ) ;
+				
+				// Display includes Korea and Top 4 if enabled
+				let displayCountries = [...scaleCountries] ;
+				if ( this.showTop ) {
+					this.pops.filter( p => p.group == 'top' ).forEach( p => {
+						if ( !displayCountries.includes( p.country ) ) displayCountries.push( p.country ) ;
+					}) ;
+				}
+				dataset_in = this.dataset.filter( c => displayCountries.includes( c.country ) ) ;
+			} else if ( this.animate == true || this.showTop == true ) {
+				// No base filter, just Korea and/or Top 4 - scale based on what's shown
+				let displayCountries = [] ;
+				if ( this.animate ) displayCountries.push( this.target_country ) ;
+				if ( this.showTop ) {
+					this.pops.filter( p => p.group == 'top' ).forEach( p => {
+						displayCountries.push( p.country ) ;
+					}) ;
+				}
+				dataset_in = this.dataset.filter( c => displayCountries.includes( c.country ) ) ;
+				all_values_in = this.all_values.filter( c => displayCountries.includes( c.country ) ) ;
 			} else {
 				// Hide Korea by default
 				dataset_in = this.dataset.filter( c => c.country != this.target_country )
@@ -711,6 +742,7 @@ export default {
 
 	    	this.animate = !this.animate ;
 
+	    	// Just redraw to add/remove Korea lines without restarting graphic
 	    	this.redraw();
 
 	    } ,
@@ -739,9 +771,17 @@ export default {
 	    	if ( this.activeFilter == 'korea' ) {
 	    		this.animate = true ;
 	    	}
-	    	// Note: Korea (animate) is never reset by other filters - it stays visible once enabled
+	    	// Note: Korea (animate) and Top 4 (showTop) are never reset by other filters
 
 	    	this.redraw( true ) ;
+	    } ,
+
+	    /**
+	    * Toggle Top 4 countries visibility (additive like Korea)
+	    */
+	    toggleTopCountries : function() {
+	    	this.showTop = !this.showTop ;
+	    	this.redraw() ;
 	    } ,
 
 	    /**
@@ -1238,6 +1278,23 @@ a.link_step {
 
 .korea-section {
 	padding-bottom: $space-sm;
+}
+
+// Step headers
+.step-header {
+	width: 100%;
+	font-size: 0.7em;
+	font-weight: 700;
+	color: #666;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: $space-xs;
+	margin-top: $space-sm;
+	padding-left: 2px;
+
+	&:first-of-type {
+		margin-top: 0;
+	}
 }
 
 // Reset all button
