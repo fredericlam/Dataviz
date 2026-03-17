@@ -96,7 +96,7 @@
 									</div>
 									<div class="col-md-12 filter-btn-wrapper">
 										<button type="button" class="btn-filter" :class="{ active: showTop }" @click="toggleTopCountries">
-											{{ showTop ? 'Hide Top 4' : 'Show Top 4' }}
+											{{ showTop ? 'Hide all' : 'Show all countries and top 4' }}
 										</button>
 									</div>
 								</div>
@@ -220,10 +220,10 @@ export default {
 			pops : [
 				{ country : 250 , label : 'France' , color : "#3b82f6" , highlight : true , group: 'main' } ,
 				{ country : 840 , label : 'USA' , color : "#1d4ed8" , highlight : true , group: 'main' } ,
-				{ country : 196 , label : 'Cyprus' , color : "#cccccc" , highlight : true , group: 'top' } ,
-				{ country : 218 , label : 'Ecuador' , color : "#cccccc" , highlight : true , group: 'top' } ,
-				{ country : 160 , label : 'China' , color : "#cccccc" , highlight : true , group: 'top' } ,
-				{ country : 792 , label : 'Türkiye' , color : "#cccccc" , highlight : true , group: 'top' } ,
+				{ country : 196 , label : 'Cyprus' , color : "#0891b2" , highlight : true , group: 'top' } ,
+				{ country : 218 , label : 'Ecuador' , color : "#0ea5e9" , highlight : true , group: 'top' } ,
+				{ country : 160 , label : 'China' , color : "#6366f1" , highlight : true , group: 'top' } ,
+				{ country : 792 , label : 'Türkiye' , color : "#9b5de5" , highlight : true , group: 'top' } ,
 				{ country : 410 , label : 'Republic of Korea' , color : "#90be6d" , highlight : true , group: 'korea' }
 			] ,
 			defaultLineColor : '#cccccc' , 
@@ -547,7 +547,9 @@ export default {
 		redraw : function( init , label ){
 
 			// legend
-			// console.info("dataset",this.dataset,this.all_values) ;
+			
+			console.info("redraw dataset",this.dataset,this.all_values) ;
+			
 			let dataset_in = [] , all_values_in = [] ;
 
 			// Adjust right margin when Korea is shown (longer label)
@@ -575,6 +577,10 @@ export default {
 						return this.lines_checkbox.includes( c.period )
 					})
 				all_values_in = this.all_values
+			} else if ( this.showTop ) {
+				// Show ALL countries when showTop is true (top priority)
+				dataset_in = this.dataset ;
+				all_values_in = this.all_values ;
 			} else if ( this.selectedCountries.length > 0 ) {
 				// Filter by individually selected countries
 				// Scale includes selected countries + Korea if enabled (Korea affects scale)
@@ -584,13 +590,8 @@ export default {
 				}
 				all_values_in = this.all_values.filter( c => scaleCountries.includes( c.country ) ) ;
 				
-				// Display includes Korea and Top 4 if enabled
+				// Display includes Korea if enabled
 				let displayCountries = [...scaleCountries] ;
-				if ( this.showTop ) {
-					this.pops.filter( p => p.group == 'top' ).forEach( p => {
-						if ( !displayCountries.includes( p.country ) ) displayCountries.push( p.country ) ;
-					}) ;
-				}
 				dataset_in = this.dataset.filter( c => displayCountries.includes( c.country ) ) ;
 			} else if ( this.activeFilter != null ) {
 				// Filter by active group
@@ -603,23 +604,12 @@ export default {
 				}
 				all_values_in = this.all_values.filter( c => scaleCountries.includes( c.country ) ) ;
 				
-				// Display includes Korea and Top 4 if enabled
+				// Display includes Korea if enabled
 				let displayCountries = [...scaleCountries] ;
-				if ( this.showTop ) {
-					this.pops.filter( p => p.group == 'top' ).forEach( p => {
-						if ( !displayCountries.includes( p.country ) ) displayCountries.push( p.country ) ;
-					}) ;
-				}
 				dataset_in = this.dataset.filter( c => displayCountries.includes( c.country ) ) ;
-			} else if ( this.animate == true || this.showTop == true ) {
-				// No base filter, just Korea and/or Top 4 - scale based on what's shown
-				let displayCountries = [] ;
-				if ( this.animate ) displayCountries.push( this.target_country ) ;
-				if ( this.showTop ) {
-					this.pops.filter( p => p.group == 'top' ).forEach( p => {
-						displayCountries.push( p.country ) ;
-					}) ;
-				}
+			} else if ( this.animate == true ) {
+				// Only Korea is shown
+				let displayCountries = [ this.target_country ] ;
 				dataset_in = this.dataset.filter( c => displayCountries.includes( c.country ) ) ;
 				all_values_in = this.all_values.filter( c => displayCountries.includes( c.country ) ) ;
 			} else {
