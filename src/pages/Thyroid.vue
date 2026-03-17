@@ -220,10 +220,10 @@ export default {
 			pops : [
 				{ country : 250 , label : 'France' , color : "#3b82f6" , highlight : true , group: 'main' } ,
 				{ country : 840 , label : 'USA' , color : "#1d4ed8" , highlight : true , group: 'main' } ,
-				{ country : 196 , label : 'Cyprus' , color : "#0891b2" , highlight : true , group: 'top' } ,
-				{ country : 218 , label : 'Ecuador' , color : "#0ea5e9" , highlight : true , group: 'top' } ,
-				{ country : 160 , label : 'China' , color : "#6366f1" , highlight : true , group: 'top' } ,
-				{ country : 792 , label : 'Türkiye' , color : "#9b5de5" , highlight : true , group: 'top' } ,
+				{ country : 196 , label : 'Cyprus' , color : "#cccccc" , highlight : true , group: 'top' } ,
+				{ country : 218 , label : 'Ecuador' , color : "#cccccc" , highlight : true , group: 'top' } ,
+				{ country : 160 , label : 'China' , color : "#cccccc" , highlight : true , group: 'top' } ,
+				{ country : 792 , label : 'Türkiye' , color : "#cccccc" , highlight : true , group: 'top' } ,
 				{ country : 410 , label : 'Republic of Korea' , color : "#90be6d" , highlight : true , group: 'korea' }
 			] ,
 			defaultLineColor : '#cccccc' , 
