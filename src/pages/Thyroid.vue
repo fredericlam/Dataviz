@@ -219,6 +219,7 @@ export default {
 			},
 			pops : [
 				{ country : 250 , label : 'France' , color : "#3b82f6" , highlight : true , group: 'main' } ,
+				{ country : 380 , label : 'Italy' , color : "#2FA4D7" , highlight : true , group: 'main' } ,
 				{ country : 840 , label : 'USA' , color : "#1d4ed8" , highlight : true , group: 'main' } ,
 				{ country : 196 , label : 'Cyprus' , color : "#0891b2" , highlight : true , group: 'top' } ,
 				{ country : 218 , label : 'Ecuador' , color : "#0ea5e9" , highlight : true , group: 'top' } ,
@@ -861,6 +862,7 @@ export default {
 	        		// Offset Korea legend text 20 units higher to prevent overlap
 	        		let koreaOffset = ( d.country == this.target_country ) ? 20 : 0 ;
 	        		let y_end = last_pos.asr + koreaOffset + ( ( is_targeted != undefined && d.country == 84000 ) ? 5 : 0 ) ;
+	        		if ( d.country == 840 ) y_end = last_pos.asr + 2 ; 
 	        		text_pos = (d.type == 1 ) ? {y:0.5,x:2025} : {y:y_end,x:2025} ;
 	        		pos_start = {x:last_pos.year,y:last_pos.asr}  ;
 	        	}
